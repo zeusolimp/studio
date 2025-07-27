@@ -18,6 +18,7 @@ export type FeaturesSectionData = {
   id: 'features';
   type: 'features';
   title: string;
+  subtext: string;
   items: FeatureItem[];
 };
 

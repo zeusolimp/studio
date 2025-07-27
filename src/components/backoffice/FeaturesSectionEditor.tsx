@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { PlusCircle, Trash2 } from 'lucide-react';
 import { iconMap } from '@/components/DynamicIcon';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Textarea } from '../ui/textarea';
 
 interface FeaturesSectionEditorProps {
   data: FeaturesSectionData;
@@ -14,8 +15,8 @@ interface FeaturesSectionEditorProps {
 const availableIcons = Object.keys(iconMap);
 
 export default function FeaturesSectionEditor({ data, onChange }: FeaturesSectionEditorProps) {
-  const handleTitleChange = (value: string) => {
-    onChange({ ...data, title: value });
+  const handleChange = (field: 'title' | 'subtext', value: string) => {
+    onChange({ ...data, [field]: value });
   };
 
   const handleItemChange = (index: number, field: keyof FeatureItem, value: string) => {
@@ -46,7 +47,16 @@ export default function FeaturesSectionEditor({ data, onChange }: FeaturesSectio
         <Input
           id={`title-${data.id}`}
           value={data.title}
-          onChange={(e) => handleTitleChange(e.target.value)}
+          onChange={(e) => handleChange('title', e.target.value)}
+        />
+      </div>
+
+       <div className="space-y-2">
+        <Label htmlFor={`subtext-${data.id}`}>Subtext</Label>
+        <Textarea
+          id={`subtext-${data.id}`}
+          value={data.subtext}
+          onChange={(e) => handleChange('subtext', e.target.value)}
         />
       </div>
       

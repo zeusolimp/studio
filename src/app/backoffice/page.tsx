@@ -1,10 +1,11 @@
+
 import { getContent } from '@/lib/content';
-import ContentEditor from '@/components/backoffice/ContentEditor';
+import { LandingContent } from '@/types';
+import ContentTabs from '@/components/backoffice/ContentTabs';
+
 
 export default async function BackofficePage() {
-  const content = await getContent();
+    const content: LandingContent = await getContent();
 
-  return (
-    <ContentEditor initialContent={content} />
-  );
+    return <ContentTabs initialContent={content} />;
 }

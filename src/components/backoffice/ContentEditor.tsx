@@ -1,5 +1,4 @@
 
-
 "use client";
 
 import { useState } from 'react';
@@ -11,16 +10,25 @@ import HeroSectionEditor from './HeroSectionEditor';
 import FeaturesSectionEditor from './FeaturesSectionEditor';
 import CtaSectionEditor from './CtaSectionEditor';
 import AboutUsSectionEditor from './AboutUsSectionEditor';
-import { Save, Loader, ArrowUp, ArrowDown, Trash2 } from 'lucide-react';
+import FeaturedArticleEditor from './FeaturedArticleEditor';
+import { Save, Loader } from 'lucide-react';
 
 const sectionEditorComponents = {
   hero: HeroSectionEditor,
   features: FeaturesSectionEditor,
+  'featured-article': FeaturedArticleEditor,
   about: AboutUsSectionEditor,
   cta: CtaSectionEditor,
 };
 
-export default function ContentEditor({ initialContent }: { initialContent: LandingContent }) {
+type EditorComponentType = keyof typeof sectionEditorComponents;
+
+interface ContentEditorProps {
+    initialContent: LandingContent;
+    allowedSections: EditorComponentType[];
+}
+
+export default function ContentEditor({ initialContent, allowedSections }: ContentEditorProps) {
   const [content, setContent] = useState<LandingContent>(initialContent);
   const [isSaving, setIsSaving] = useState(false);
   const { toast } = useToast();
@@ -57,48 +65,19 @@ export default function ContentEditor({ initialContent }: { initialContent: Land
     setContent({ ...content, sections: newSections });
   };
   
-  const handleMoveSection = (index: number, direction: 'up' | 'down') => {
-    if ((direction === 'up' && index === 0) || (direction === 'down' && index === content.sections.length - 1)) return;
-    
-    const newSections = [...content.sections];
-    const sectionToMove = newSections[index];
-    const swapIndex = direction === 'up' ? index - 1 : index + 1;
-
-    newSections[index] = newSections[swapIndex];
-    newSections[swapIndex] = sectionToMove;
-
-    setContent({ ...content, sections: newSections });
-  };
-
-  const handleRemoveSection = (index: number) => {
-    const newSections = content.sections.filter((_, i) => i !== index);
-    setContent({ ...content, sections: newSections });
-  };
-
   const renderSectionEditor = (section: Section, index: number) => {
-    const EditorComponent = sectionEditorComponents[section.type as keyof typeof sectionEditorComponents];
+    const sectionType = section.type as EditorComponentType;
+    if (!allowedSections.includes(sectionType)) return null;
+
+    const EditorComponent = sectionEditorComponents[sectionType];
     if (!EditorComponent) return null;
 
     const title = `${section.type.charAt(0).toUpperCase() + section.type.slice(1)} Section`;
 
     return (
         <Card key={`${section.id}-${index}`}>
-            <CardHeader className="flex flex-row items-center justify-between">
+            <CardHeader>
                 <CardTitle className="font-headline text-xl">{title}</CardTitle>
-                <div className="flex items-center gap-1">
-                    <Button variant="ghost" size="icon" onClick={() => handleMoveSection(index, 'up')} disabled={index === 0}>
-                        <ArrowUp className="h-4 w-4" />
-                        <span className="sr-only">Move section up</span>
-                    </Button>
-                    <Button variant="ghost" size="icon" onClick={() => handleMoveSection(index, 'down')} disabled={index === content.sections.length - 1}>
-                        <ArrowDown className="h-4 w-4" />
-                        <span className="sr-only">Move section down</span>
-                    </Button>
-                    <Button disabled variant="ghost" size="icon" onClick={() => handleRemoveSection(index)} className="text-destructive hover:bg-destructive/10 hover:text-destructive">
-                        <Trash2 className="h-4 w-4" />
-                        <span className="sr-only">Delete section</span>
-                    </Button>
-                </div>
             </CardHeader>
             <CardContent>
                 <EditorComponent data={section as any} onChange={(newSectionData) => handleSectionChange(index, newSectionData)} />
@@ -108,7 +87,7 @@ export default function ContentEditor({ initialContent }: { initialContent: Land
   };
   
   return (
-    <div className="max-w-4xl mx-auto py-8">
+    <div className="max-w-4xl mx-auto">
       <div className="flex justify-between items-center mb-6 pb-4 border-b">
         <h1 className="text-3xl font-bold font-headline">Content Editor</h1>
         <Button onClick={handleSave} disabled={isSaving} size="lg">

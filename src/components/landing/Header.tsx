@@ -1,21 +1,15 @@
 
-import Link from 'next-intl/link';
+import { Link } from 'next-intl';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '../ThemeToggle';
 import { getSettings } from '@/lib/settings';
 import LanguageSwitcher from './LanguageSwitcher';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
-const Header = () => {
-  const t = useTranslations('Header');
-  // I need to do this because getSettings is an async function and this is a server component
-  // so I cannot use async/await here. I will just read the settings in an async function and then
-  // call the component with the settings as props.
-  const getSettingsPayload = async () => {
-    return await getSettings();
-  }
-
+const Header = async () => {
+  const t = await getTranslations('Header');
+  
   const NavLinks = () => {
     return (
         <>
@@ -42,8 +36,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          {/* This component cannot be async, so I will do a trick to get the settings */}
-          <HeaderLogo getSettingsPayload={getSettingsPayload} />
+          <HeaderLogo />
           <span className="font-headline text-xl font-bold">iddeia global</span>
         </Link>
         
@@ -61,8 +54,8 @@ const Header = () => {
   );
 };
 
-const HeaderLogo = async ({ getSettingsPayload }: { getSettingsPayload: () => Promise<any> }) => {
-    const settings = await getSettingsPayload();
+const HeaderLogo = async () => {
+    const settings = await getSettings();
     return (
         <>
             {settings.logo_url ? (

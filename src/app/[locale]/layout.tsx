@@ -3,7 +3,8 @@ import '../globals.css';
 import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { getSettings } from '@/lib/settings';
-import { NextIntlClientProvider, useMessages } from 'next-intl';
+import {NextIntlClientProvider} from 'next-intl';
+import {getMessages} from 'next-intl/server';
 
 export const metadata: Metadata = {
   title: 'Soluções Digitais | Desenvolvimento Web e Suporte',
@@ -18,7 +19,7 @@ export default async function RootLayout({
   params: {locale: string};
 }>) {
   const settings = await getSettings();
-  const messages = useMessages();
+  const messages = await getMessages({locale});
   const { light, dark } = settings.theme;
 
   const themeStyle = `

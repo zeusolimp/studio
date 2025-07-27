@@ -1,5 +1,5 @@
 
-import Link from 'next-intl/link';
+import { Link } from 'next-intl';
 import Image from 'next/image';
 import { getContent } from '@/lib/content';
 import { getSettings } from '@/lib/settings';

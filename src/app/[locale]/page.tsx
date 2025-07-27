@@ -46,7 +46,8 @@ function getLocalizedContent(section: Section, locale: Locale): any {
     return localizedSection;
 }
 
-export default async function Home({ params: { locale } }: { params: { locale: Locale } }) {
+export default async function Home({ params }: { params: { locale: Locale } }) {
+  const { locale } = params;
   const content = await getContent();
 
   return (

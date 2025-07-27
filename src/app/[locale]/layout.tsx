@@ -4,7 +4,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { getSettings } from '@/lib/settings';
 import {NextIntlClientProvider} from 'next-intl';
-import {getMessages} from 'next-intl/server';
+import {getMessages, getLocale} from 'next-intl/server';
 
 export const metadata: Metadata = {
   title: 'Soluções Digitais | Desenvolvimento Web e Suporte',
@@ -13,13 +13,14 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params: {locale}
+  params
 }: Readonly<{
   children: React.ReactNode;
   params: {locale: string};
 }>) {
+  const { locale } = params;
   const settings = await getSettings();
-  const messages = await getMessages({locale});
+  const messages = await getMessages();
   const { light, dark } = settings.theme;
 
   const themeStyle = `

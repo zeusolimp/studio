@@ -91,7 +91,7 @@ export default function ContentEditor({ initialContent, allowedSections }: Conte
   return (
     <div className="max-w-4xl mx-auto">
       <div className="flex justify-between items-center mb-6 pb-4 border-b">
-        <h1 className="text-3xl font-bold font-headline">Content Editor</h1>
+        <h1 className="text-3xl font-headline">Content Editor</h1>
         <Button onClick={handleSave} disabled={isSaving} size="lg">
             {isSaving ? <Loader className="mr-2 h-4 w-4 animate-spin" /> : <Save className="mr-2 h-4 w-4" />}
             {isSaving ? 'Saving...' : 'Save Changes'}

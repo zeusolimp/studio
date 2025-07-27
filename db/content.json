@@ -1,4 +1,3 @@
-
 {
   "sections": [
     {
@@ -41,7 +40,7 @@
       "title": "Artículo Destacado",
       "subtitle": "Maximizando la Eficiencia con Desarrollo a Medida",
       "text": "En el dinámico mundo de la tecnología, las soluciones de software genéricas a menudo no logran satisfacer las necesidades específicas de las empresas. El desarrollo a medida emerge como una estrategia clave para optimizar procesos, mejorar la productividad y obtener una ventaja competitiva sostenible. Al crear software diseñado exclusivamente para tus flujos de trabajo, te aseguras de que cada función y característica esté alineada con tus objetivos de negocio, eliminando funcionalidades innecesarias y reduciendo la curva de aprendizaje para tu equipo.\n\nAdoptar una solución a medida no solo significa tener un sistema que se adapta perfectamente a tu empresa, sino también contar con la flexibilidad para escalar y evolucionar junto a ella. A diferencia de los productos de software estándar, una aplicación personalizada puede ser modificada y ampliada para responder a los cambios del mercado y a las nuevas oportunidades, asegurando que tu inversión tecnológica siga siendo relevante y rentable a largo plazo. En iddeia global, nos especializamos en convertir tus requisitos únicos en software potente y eficiente.",
-      "image_url": "https://placehold.co/600x400.png",
+      "image_url": "/uploads/1753579133668-fondo-codigo-hero.jpg",
       "button_text": "Ir al Blog",
       "button_link": "/blog"
     },
@@ -51,7 +50,7 @@
       "title": "Sobre Nosotros",
       "paragraph1": "Somos un equipo de innovadores, solucionadores de problemas y apasionados por la tecnología, dedicados a transformar ideas en realidades digitales. Nuestra misión es impulsar el éxito de nuestros clientes a través de soluciones de software excepcionales y un soporte técnico inigualable.",
       "paragraph2": "Con años de experiencia en la industria, hemos perfeccionado nuestro enfoque en la creación de aplicaciones web, sitios y sistemas que no solo son visualmente impactantes, sino también robustos, escalables y seguros. Creemos en la colaboración estrecha y la comunicación transparente para garantizar que cada proyecto sea un reflejo fiel de la visión de nuestros clientes.",
-      "image_url": "https://placehold.co/600x400.png",
+      "image_url": "/uploads/1753579140840-fondo-codigo-hero.jpg",
       "button_text": "¿Quiénes somos?",
       "button_link": "/sobre-nosotros"
     },
@@ -63,22 +62,42 @@
       "button_text": "Crea un proyecto con nosotros"
     },
     {
-        "id": "footer",
-        "type": "footer",
-        "brand_description": "Creamos soluciones digitales a medida para potenciar tu negocio con tecnología.",
-        "contact_email": "contacto@iddeiaglobal.com",
-        "contact_phone": "+51 987 654 321",
-        "contact_address": "Av. Principal 123, Oficina 404, Lima, Perú",
-        "social_links": [
-            { "id": "social1", "platform": "Facebook", "url": "#" },
-            { "id": "social2", "platform": "Instagram", "url": "#" },
-            { "id": "social3", "platform": "Linkedin", "url": "#" }
-        ],
-        "legal_links": [
-            { "id": "legal1", "text": "Políticas de Privacidad", "url": "/politicas-privacidad" },
-            { "id": "legal2", "text": "Libro de Reclamaciones", "url": "/libro-reclamaciones" }
-        ],
-        "copyright_text": "{year} iddeia global. Todos los derechos reservados."
+      "id": "footer",
+      "type": "footer",
+      "brand_description": "Creamos soluciones digitales a medida para potenciar tu negocio con tecnología.",
+      "contact_email": "contacto@iddeiaglobal.com",
+      "contact_phone": "+51 987 654 321",
+      "contact_address": "Av. Principal 123, Oficina 404, Lima, Perú",
+      "social_links": [
+        {
+          "id": "social1",
+          "platform": "Facebook",
+          "url": "#"
+        },
+        {
+          "id": "social2",
+          "platform": "Instagram",
+          "url": "#"
+        },
+        {
+          "id": "social3",
+          "platform": "Linkedin",
+          "url": "#"
+        }
+      ],
+      "legal_links": [
+        {
+          "id": "legal1",
+          "text": "Políticas de Privacidad",
+          "url": "/politicas-privacidad"
+        },
+        {
+          "id": "legal2",
+          "text": "Libro de Reclamaciones",
+          "url": "/libro-reclamaciones"
+        }
+      ],
+      "copyright_text": "{year} iddeia global. Todos los derechos reservados."
     }
   ]
 }

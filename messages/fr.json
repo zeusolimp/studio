@@ -13,6 +13,15 @@
         "follow_us": "Suivez-nous",
         "dashboard": "Tableau de Bord"
     },
+    "BackofficeSidebar": {
+        "home": "Accueil",
+        "services": "Services",
+        "about": "À propos de nous",
+        "blog": "Blog",
+        "contact": "Contact",
+        "footer": "Pied de page",
+        "settings": "Paramètres"
+    },
     "ProjectBriefForm": {
         "title": "Briefing de Projet",
         "description": "Veuillez remplir les détails ci-dessous afin que nous puissions comprendre votre projet.",
@@ -123,7 +132,7 @@
             "itemIcon": "Icône",
             "selectIcon": "Sélectionnez une icône",
             "itemDescription": "Description",
-            "deleteFeature": "Supprimer la caractéristique",
+            "deleteFeature": "Supprimer la característica",
             "addFeature": "Ajouter une Caractéristique",
             "newFeatureTitle": "Nouvelle Caractéristique",
             "newFeatureDescription": "Une brève description de cette nouvelle caractéristique."

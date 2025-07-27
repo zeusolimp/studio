@@ -24,8 +24,7 @@ export default function BackofficeLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const t = useTranslations('Header');
-  const tFooter = useTranslations('Footer');
+  const t = useTranslations('BackofficeSidebar');
 
   const menuItems = [
       { href: '/backoffice/inicio', label: t('home'), icon: Home },
@@ -33,8 +32,8 @@ export default function BackofficeLayout({
       { href: '/backoffice/sobre-nosotros', label: t('about'), icon: Users },
       { href: '/backoffice/blog', label: t('blog'), icon: FileText },
       { href: '/backoffice/contacto', label: t('contact'), icon: Phone },
-      { href: '/backoffice/footer', label: 'Rodapé', icon: Grip }, // "Rodapé" is not in Header or Footer translations
-      { href: '/backoffice/configuraciones', label: 'Configurações', icon: Settings }, // "Configurações" is not in Header or Footer translations
+      { href: '/backoffice/footer', label: t('footer'), icon: Grip },
+      { href: '/backoffice/configuracoes', label: t('settings'), icon: Settings },
   ];
 
   return (

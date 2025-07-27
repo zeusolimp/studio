@@ -13,6 +13,15 @@
         "follow_us": "Follow us",
         "dashboard": "Dashboard"
     },
+    "BackofficeSidebar": {
+        "home": "Home",
+        "services": "Services",
+        "about": "About us",
+        "blog": "Blog",
+        "contact": "Contact",
+        "footer": "Footer",
+        "settings": "Settings"
+    },
     "ProjectBriefForm": {
         "title": "Project Briefing",
         "description": "Please fill in the details below so we can understand your project.",

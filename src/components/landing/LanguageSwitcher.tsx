@@ -25,14 +25,14 @@ export default function LanguageSwitcher() {
 
   return (
     <Select onValueChange={handleLocaleChange} defaultValue={locale}>
-      <SelectTrigger className="w-[120px]">
+      <SelectTrigger className="w-[70px]">
         <SelectValue placeholder="Language" />
       </SelectTrigger>
       <SelectContent>
-        <SelectItem value="pt">Português</SelectItem>
-        <SelectItem value="es">Español</SelectItem>
-        <SelectItem value="en">English</SelectItem>
-        <SelectItem value="fr">Français</SelectItem>
+        <SelectItem value="pt">Pt</SelectItem>
+        <SelectItem value="es">Es</SelectItem>
+        <SelectItem value="en">En</SelectItem>
+        <SelectItem value="fr">Fr</SelectItem>
       </SelectContent>
     </Select>
   );

@@ -16,32 +16,29 @@ const Header = () => {
           </svg>
           <span className="font-headline text-xl font-bold">iddeia global</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-            <Link href="/" className="text-muted-foreground transition-colors hover:text-foreground">
-                Iniciar
-            </Link>
-            <Link href="/servicios" className="text-muted-foreground transition-colors hover:text-foreground">
-                Servicios
-            </Link>
-            <Link href="/sobre-nosotros" className="text-muted-foreground transition-colors hover:text-foreground">
-                Quiénes somos
-            </Link>
-             <Link href="/blog" className="text-muted-foreground transition-colors hover:text-foreground">
-                Blog
-            </Link>
-            <Link href="/contacto" className="text-muted-foreground transition-colors hover:text-foreground">
-                Contacto
-            </Link>
-        </nav>
-        <nav className="flex items-center gap-2">
-          <Button asChild variant="ghost" size="sm">
-            <Link href="/backoffice">
-              <LayoutDashboard className="mr-2 h-4 w-4" />
-              Panel de Control
-            </Link>
-          </Button>
-          <ThemeToggle />
-        </nav>
+        
+        <div className="flex items-center gap-6">
+            <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+                <Link href="/" className="text-muted-foreground transition-colors hover:text-foreground">
+                    Iniciar
+                </Link>
+                <Link href="/servicios" className="text-muted-foreground transition-colors hover:text-foreground">
+                    Servicios
+                </Link>
+                <Link href="/sobre-nosotros" className="text-muted-foreground transition-colors hover:text-foreground">
+                    Quiénes somos
+                </Link>
+                <Link href="/blog" className="text-muted-foreground transition-colors hover:text-foreground">
+                    Blog
+                </Link>
+                <Link href="/contacto" className="text-muted-foreground transition-colors hover:text-foreground">
+                    Contacto
+                </Link>
+            </nav>
+            <div className="flex items-center gap-2">
+                <ThemeToggle />
+            </div>
+        </div>
       </div>
     </header>
   );

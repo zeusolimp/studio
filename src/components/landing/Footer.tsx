@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone } from 'lucide-react';
+import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, LayoutDashboard } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -32,6 +32,10 @@ const Footer = () => {
                 <Link href="/sobre-nosotros" className="hover:text-accent transition-colors">Quiénes somos</Link>
                 <Link href="/blog" className="hover:text-accent transition-colors">Blog</Link>
                 <Link href="/contacto" className="hover:text-accent transition-colors">Contacto</Link>
+                 <Link href="/backoffice" className="flex items-center gap-2 hover:text-accent transition-colors">
+                    <LayoutDashboard className="h-4 w-4" />
+                    Panel de Control
+                </Link>
             </nav>
           </div>
 

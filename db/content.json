@@ -1,3 +1,4 @@
+
 {
   "sections": [
     {
@@ -39,9 +40,9 @@
       "type": "featured-article",
       "title": "Artículo Destacado",
       "subtitle": "Maximizando la Eficiencia con Desarrollo a Medida",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh.",
+      "text": "En el dinámico mundo de la tecnología, las soluciones de software genéricas a menudo no logran satisfacer las necesidades específicas de las empresas. El desarrollo a medida emerge como una estrategia clave para optimizar procesos, mejorar la productividad y obtener una ventaja competitiva sostenible. Al crear software diseñado exclusivamente para tus flujos de trabajo, te aseguras de que cada función y característica esté alineada con tus objetivos de negocio, eliminando funcionalidades innecesarias y reduciendo la curva de aprendizaje para tu equipo.\n\nAdoptar una solución a medida no solo significa tener un sistema que se adapta perfectamente a tu empresa, sino también contar con la flexibilidad para escalar y evolucionar junto a ella. A diferencia de los productos de software estándar, una aplicación personalizada puede ser modificada y ampliada para responder a los cambios del mercado y a las nuevas oportunidades, asegurando que tu inversión tecnológica siga siendo relevante y rentable a largo plazo. En iddeia global, nos especializamos en convertir tus requisitos únicos en software potente y eficiente.",
       "image_url": "https://placehold.co/600x400.png",
-      "button_text": "Leer en el Blog",
+      "button_text": "Ir al Blog",
       "button_link": "/blog"
     },
     {

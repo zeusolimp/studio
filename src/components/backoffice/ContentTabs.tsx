@@ -1,7 +1,7 @@
+
 "use client";
 
-import { useState, useEffect } from 'react';
-import { getContent } from '@/lib/content';
+import { useState } from 'react';
 import type { Section, LandingContent } from '@/types';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
@@ -81,7 +81,7 @@ export default function ContentTabs({ initialContent }: { initialContent: Landin
     }
 
     return (
-        <div className="max-w-5xl mx-auto py-8">
+        <div className="max-w-6xl mx-auto py-8">
             <div className="flex justify-between items-center mb-6 pb-4 border-b">
                 <h1 className="text-3xl font-bold font-headline">Content Editor</h1>
                 <Button onClick={handleSave} disabled={isSaving || isLoading} size="lg">
@@ -89,18 +89,21 @@ export default function ContentTabs({ initialContent }: { initialContent: Landin
                     {isSaving ? 'Saving...' : 'Save All Changes'}
                 </Button>
             </div>
-            <Tabs defaultValue="hero" className="w-full">
-                <TabsList className="grid w-full grid-cols-4 mb-4">
+            <Tabs defaultValue="hero" orientation="vertical" className="flex gap-8">
+                <TabsList className="flex flex-col h-auto justify-start items-stretch">
                     <TabsTrigger value="hero">Hero Section</TabsTrigger>
                     <TabsTrigger value="services">Services Section</TabsTrigger>
                     <TabsTrigger value="about">About Us Section</TabsTrigger>
                     <TabsTrigger value="cta">CTA Section</TabsTrigger>
                 </TabsList>
-                <TabsContent value="hero">{renderEditorFor('hero')}</TabsContent>
-                <TabsContent value="services">{renderEditorFor('features')}</TabsContent>
-                <TabsContent value="about">{renderEditorFor('about')}</TabsContent>
-                <TabsContent value="cta">{renderEditorFor('cta')}</TabsContent>
+                <div className="flex-1">
+                    <TabsContent value="hero" className="mt-0">{renderEditorFor('hero')}</TabsContent>
+                    <TabsContent value="services" className="mt-0">{renderEditorFor('features')}</TabsContent>
+                    <TabsContent value="about" className="mt-0">{renderEditorFor('about')}</TabsContent>
+                    <TabsContent value="cta" className="mt-0">{renderEditorFor('cta')}</TabsContent>
+                </div>
             </Tabs>
         </div>
     );
 }
+

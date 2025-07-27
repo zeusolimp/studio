@@ -13,6 +13,15 @@
         "follow_us": "Siga-nos",
         "dashboard": "Painel de Controlo"
     },
+    "BackofficeSidebar": {
+        "home": "Início",
+        "services": "Serviços",
+        "about": "Nós",
+        "blog": "Blog",
+        "contact": "Contacto",
+        "footer": "Rodapé",
+        "settings": "Configurações"
+    },
     "ProjectBriefForm": {
         "title": "Briefing do Projeto",
         "description": "Por favor, preencha os detalhes abaixo para que possamos entender o seu projeto.",

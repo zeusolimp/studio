@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { Eye, Home, Settings, Briefcase, Users, Phone } from 'lucide-react';
+import { Eye, Home, Settings, Briefcase, Users, Phone, Grip, FileText } from 'lucide-react';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { cn } from '@/lib/utils';
 import {
@@ -24,6 +24,7 @@ const menuItems = [
     { href: '/backoffice/servicios', label: 'Servicios', icon: Briefcase },
     { href: '/backoffice/sobre-nosotros', label: 'Quiénes Somos', icon: Users },
     { href: '/backoffice/contacto', label: 'Contacto', icon: Phone },
+    { href: '/backoffice/footer', label: 'Footer', icon: Grip },
 ];
 
 export default function BackofficeLayout({

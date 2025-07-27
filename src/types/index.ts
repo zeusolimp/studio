@@ -1,3 +1,4 @@
+
 export type FeatureItem = {
   id: string;
   icon: string;
@@ -52,7 +53,31 @@ export type CtaSectionData = {
   button_text: string;
 };
 
-export type Section = HeroSectionData | FeaturesSectionData | AboutUsSectionData | CtaSectionData | FeaturedArticleSectionData;
+export type FooterLink = {
+  id: string;
+  text: string;
+  url: string;
+};
+
+export type SocialLink = {
+  id: string;
+  platform: 'Facebook' | 'Instagram' | 'Linkedin';
+  url: string;
+};
+
+export type FooterSectionData = {
+    id: 'footer';
+    type: 'footer';
+    brand_description: string;
+    contact_email: string;
+    contact_phone: string;
+    contact_address: string;
+    social_links: SocialLink[];
+    legal_links: FooterLink[];
+    copyright_text: string;
+}
+
+export type Section = HeroSectionData | FeaturesSectionData | AboutUsSectionData | CtaSectionData | FeaturedArticleSectionData | FooterSectionData;
 
 export type LandingContent = {
   sections: Section[];

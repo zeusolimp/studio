@@ -11,6 +11,7 @@ import FeaturesSectionEditor from './FeaturesSectionEditor';
 import CtaSectionEditor from './CtaSectionEditor';
 import AboutUsSectionEditor from './AboutUsSectionEditor';
 import FeaturedArticleEditor from './FeaturedArticleEditor';
+import FooterSectionEditor from './FooterSectionEditor';
 import { Save, Loader } from 'lucide-react';
 
 const sectionEditorComponents = {
@@ -19,6 +20,7 @@ const sectionEditorComponents = {
   'featured-article': FeaturedArticleEditor,
   about: AboutUsSectionEditor,
   cta: CtaSectionEditor,
+  footer: FooterSectionEditor,
 };
 
 type EditorComponentType = keyof typeof sectionEditorComponents;

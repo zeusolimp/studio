@@ -61,6 +61,24 @@
       "title": "¿Listo para Empezar tu Próximo Proyecto?",
       "subtext": "Contáctanos para descubrir cómo podemos ayudarte a alcanzar tus objetivos tecnológicos.",
       "button_text": "Crea un proyecto con nosotros"
+    },
+    {
+        "id": "footer",
+        "type": "footer",
+        "brand_description": "Creamos soluciones digitales a medida para potenciar tu negocio con tecnología.",
+        "contact_email": "contacto@iddeiaglobal.com",
+        "contact_phone": "+51 987 654 321",
+        "contact_address": "Av. Principal 123, Oficina 404, Lima, Perú",
+        "social_links": [
+            { "id": "social1", "platform": "Facebook", "url": "#" },
+            { "id": "social2", "platform": "Instagram", "url": "#" },
+            { "id": "social3", "platform": "Linkedin", "url": "#" }
+        ],
+        "legal_links": [
+            { "id": "legal1", "text": "Políticas de Privacidad", "url": "/politicas-privacidad" },
+            { "id": "legal2", "text": "Libro de Reclamaciones", "url": "/libro-reclamaciones" }
+        ],
+        "copyright_text": "{year} iddeia global. Todos los derechos reservados."
     }
   ]
 }

@@ -12,7 +12,8 @@ import { useLocale } from 'next-intl';
 
 
 const Footer = () => {
-    const t = useTranslations('Footer');
+    const tFooter = useTranslations('Footer');
+    const tHeader = useTranslations('Header');
     const [data, setData] = useState<FooterSectionData | null>(null);
     const [settings, setSettings] = useState<SiteSettings | null>(null);
     const locale = useLocale() as Locale;
@@ -65,22 +66,22 @@ const Footer = () => {
             </div>
 
             <div>
-                <h3 className="font-headline text-lg font-semibold mb-4">{t('navigation')}</h3>
+                <h3 className="font-headline text-lg font-semibold mb-4">{tFooter('navigation')}</h3>
                 <nav className="flex flex-col gap-2 text-muted-foreground">
-                    <Link href="/" className="hover:text-accent transition-colors">{t('home')}</Link>
-                    <Link href="/servicios" className="hover:text-accent transition-colors">{t('services')}</Link>
-                    <Link href="/sobre-nosotros" className="hover:text-accent transition-colors">{t('about')}</Link>
-                    <Link href="/blog" className="hover:text-accent transition-colors">{t('blog')}</Link>
-                    <Link href="/contacto" className="hover:text-accent transition-colors">{t('contact')}</Link>
+                    <Link href="/" className="hover:text-accent transition-colors">{tHeader('home')}</Link>
+                    <Link href="/servicios" className="hover:text-accent transition-colors">{tHeader('services')}</Link>
+                    <Link href="/sobre-nosotros" className="hover:text-accent transition-colors">{tHeader('about')}</Link>
+                    <Link href="/blog" className="hover:text-accent transition-colors">{tHeader('blog')}</Link>
+                    <Link href="/contacto" className="hover:text-accent transition-colors">{tHeader('contact')}</Link>
                     <Link href="/backoffice" className="flex items-center gap-2 hover:text-accent transition-colors">
                         <LayoutDashboard className="h-4 w-4" />
-                        {t('dashboard')}
+                        {tFooter('dashboard')}
                     </Link>
                 </nav>
             </div>
 
             <div>
-                <h3 className="font-headline text-lg font-semibold mb-4">{t('contact')}</h3>
+                <h3 className="font-headline text-lg font-semibold mb-4">{tFooter('contact')}</h3>
                 <div className="flex flex-col gap-3 text-muted-foreground text-sm">
                 <div className="flex items-center gap-3">
                     <DynamicIcon name="Mail" className="h-4 w-4 text-accent" />
@@ -98,7 +99,7 @@ const Footer = () => {
             </div>
 
             <div>
-                <h3 className="font-headline text-lg font-semibold mb-4">{t('follow_us')}</h3>
+                <h3 className="font-headline text-lg font-semibold mb-4">{tFooter('follow_us')}</h3>
                 <div className="flex items-center gap-4">
                  {social_links.map(social => (
                      <a key={social.id} href={social.url} target='_blank' rel="noopener noreferrer" aria-label={social.platform} className="text-muted-foreground hover:text-accent transition-colors">

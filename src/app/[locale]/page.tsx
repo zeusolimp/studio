@@ -4,7 +4,7 @@ import Header from '@/components/landing/Header';
 import HeroSection from '@/components/landing/HeroSection';
 import FeaturesSection from '@/components/landing/FeaturesSection';
 import Footer from '@/components/landing/Footer';
-import type { Section, HeroSectionData, FeaturesSectionData, CtaSectionData, AboutUsSectionData, FeaturedArticleSectionData, Locale } from '@/types';
+import type { Section, Locale } from '@/types';
 import CtaSection from '@/components/landing/CtaSection';
 import AboutUsSection from '@/components/landing/AboutUsSection';
 import FeaturedArticleSection from '@/components/landing/FeaturedArticleSection';
@@ -32,65 +32,31 @@ function getLocalizedContent<T extends { [key: string]: any }>(content: T, local
 export default async function Home({ params: { locale } }: { params: { locale: Locale } }) {
   const content = await getContent();
 
-  const renderSection = (section: Section) => {
-    const Component = sectionComponents[section.type as keyof typeof sectionComponents];
-    if (Component) {
-      const localizedSection = getLocalizedContent(section, locale);
-      return <Component key={section.id} {...(localizedSection as any)} />;
-    }
-    return null;
-  };
-
-  const localizedSections = content.sections.map(section => {
-      if (section.type === 'features') {
-          return {
-              ...getLocalizedContent(section, locale),
-              items: section.items.map(item => getLocalizedContent(item, locale))
-          };
-      }
-      if (section.type === 'footer') {
-           return {
-              ...getLocalizedContent(section, locale),
-              social_links: section.social_links,
-              legal_links: section.legal_links.map(link => ({
-                  ...getLocalizedContent(link, locale),
-                  id: link.id,
-                  url: link.url
-              }))
-          };
-      }
-      return getLocalizedContent(section, locale);
-  });
-
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow">
-        {content.sections.map(section => {
-          const Component = sectionComponents[section.type as keyof typeof sectionComponents];
-          if (Component) {
-            let props: any;
-            if (section.type === 'features') {
-                props = {
-                    ...getLocalizedContent(section, locale),
-                    items: section.items.map(item => getLocalizedContent(item, locale))
-                };
-            } else if (section.type === 'footer') {
-                props = {
-                    ...getLocalizedContent(section, locale),
-                    social_links: section.social_links,
-                    legal_links: section.legal_links.map(link => ({
-                       ...getLocalizedContent(link, locale),
-                       id: link.id,
-                       url: link.url
-                    }))
-                };
-            } else {
-                props = getLocalizedContent(section, locale);
+        {content.sections
+          .filter(section => section.type !== 'footer') // O footer é renderizado separadamente
+          .map(section => {
+            const Component = sectionComponents[section.type as keyof typeof sectionComponents];
+            
+            if (Component) {
+              let props: any;
+              
+              if (section.type === 'features') {
+                  props = {
+                      ...getLocalizedContent(section, locale),
+                      items: section.items.map(item => getLocalizedContent(item, locale))
+                  };
+              } else {
+                  props = getLocalizedContent(section, locale);
+              }
+              
+              return <Component key={section.id} {...props} />;
             }
-            return <Component key={section.id} {...props} />;
-          }
-          return null;
+            
+            return null;
         })}
       </main>
       <Footer />

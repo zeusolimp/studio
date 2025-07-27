@@ -44,17 +44,17 @@ export default function ContentEditor({ initialContent, allowedSections }: Conte
         body: JSON.stringify(content),
       });
       if (!response.ok) {
-        throw new Error('Failed to save content');
+        throw new Error('Falha ao guardar o conteúdo');
       }
       toast({
-        title: "Success!",
-        description: "Your changes have been saved.",
+        title: "Sucesso!",
+        description: "As suas alterações foram guardadas.",
       });
     } catch (error) {
       toast({
         variant: "destructive",
-        title: "Error",
-        description: "Could not save changes. Please try again.",
+        title: "Erro",
+        description: "Não foi possível guardar as alterações. Por favor, tente novamente.",
       });
     } finally {
       setIsSaving(false);
@@ -91,10 +91,10 @@ export default function ContentEditor({ initialContent, allowedSections }: Conte
   return (
     <div className="max-w-4xl mx-auto">
       <div className="flex justify-between items-center mb-6 pb-4 border-b">
-        <h1 className="text-3xl font-headline">Content Editor</h1>
+        <h1 className="text-3xl font-headline">Editor de Conteúdo</h1>
         <Button onClick={handleSave} disabled={isSaving} size="lg">
             {isSaving ? <Loader className="mr-2 h-4 w-4 animate-spin" /> : <Save className="mr-2 h-4 w-4" />}
-            {isSaving ? 'Saving...' : 'Save Changes'}
+            {isSaving ? 'A guardar...' : 'Guardar Alterações'}
         </Button>
       </div>
       

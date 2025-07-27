@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useRef } from 'react';
@@ -35,21 +36,21 @@ export default function ImageUploader({ currentImageUrl, onUploadSuccess, label 
 
       const result = await response.json();
       if (!response.ok || !result.success) {
-        throw new Error(result.error || 'File upload failed');
+        throw new Error(result.error || 'Falha no upload do ficheiro');
       }
       
       onUploadSuccess(result.url);
       setPreview(result.url);
       toast({
-        title: "Image uploaded",
-        description: "The new image is now live.",
+        title: "Imagem carregada",
+        description: "A nova imagem está agora ativa.",
       });
 
     } catch (error: any) {
       toast({
         variant: 'destructive',
-        title: 'Upload Error',
-        description: error.message || 'An unknown error occurred.',
+        title: 'Erro de Upload',
+        description: error.message || 'Ocorreu um erro desconhecido.',
       });
     } finally {
       setIsUploading(false);
@@ -62,11 +63,11 @@ export default function ImageUploader({ currentImageUrl, onUploadSuccess, label 
       <div className="flex items-center gap-4">
         {preview ? (
           <div className="relative w-32 h-20 rounded-md overflow-hidden border">
-            <Image src={preview} alt="Image preview" fill sizes="128px" style={{ objectFit: 'cover' }} />
+            <Image src={preview} alt="Pré-visualização da imagem" fill sizes="128px" style={{ objectFit: 'cover' }} />
           </div>
         ) : (
           <div className="w-32 h-20 rounded-md bg-muted flex items-center justify-center text-sm text-muted-foreground">
-            No Image
+            Sem Imagem
           </div>
         )}
         <Button
@@ -80,7 +81,7 @@ export default function ImageUploader({ currentImageUrl, onUploadSuccess, label 
           ) : (
             <Upload className="mr-2 h-4 w-4" />
           )}
-          {isUploading ? 'Uploading...' : 'Change Image'}
+          {isUploading ? 'A carregar...' : 'Mudar Imagem'}
         </Button>
         <input
           type="file"

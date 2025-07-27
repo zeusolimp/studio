@@ -4,68 +4,68 @@
     {
       "id": "hero",
       "type": "hero",
-      "headline": "Creamos Soluciones Digitales a tu Medida",
-      "subtext": "Desde aplicaciones web innovadoras y sitios web impactantes hasta sistemas robustos y soporte técnico confiable. Potenciamos tu negocio con tecnología.",
-      "cta_button_text": "Conoce Nuestros Servicios",
+      "headline": "Criamos Soluções Digitais à sua Medida",
+      "subtext": "Desde aplicações web inovadoras e websites impactantes até sistemas robustos e suporte técnico de confiança. Potenciamos o seu negócio com tecnologia.",
+      "cta_button_text": "Conheça os Nossos Serviços",
       "image_url": "/uploads/1753575457803-fondo-codigo-hero.jpg"
     },
     {
       "id": "features",
       "type": "features",
-      "title": "Nuestros Servicios Principales",
-      "subtext": "En iddeia global, nos especializamos en una amplia gama de servicios de desarrollo de software, diseñados para impulsar la innovación y la eficiencia en tu negocio.",
+      "title": "Os Nossos Serviços Principais",
+      "subtext": "Na iddeia global, especializamo-nos numa vasta gama de serviços de desenvolvimento de software, concebidos para impulsionar a inovação e a eficiência no seu negócio.",
       "items": [
         {
           "id": "feat1",
           "icon": "Code",
-          "title": "Desarrollo Web",
-          "description": "Creamos aplicaciones y sitios web a medida, optimizados para el rendimiento y la experiencia del usuario."
+          "title": "Desenvolvimento Web",
+          "description": "Criamos aplicações e websites à medida, otimizados para o desempenho e a experiência do utilizador."
         },
         {
           "id": "feat2",
           "icon": "PenTool",
-          "title": "Diseño de Sistemas",
-          "description": "Diseñamos arquitecturas de software robustas y escalables para satisfacer las necesidades de tu empresa."
+          "title": "Desenho de Sistemas",
+          "description": "Desenhamos arquiteturas de software robustas e escaláveis para satisfazer as necessidades da sua empresa."
         },
         {
           "id": "feat3",
           "icon": "Wand2",
-          "title": "Soporte Técnico",
-          "description": "Ofrecemos soporte técnico experto, tanto online a través de tickets como presencial, para resolver tus incidencias."
+          "title": "Suporte Técnico",
+          "description": "Oferecemos suporte técnico especializado, tanto online através de tickets como presencial, para resolver as suas incidências."
         }
       ]
     },
     {
       "id": "featured-article",
       "type": "featured-article",
-      "title": "Artículo Destacado",
-      "subtitle": "Maximizando la Eficiencia con Desarrollo a Medida",
-      "text": "En el dinámico mundo de la tecnología, las soluciones de software genéricas a menudo no logran satisfacer las necesidades específicas de las empresas. El desarrollo a medida emerge como una estrategia clave para optimizar procesos, mejorar la productividad y obtener una ventaja competitiva sostenible. Al crear software diseñado exclusivamente para tus flujos de trabajo, te aseguras de que cada función y característica esté alineada con tus objetivos de negocio, eliminando funcionalidades innecesarias y reduciendo la curva de aprendizaje para tu equipo.\n\nAdoptar una solución a medida no solo significa tener un sistema que se adapta perfectamente a tu empresa, sino también contar con la flexibilidad para escalar y evolucionar junto a ella. A diferencia de los productos de software estándar, una aplicación personalizada puede ser modificada y ampliada para responder a los cambios del mercado y a las nuevas oportunidades, asegurando que tu inversión tecnológica siga siendo relevante y rentable a largo plazo. En iddeia global, nos especializamos en convertir tus requisitos únicos en software potente y eficiente.",
+      "title": "Artigo em Destaque",
+      "subtitle": "Maximizando a Eficiência com Desenvolvimento à Medida",
+      "text": "No dinâmico mundo da tecnologia, as soluções de software genéricas muitas vezes não conseguem satisfazer as necessidades específicas das empresas. O desenvolvimento à medida surge como uma estratégia chave para otimizar processos, melhorar a produtividade e obter uma vantagem competitiva sustentável. Ao criar software desenhado exclusivamente para os seus fluxos de trabalho, garante que cada função e característica está alinhada com os seus objetivos de negócio, eliminando funcionalidades desnecessárias e reduzindo a curva de aprendizagem para a sua equipa.\n\nAdotar uma solução à medida não só significa ter um sistema que se adapta perfeitamente à sua empresa, mas também contar com a flexibilidade para escalar e evoluir com ela. Ao contrário dos produtos de software padrão, uma aplicação personalizada pode ser modificada e expandida para responder às mudanças do mercado и às novas oportunidades, assegurando que o seu investimento tecnológico continue a ser relevante e rentável a longo prazo. Na iddeia global, especializamo-nos em transformar os seus requisitos únicos em software potente e eficiente.",
       "image_url": "/uploads/1753579133668-fondo-codigo-hero.jpg",
-      "button_text": "Ir al Blog",
+      "button_text": "Ir para o Blog",
       "button_link": "/blog"
     },
     {
       "id": "about",
       "type": "about",
-      "title": "Sobre Nosotros",
-      "paragraph1": "Somos un equipo de innovadores, solucionadores de problemas y apasionados por la tecnología, dedicados a transformar ideas en realidades digitales. Nuestra misión es impulsar el éxito de nuestros clientes a través de soluciones de software excepcionales y un soporte técnico inigualable.",
-      "paragraph2": "Con años de experiencia en la industria, hemos perfeccionado nuestro enfoque en la creación de aplicaciones web, sitios y sistemas que no solo son visualmente impactantes, sino también robustos, escalables y seguros. Creemos en la colaboración estrecha y la comunicación transparente para garantizar que cada proyecto sea un reflejo fiel de la visión de nuestros clientes.",
+      "title": "Sobre Nós",
+      "paragraph1": "Somos uma equipa de inovadores, solucionadores de problemas e apaixonados por tecnologia, dedicados a transformar ideias em realidades digitais. A nossa missão é impulsionar o sucesso dos nossos clientes através de soluções de software excecionais e um suporte técnico inigualável.",
+      "paragraph2": "Com anos de experiência na indústria, aperfeiçoámos a nossa abordagem na criação de aplicações web, sites e sistemas que não são apenas visualmente impactantes, mas também robustos, escaláveis e seguros. Acreditamos na colaboração estreita e na comunicação transparente para garantir que cada projeto seja um reflexo fiel da visão dos nossos clientes.",
       "image_url": "/uploads/1753579140840-fondo-codigo-hero.jpg",
-      "button_text": "¿Quiénes somos?",
+      "button_text": "Quem somos?",
       "button_link": "/sobre-nosotros"
     },
     {
       "id": "cta",
       "type": "cta",
-      "title": "¿Listo para Empezar tu Próximo Proyecto?",
-      "subtext": "Contáctanos para descubrir cómo podemos ayudarte a alcanzar tus objetivos tecnológicos.",
-      "button_text": "Crea un proyecto con nosotros"
+      "title": "Pronto para Começar o seu Próximo Projeto?",
+      "subtext": "Contacte-nos para descobrir como podemos ajudá-lo a alcançar os seus objetivos tecnológicos.",
+      "button_text": "Crie um projeto connosco"
     },
     {
       "id": "footer",
       "type": "footer",
-      "brand_description": "Creamos soluciones digitales a medida para potenciar tu negocio con tecnología.",
+      "brand_description": "Criamos soluções digitais à medida para potenciar o seu negócio com tecnologia.",
       "social_links": [
         {
           "id": "social1",
@@ -86,16 +86,16 @@
       "legal_links": [
         {
           "id": "legal1",
-          "text": "Políticas de Privacidad",
-          "url": "/politicas-privacidad"
+          "text": "Políticas de Privacidade",
+          "url": "/politicas-privacidade"
         },
         {
           "id": "legal2",
-          "text": "Libro de Reclamaciones",
-          "url": "/libro-reclamaciones"
+          "text": "Livro de Reclamações",
+          "url": "/livro-reclamacoes"
         }
       ],
-      "copyright_text": "{year} iddeia global. Todos los derechos reservados."
+      "copyright_text": "{year} iddeia global. Todos os direitos reservados."
     }
   ]
 }

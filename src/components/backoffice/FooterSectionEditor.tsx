@@ -40,7 +40,7 @@ export default function FooterSectionEditor({ data, onChange }: FooterSectionEdi
   };
 
   const handleAddLegalLink = () => {
-    const newLink: FooterLink = { id: `legal-${Date.now()}`, text: 'New Link', url: '#' };
+    const newLink: FooterLink = { id: `legal-${Date.now()}`, text: 'Novo Link', url: '#' };
     onChange({ ...data, legal_links: [...data.legal_links, newLink] });
   };
 
@@ -53,17 +53,17 @@ export default function FooterSectionEditor({ data, onChange }: FooterSectionEdi
   return (
     <div className="space-y-6">
       <div className="space-y-2">
-        <Label htmlFor={`desc-${data.id}`}>Brand Description</Label>
+        <Label htmlFor={`desc-${data.id}`}>Descrição da Marca</Label>
         <Textarea id={`desc-${data.id}`} value={data.brand_description} onChange={(e) => handleChange('brand_description', e.target.value)} />
       </div>
 
       <div className="space-y-4 border-t pt-4">
-        <Label>Social Media Links</Label>
+        <Label>Links de Redes Sociais</Label>
         {data.social_links.map((link, index) => (
             <div key={link.id} className="flex items-end gap-2 p-2 border rounded-md bg-background/50">
                 <div className="grid grid-cols-2 gap-2 flex-grow">
                     <div className="space-y-1">
-                        <Label htmlFor={`social-platform-${link.id}`} className="text-xs">Platform</Label>
+                        <Label htmlFor={`social-platform-${link.id}`} className="text-xs">Plataforma</Label>
                         <Select value={link.platform} onValueChange={(value) => handleSocialLinkChange(index, 'platform', value)}>
                             <SelectTrigger id={`social-platform-${link.id}`}><SelectValue /></SelectTrigger>
                             <SelectContent>
@@ -83,16 +83,16 @@ export default function FooterSectionEditor({ data, onChange }: FooterSectionEdi
                 </Button>
             </div>
         ))}
-         <Button variant="outline" size="sm" onClick={handleAddSocialLink}><PlusCircle className="mr-2 h-4 w-4" />Add Social Link</Button>
+         <Button variant="outline" size="sm" onClick={handleAddSocialLink}><PlusCircle className="mr-2 h-4 w-4" />Adicionar Link Social</Button>
       </div>
 
       <div className="space-y-4 border-t pt-4">
-        <Label>Legal Links</Label>
+        <Label>Links Legais</Label>
         {data.legal_links.map((link, index) => (
              <div key={link.id} className="flex items-end gap-2 p-2 border rounded-md bg-background/50">
                 <div className="grid grid-cols-2 gap-2 flex-grow">
                      <div className="space-y-1">
-                        <Label htmlFor={`legal-text-${link.id}`} className="text-xs">Text</Label>
+                        <Label htmlFor={`legal-text-${link.id}`} className="text-xs">Texto</Label>
                         <Input id={`legal-text-${link.id}`} value={link.text} onChange={(e) => handleLegalLinkChange(index, 'text', e.target.value)} />
                     </div>
                      <div className="space-y-1">
@@ -105,13 +105,13 @@ export default function FooterSectionEditor({ data, onChange }: FooterSectionEdi
                 </Button>
             </div>
         ))}
-         <Button variant="outline" size="sm" onClick={handleAddLegalLink}><PlusCircle className="mr-2 h-4 w-4" />Add Legal Link</Button>
+         <Button variant="outline" size="sm" onClick={handleAddLegalLink}><PlusCircle className="mr-2 h-4 w-4" />Adicionar Link Legal</Button>
       </div>
       
        <div className="space-y-2 border-t pt-4">
-        <Label htmlFor={`copyright-${data.id}`}>Copyright Text</Label>
+        <Label htmlFor={`copyright-${data.id}`}>Texto de Copyright</Label>
         <Input id={`copyright-${data.id}`} value={data.copyright_text} onChange={(e) => handleChange('copyright_text', e.target.value)} />
-        <p className="text-xs text-muted-foreground">You can use `'{'{year}'}'` as a placeholder for the current year.</p>
+        <p className="text-xs text-muted-foreground">Pode usar `'{'{year}'}'` como placeholder para o ano atual.</p>
       </div>
     </div>
   );

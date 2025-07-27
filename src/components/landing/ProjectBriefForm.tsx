@@ -15,25 +15,25 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { User, Mail, Building, Calendar, AppWindow, Link as LinkIcon, Palette, PlusCircle, Trash2 } from "lucide-react";
 
 const briefSchema = z.object({
-  fullName: z.string().min(1, "Nombre completo es requerido"),
+  fullName: z.string().min(1, "Nome completo é obrigatório"),
   email: z.string().email("Email inválido"),
   companyName: z.string().optional(),
   idealTimeframe: z.string().optional(),
-  projectType: z.string().min(1, "Debe seleccionar un tipo de proyecto"),
+  projectType: z.string().min(1, "Deve selecionar um tipo de projeto"),
   requiredSections: z.array(z.string()).optional(),
   referenceSites: z.array(z.object({ value: z.string().url("URL inválida").or(z.literal('')) })).optional(),
-  favoriteColors: z.array(z.string()).min(1, "Elija al menos un color.").max(3, "Puede elegir hasta 3 colores."),
-  projectDescription: z.string().min(10, "La descripción debe tener al menos 10 caracteres."),
+  favoriteColors: z.array(z.string()).min(1, "Escolha pelo menos uma cor.").max(3, "Pode escolher até 3 cores."),
+  projectDescription: z.string().min(10, "A descrição deve ter pelo menos 10 caracteres."),
 });
 
 type BriefFormValues = z.infer<typeof briefSchema>;
 
-const projectTypes = ["Sitio Web Corporativo", "E-commerce", "Aplicación Web", "Blog", "Landing Page", "Otro"];
+const projectTypes = ["Site Corporativo", "E-commerce", "Aplicação Web", "Blog", "Landing Page", "Outro"];
 const availableSections = [
-    { id: "home", label: "Home" },
-    { id: "about", label: "Quiénes Somos" },
-    { id: "services", label: "Servicios" },
-    { id: "news", label: "Noticias" },
+    { id: "home", label: "Início" },
+    { id: "about", label: "Quem Somos" },
+    { id: "services", label: "Serviços" },
+    { id: "news", label: "Notícias" },
     { id: "contact", label: "Contacto" },
 ];
 const availableColors = ["#F97316", "#000000", "#8B5CF6", "#EC4899", "#A3A3A3", "#3B82F6", "#FBBF24", "#B91C1C", "#10B981", "#A855F7"];
@@ -61,9 +61,10 @@ export default function ProjectBriefForm() {
   });
 
   function onSubmit(data: BriefFormValues) {
+    console.log(data);
     toast({
       title: "Briefing Enviado!",
-      description: "Gracias por completar el briefing. Nos pondremos en contacto contigo pronto.",
+      description: "Obrigado por preencher o briefing. Entraremos em contacto consigo em breve.",
     });
     form.reset();
   }
@@ -71,7 +72,7 @@ export default function ProjectBriefForm() {
   return (
     <Card className="text-left shadow-xl">
       <CardHeader>
-        <CardTitle className="font-headline text-2xl">Briefing del Proyecto</CardTitle>
+        <CardTitle className="font-headline text-2xl">Briefing do Projeto</CardTitle>
         <CardDescription>Por favor, preencha os detalhes abaixo para que possamos entender o seu projeto.</CardDescription>
       </CardHeader>
       <CardContent>
@@ -83,11 +84,11 @@ export default function ProjectBriefForm() {
                 name="fullName"
                 render={({ field }) => (
                     <FormItem>
-                    <FormLabel>Nombre Completo</FormLabel>
+                    <FormLabel>Nome Completo</FormLabel>
                     <FormControl>
                         <div className="relative">
                             <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                            <Input placeholder="Tu nombre" {...field} className="pl-10" />
+                            <Input placeholder="O seu nome" {...field} className="pl-10" />
                         </div>
                     </FormControl>
                     <FormMessage />
@@ -99,11 +100,11 @@ export default function ProjectBriefForm() {
                 name="email"
                 render={({ field }) => (
                     <FormItem>
-                    <FormLabel>Dirección de Email</FormLabel>
+                    <FormLabel>Endereço de Email</FormLabel>
                     <FormControl>
                         <div className="relative">
                             <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                            <Input placeholder="tu@email.com" {...field} className="pl-10" />
+                            <Input placeholder="o.seu@email.com" {...field} className="pl-10" />
                         </div>
                     </FormControl>
                     <FormMessage />
@@ -115,7 +116,7 @@ export default function ProjectBriefForm() {
                 name="companyName"
                 render={({ field }) => (
                     <FormItem>
-                    <FormLabel>Nombre de la Empresa (Opcional)</FormLabel>
+                    <FormLabel>Nome da Empresa (Opcional)</FormLabel>
                     <FormControl>
                          <div className="relative">
                             <Building className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
@@ -131,11 +132,11 @@ export default function ProjectBriefForm() {
                 name="idealTimeframe"
                 render={({ field }) => (
                     <FormItem>
-                    <FormLabel>Plazo Ideal (Opcional)</FormLabel>
+                    <FormLabel>Prazo Ideal (Opcional)</FormLabel>
                     <FormControl>
                         <div className="relative">
                             <Calendar className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                            <Input placeholder="ej: 3-6 meses" {...field} className="pl-10" />
+                            <Input placeholder="ex: 3-6 meses" {...field} className="pl-10" />
                         </div>
                     </FormControl>
                     <FormMessage />
@@ -150,13 +151,13 @@ export default function ProjectBriefForm() {
                     name="projectType"
                     render={({ field }) => (
                         <FormItem>
-                        <FormLabel>Tipo de Proyecto</FormLabel>
+                        <FormLabel>Tipo de Projeto</FormLabel>
                         <FormControl>
                             <div className="relative">
                                 <AppWindow className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                                 <Select onValueChange={field.onChange} defaultValue={field.value}>
                                     <SelectTrigger className="pl-10">
-                                        <SelectValue placeholder="Seleccione un tipo de proyecto" />
+                                        <SelectValue placeholder="Selecione um tipo de projeto" />
                                     </SelectTrigger>
                                     <SelectContent>
                                         {projectTypes.map((type) => (
@@ -175,7 +176,7 @@ export default function ProjectBriefForm() {
                     name="requiredSections"
                     render={() => (
                         <FormItem>
-                            <FormLabel>Secciones Necesarias</FormLabel>
+                            <FormLabel>Secções Necessárias</FormLabel>
                             <div className="flex flex-wrap gap-4 pt-2">
                             {availableSections.map((item) => (
                                 <FormField
@@ -211,7 +212,7 @@ export default function ProjectBriefForm() {
               name="referenceSites"
               render={() => (
                 <FormItem>
-                  <FormLabel>Sitios de Referencia (Opcional)</FormLabel>
+                  <FormLabel>Sites de Referência (Opcional)</FormLabel>
                   {fields.map((field, index) => (
                     <FormField
                       key={field.id}
@@ -222,7 +223,7 @@ export default function ProjectBriefForm() {
                            <FormControl>
                             <div className="relative flex items-center">
                                 <LinkIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-                                <Input {...field} placeholder={`https://ejemplo.com/${index + 1}`} className="pl-10" />
+                                <Input {...field} placeholder={`https://exemplo.com/${index + 1}`} className="pl-10" />
                                 {index > 0 && (
                                     <Button type="button" variant="ghost" size="icon" className="ml-2 text-destructive hover:bg-destructive/10 hover:text-destructive" onClick={() => remove(index)}>
                                         <Trash2 className="h-4 w-4" />
@@ -242,7 +243,7 @@ export default function ProjectBriefForm() {
                     className="mt-2"
                     onClick={() => append({ value: "" })}>
                     <PlusCircle className="mr-2 h-4 w-4" />
-                    Añadir otro sitio
+                    Adicionar outro site
                   </Button>
                 </FormItem>
               )}
@@ -253,7 +254,7 @@ export default function ProjectBriefForm() {
               name="favoriteColors"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Colores Favoritos (Escolha 3)</FormLabel>
+                  <FormLabel>Cores Favoritas (Escolha até 3)</FormLabel>
                   <FormControl>
                     <div className="flex flex-wrap gap-2 pt-2">
                       {availableColors.map((color, index) => (
@@ -290,7 +291,7 @@ export default function ProjectBriefForm() {
               name="projectDescription"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Descripción del Proyecto</FormLabel>
+                  <FormLabel>Descrição do Projeto</FormLabel>
                   <FormControl>
                     <Textarea
                       placeholder="Fale-nos sobre os seus objetivos, público-alvo e quaisquer funcionalidades específicas que tenha em mente."

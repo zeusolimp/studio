@@ -20,13 +20,13 @@ import {
 } from '@/components/ui/sidebar';
 
 const menuItems = [
-    { href: '/backoffice/inicio', label: 'Inicio', icon: Home },
-    { href: '/backoffice/servicios', label: 'Servicios', icon: Briefcase },
-    { href: '/backoffice/sobre-nosotros', label: 'Quiénes Somos', icon: Users },
+    { href: '/backoffice/inicio', label: 'Início', icon: Home },
+    { href: '/backoffice/servicos', label: 'Serviços', icon: Briefcase },
+    { href: '/backoffice/sobre-nosotros', label: 'Quem Somos', icon: Users },
     { href: '/backoffice/blog', label: 'Blog', icon: FileText },
     { href: '/backoffice/contacto', label: 'Contacto', icon: Phone },
-    { href: '/backoffice/footer', label: 'Footer', icon: Grip },
-    { href: '/backoffice/configuraciones', label: 'Configuraciones', icon: Settings },
+    { href: '/backoffice/footer', label: 'Rodapé', icon: Grip },
+    { href: '/backoffice/configuracoes', label: 'Configurações', icon: Settings },
 ];
 
 export default function BackofficeLayout({
@@ -73,7 +73,7 @@ export default function BackofficeLayout({
                      <Button asChild variant="outline" size="sm">
                         <Link href="/">
                             <Eye className="mr-2 h-4 w-4" />
-                            View Site
+                            Ver Site
                         </Link>
                     </Button>
                 </div>

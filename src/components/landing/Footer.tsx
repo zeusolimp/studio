@@ -47,16 +47,16 @@ const Footer = async () => {
             </div>
 
             <div>
-                <h3 className="font-headline text-lg font-semibold mb-4">Navegación</h3>
+                <h3 className="font-headline text-lg font-semibold mb-4">Navegação</h3>
                 <nav className="flex flex-col gap-2 text-muted-foreground">
-                    <Link href="/" className="hover:text-accent transition-colors">Iniciar</Link>
-                    <Link href="/servicios" className="hover:text-accent transition-colors">Servicios</Link>
-                    <Link href="/sobre-nosotros" className="hover:text-accent transition-colors">Quiénes somos</Link>
+                    <Link href="/" className="hover:text-accent transition-colors">Início</Link>
+                    <Link href="/servicos" className="hover:text-accent transition-colors">Serviços</Link>
+                    <Link href="/sobre-nosotros" className="hover:text-accent transition-colors">Quem somos</Link>
                     <Link href="/blog" className="hover:text-accent transition-colors">Blog</Link>
                     <Link href="/contacto" className="hover:text-accent transition-colors">Contacto</Link>
                     <Link href="/backoffice" className="flex items-center gap-2 hover:text-accent transition-colors">
                         <LayoutDashboard className="h-4 w-4" />
-                        Panel de Control
+                        Painel de Controlo
                     </Link>
                 </nav>
             </div>
@@ -80,7 +80,7 @@ const Footer = async () => {
             </div>
 
             <div>
-                <h3 className="font-headline text-lg font-semibold mb-4">Síguenos</h3>
+                <h3 className="font-headline text-lg font-semibold mb-4">Siga-nos</h3>
                 <div className="flex items-center gap-4">
                  {social_links.map(social => (
                      <Link key={social.id} href={social.url} aria-label={social.platform} className="text-muted-foreground hover:text-accent transition-colors">

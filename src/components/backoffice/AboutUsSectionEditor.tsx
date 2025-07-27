@@ -17,7 +17,7 @@ export default function AboutUsSectionEditor({ data, onChange }: AboutUsSectionE
   return (
     <div className="space-y-4">
       <div className="space-y-2">
-        <Label htmlFor={`title-${data.id}`}>Title</Label>
+        <Label htmlFor={`title-${data.id}`}>Título</Label>
         <Input
           id={`title-${data.id}`}
           value={data.title}
@@ -25,7 +25,7 @@ export default function AboutUsSectionEditor({ data, onChange }: AboutUsSectionE
         />
       </div>
       <div className="space-y-2">
-        <Label htmlFor={`paragraph1-${data.id}`}>Paragraph 1</Label>
+        <Label htmlFor={`paragraph1-${data.id}`}>Parágrafo 1</Label>
         <Textarea
           id={`paragraph1-${data.id}`}
           value={data.paragraph1}
@@ -34,7 +34,7 @@ export default function AboutUsSectionEditor({ data, onChange }: AboutUsSectionE
         />
       </div>
       <div className="space-y-2">
-        <Label htmlFor={`paragraph2-${data.id}`}>Paragraph 2</Label>
+        <Label htmlFor={`paragraph2-${data.id}`}>Parágrafo 2</Label>
         <Textarea
           id={`paragraph2-${data.id}`}
           value={data.paragraph2}
@@ -43,25 +43,25 @@ export default function AboutUsSectionEditor({ data, onChange }: AboutUsSectionE
         />
       </div>
       <div className="space-y-2">
-        <Label htmlFor={`button_text-${data.id}`}>Button Text</Label>
+        <Label htmlFor={`button_text-${data.id}`}>Texto do Botão</Label>
         <Input
           id={`button_text-${data.id}`}
           value={data.button_text || ''}
           onChange={(e) => handleChange('button_text', e.target.value)}
-          placeholder="e.g. Learn More"
+          placeholder="ex: Saber Mais"
         />
       </div>
        <div className="space-y-2">
-        <Label htmlFor={`button_link-${data.id}`}>Button Link</Label>
+        <Label htmlFor={`button_link-${data.id}`}>Link do Botão</Label>
         <Input
           id={`button_link-${data.id}`}
           value={data.button_link || ''}
           onChange={(e) => handleChange('button_link', e.target.value)}
-          placeholder="e.g. /about-us"
+          placeholder="ex: /sobre-nos"
         />
       </div>
       <ImageUploader
-        label="About Us Image"
+        label="Imagem Sobre Nós"
         currentImageUrl={data.image_url}
         onUploadSuccess={(url) => handleChange('image_url', url)}
       />

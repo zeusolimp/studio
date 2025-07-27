@@ -5,8 +5,8 @@ import { ThemeProvider } from '@/components/ThemeProvider';
 import { getSettings } from '@/lib/settings';
 
 export const metadata: Metadata = {
-  title: 'Soluciones Digitales | Desarrollo Web y Soporte',
-  description: 'Creamos aplicaciones web, sitios y sistemas a medida. Ofrecemos soporte técnico especializado.',
+  title: 'Soluções Digitais | Desenvolvimento Web e Suporte',
+  description: 'Criamos aplicações web, sites e sistemas à medida. Oferecemos suporte técnico especializado.',
 };
 
 export default async function RootLayout({
@@ -29,7 +29,7 @@ export default async function RootLayout({
   `;
 
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html lang="pt" suppressHydrationWarning>
       <head>
         <style dangerouslySetInnerHTML={{ __html: themeStyle }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

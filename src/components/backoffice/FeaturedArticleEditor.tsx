@@ -17,7 +17,7 @@ export default function FeaturedArticleEditor({ data, onChange }: FeaturedArticl
   return (
     <div className="space-y-4">
       <div className="space-y-2">
-        <Label htmlFor={`title-${data.id}`}>Title</Label>
+        <Label htmlFor={`title-${data.id}`}>Título</Label>
         <Input
           id={`title-${data.id}`}
           value={data.title}
@@ -25,7 +25,7 @@ export default function FeaturedArticleEditor({ data, onChange }: FeaturedArticl
         />
       </div>
       <div className="space-y-2">
-        <Label htmlFor={`subtitle-${data.id}`}>Subtitle</Label>
+        <Label htmlFor={`subtitle-${data.id}`}>Subtítulo</Label>
         <Input
           id={`subtitle-${data.id}`}
           value={data.subtitle}
@@ -33,7 +33,7 @@ export default function FeaturedArticleEditor({ data, onChange }: FeaturedArticl
         />
       </div>
       <div className="space-y-2">
-        <Label htmlFor={`text-${data.id}`}>Text</Label>
+        <Label htmlFor={`text-${data.id}`}>Texto</Label>
         <Textarea
           id={`text-${data.id}`}
           value={data.text}
@@ -42,7 +42,7 @@ export default function FeaturedArticleEditor({ data, onChange }: FeaturedArticl
         />
       </div>
       <div className="space-y-2">
-        <Label htmlFor={`button_text-${data.id}`}>Button Text</Label>
+        <Label htmlFor={`button_text-${data.id}`}>Texto do Botão</Label>
         <Input
           id={`button_text-${data.id}`}
           value={data.button_text}
@@ -50,7 +50,7 @@ export default function FeaturedArticleEditor({ data, onChange }: FeaturedArticl
         />
       </div>
        <div className="space-y-2">
-        <Label htmlFor={`button_link-${data.id}`}>Button Link</Label>
+        <Label htmlFor={`button_link-${data.id}`}>Link do Botão</Label>
         <Input
           id={`button_link-${data.id}`}
           value={data.button_link}
@@ -58,7 +58,7 @@ export default function FeaturedArticleEditor({ data, onChange }: FeaturedArticl
         />
       </div>
       <ImageUploader
-        label="Featured Image"
+        label="Imagem em Destaque"
         currentImageUrl={data.image_url}
         onUploadSuccess={(url) => handleChange('image_url', url)}
       />

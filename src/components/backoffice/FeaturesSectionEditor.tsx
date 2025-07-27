@@ -29,8 +29,8 @@ export default function FeaturesSectionEditor({ data, onChange }: FeaturesSectio
     const newItem: FeatureItem = {
       id: `feat-${Date.now()}`,
       icon: 'PenTool',
-      title: 'New Feature',
-      description: 'A brief description of this new feature.',
+      title: 'Nova Funcionalidade',
+      description: 'Uma breve descrição desta nova funcionalidade.',
     };
     onChange({ ...data, items: [...data.items, newItem] });
   };
@@ -43,7 +43,7 @@ export default function FeaturesSectionEditor({ data, onChange }: FeaturesSectio
   return (
     <div className="space-y-6">
       <div className="space-y-2">
-        <Label htmlFor={`title-${data.id}`}>Section Title</Label>
+        <Label htmlFor={`title-${data.id}`}>Título da Secção</Label>
         <Input
           id={`title-${data.id}`}
           value={data.title}
@@ -52,7 +52,7 @@ export default function FeaturesSectionEditor({ data, onChange }: FeaturesSectio
       </div>
 
        <div className="space-y-2">
-        <Label htmlFor={`subtext-${data.id}`}>Subtext</Label>
+        <Label htmlFor={`subtext-${data.id}`}>Subtexto</Label>
         <Textarea
           id={`subtext-${data.id}`}
           value={data.subtext}
@@ -61,23 +61,23 @@ export default function FeaturesSectionEditor({ data, onChange }: FeaturesSectio
       </div>
       
       <div className="space-y-4">
-        <Label>Features</Label>
+        <Label>Funcionalidades</Label>
         {data.items.map((item, index) => (
           <div key={item.id} className="border p-4 rounded-md space-y-3 relative bg-background/50">
             <Button variant="ghost" size="icon" className="absolute top-2 right-2 text-destructive hover:bg-destructive/10 hover:text-destructive" onClick={() => handleRemoveItem(index)}>
                 <Trash2 className="h-4 w-4" />
-                 <span className="sr-only">Delete feature</span>
+                 <span className="sr-only">Apagar funcionalidade</span>
             </Button>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                    <Label htmlFor={`item-title-${item.id}`}>Title</Label>
+                    <Label htmlFor={`item-title-${item.id}`}>Título</Label>
                     <Input id={`item-title-${item.id}`} value={item.title} onChange={(e) => handleItemChange(index, 'title', e.target.value)} />
                 </div>
                 <div className="space-y-2">
-                    <Label htmlFor={`item-icon-${item.id}`}>Icon</Label>
+                    <Label htmlFor={`item-icon-${item.id}`}>Ícone</Label>
                      <Select value={item.icon} onValueChange={(value) => handleItemChange(index, 'icon', value)}>
                         <SelectTrigger id={`item-icon-${item.id}`}>
-                            <SelectValue placeholder="Select an icon" />
+                            <SelectValue placeholder="Selecione um ícone" />
                         </SelectTrigger>
                         <SelectContent>
                             {availableIcons.map(iconName => (
@@ -88,14 +88,14 @@ export default function FeaturesSectionEditor({ data, onChange }: FeaturesSectio
                 </div>
             </div>
             <div className="space-y-2">
-                <Label htmlFor={`item-desc-${item.id}`}>Description</Label>
+                <Label htmlFor={`item-desc-${item.id}`}>Descrição</Label>
                 <Input id={`item-desc-${item.id}`} value={item.description} onChange={(e) => handleItemChange(index, 'description', e.target.value)} />
             </div>
           </div>
         ))}
         <Button variant="outline" onClick={handleAddItem}>
             <PlusCircle className="mr-2 h-4 w-4" />
-            Add Feature
+            Adicionar Funcionalidade
         </Button>
       </div>
     </div>

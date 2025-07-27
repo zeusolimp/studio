@@ -30,17 +30,17 @@ export default function SettingsEditor({ initialSettings }: SettingsEditorProps)
         body: JSON.stringify(settings),
       });
       if (!response.ok) {
-        throw new Error('Failed to save settings');
+        throw new Error('Falha ao guardar as configurações');
       }
       toast({
-        title: "Success!",
-        description: "Your settings have been saved. They will be applied on the next page refresh.",
+        title: "Sucesso!",
+        description: "As suas configurações foram guardadas. Serão aplicadas na próxima atualização da página.",
       });
     } catch (error) {
       toast({
         variant: "destructive",
-        title: "Error",
-        description: "Could not save settings. Please try again.",
+        title: "Erro",
+        description: "Não foi possível guardar as configurações. Por favor, tente novamente.",
       });
     } finally {
       setIsSaving(false);
@@ -77,10 +77,10 @@ export default function SettingsEditor({ initialSettings }: SettingsEditorProps)
   return (
     <div className="max-w-4xl mx-auto">
       <div className="flex justify-between items-center mb-6 pb-4 border-b">
-        <h1 className="text-3xl font-headline">Site Settings</h1>
+        <h1 className="text-3xl font-headline">Configurações do Site</h1>
         <Button onClick={handleSave} disabled={isSaving} size="lg">
             {isSaving ? <Loader className="mr-2 h-4 w-4 animate-spin" /> : <Save className="mr-2 h-4 w-4" />}
-            {isSaving ? 'Saving...' : 'Save Settings'}
+            {isSaving ? 'A guardar...' : 'Guardar Configurações'}
         </Button>
       </div>
       
@@ -88,11 +88,11 @@ export default function SettingsEditor({ initialSettings }: SettingsEditorProps)
           <Card>
             <CardHeader>
                 <CardTitle>Logo</CardTitle>
-                <CardDescription>Upload your site's logo. It will appear in the navigation bar.</CardDescription>
+                <CardDescription>Carregue o logo do seu site. Ele aparecerá na barra de navegação.</CardDescription>
             </CardHeader>
             <CardContent>
                 <ImageUploader 
-                    label="Site Logo"
+                    label="Logo do Site"
                     currentImageUrl={settings.logo_url}
                     onUploadSuccess={handleLogoUpload}
                 />
@@ -101,20 +101,20 @@ export default function SettingsEditor({ initialSettings }: SettingsEditorProps)
 
           <Card>
             <CardHeader>
-                <CardTitle>Contact Information</CardTitle>
-                <CardDescription>This information will be displayed in the footer and contact pages.</CardDescription>
+                <CardTitle>Informações de Contacto</CardTitle>
+                <CardDescription>Esta informação será exibida no rodapé e nas páginas de contacto.</CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
                  <div className="space-y-2">
-                    <Label htmlFor="email">Contact Email</Label>
+                    <Label htmlFor="email">Email de Contacto</Label>
                     <Input id="email" value={settings.contact.email} onChange={(e) => handleContactChange('email', e.target.value)} />
                 </div>
                  <div className="space-y-2">
-                    <Label htmlFor="phone">Contact Phone</Label>
+                    <Label htmlFor="phone">Telefone de Contacto</Label>
                     <Input id="phone" value={settings.contact.phone} onChange={(e) => handleContactChange('phone', e.target.value)} />
                 </div>
                  <div className="space-y-2">
-                    <Label htmlFor="address">Contact Address</Label>
+                    <Label htmlFor="address">Morada de Contacto</Label>
                     <Input id="address" value={settings.contact.address} onChange={(e) => handleContactChange('address', e.target.value)} />
                 </div>
             </CardContent>
@@ -122,24 +122,24 @@ export default function SettingsEditor({ initialSettings }: SettingsEditorProps)
 
           <Card>
              <CardHeader>
-                <CardTitle>Theme Colors</CardTitle>
-                <CardDescription>Customize the color palette for the light and dark themes of your site. Provide HSL values (e.g., 222 47% 11%).</CardDescription>
+                <CardTitle>Cores do Tema</CardTitle>
+                <CardDescription>Personalize a paleta de cores para os temas claro e escuro do seu site. Forneça valores HSL (ex: 222 47% 11%).</CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
                 <div>
-                    <h3 className="font-medium mb-4 text-lg">Light Theme</h3>
+                    <h3 className="font-medium mb-4 text-lg">Tema Claro</h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <ColorPicker label="Background" color={settings.theme.light.background} onChange={(color) => handleColorChange('light', 'background', color)} />
-                        <ColorPicker label="Foreground" color={settings.theme.light.foreground} onChange={(color) => handleColorChange('light', 'foreground', color)} />
-                        <ColorPicker label="Accent" color={settings.theme.light.accent} onChange={(color) => handleColorChange('light', 'accent', color)} />
+                        <ColorPicker label="Fundo" color={settings.theme.light.background} onChange={(color) => handleColorChange('light', 'background', color)} />
+                        <ColorPicker label="Texto" color={settings.theme.light.foreground} onChange={(color) => handleColorChange('light', 'foreground', color)} />
+                        <ColorPicker label="Destaque" color={settings.theme.light.accent} onChange={(color) => handleColorChange('light', 'accent', color)} />
                     </div>
                 </div>
                  <div>
-                    <h3 className="font-medium mb-4 text-lg">Dark Theme</h3>
+                    <h3 className="font-medium mb-4 text-lg">Tema Escuro</h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <ColorPicker label="Background" color={settings.theme.dark.background} onChange={(color) => handleColorChange('dark', 'background', color)} />
-                        <ColorPicker label="Foreground" color={settings.theme.dark.foreground} onChange={(color) => handleColorChange('dark', 'foreground', color)} />
-                        <ColorPicker label="Accent" color={settings.theme.dark.accent} onChange={(color) => handleColorChange('dark', 'accent', color)} />
+                        <ColorPicker label="Fundo" color={settings.theme.dark.background} onChange={(color) => handleColorChange('dark', 'background', color)} />
+                        <ColorPicker label="Texto" color={settings.theme.dark.foreground} onChange={(color) => handleColorChange('dark', 'foreground', color)} />
+                        <ColorPicker label="Destaque" color={settings.theme.dark.accent} onChange={(color) => handleColorChange('dark', 'accent', color)} />
                     </div>
                 </div>
             </CardContent>

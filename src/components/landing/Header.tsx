@@ -28,13 +28,13 @@ const Header = async () => {
         <div className="flex items-center gap-6">
             <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
                 <Link href="/" className="text-muted-foreground transition-colors hover:text-foreground">
-                    Iniciar
+                    Início
                 </Link>
                 <Link href="/servicios" className="text-muted-foreground transition-colors hover:text-foreground">
-                    Servicios
+                    Serviços
                 </Link>
                 <Link href="/sobre-nosotros" className="text-muted-foreground transition-colors hover:text-foreground">
-                    Quiénes somos
+                    Quem somos
                 </Link>
                 <Link href="/blog" className="text-muted-foreground transition-colors hover:text-foreground">
                     Blog

@@ -23,14 +23,14 @@ const Footer = () => {
                     fetch('/api/settings'),
                 ]);
                 const content = await contentRes.json();
-                const settings = await settingsRes.json();
+                const settingsData = await settingsRes.json();
                 
                 const footer = content.sections.find(
                     (section: any) => section.type === 'footer'
                 ) as FooterSectionData | undefined;
 
                 if (footer) setFooterData(footer);
-                setSettings(settings);
+                setSettings(settingsData);
 
             } catch (error) {
                 console.error("Failed to fetch footer data:", error);

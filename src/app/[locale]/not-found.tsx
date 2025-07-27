@@ -1,7 +1,8 @@
 
 "use client";
 
-import { useTranslations, Link } from "next-intl";
+import { useTranslations } from "next-intl";
+import { Link } from "@/navigation";
 
 export default function NotFound() {
   const t = useTranslations("NotFound");

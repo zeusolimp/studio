@@ -36,7 +36,7 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 max-w-screen-2xl items-center justify-between">
+      <div className="container flex h-16 max-w-[1920px] items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <HeaderLogo />
           <span className="font-headline text-xl font-bold">iddeia global</span>

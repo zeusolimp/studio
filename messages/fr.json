@@ -117,62 +117,22 @@
         "en": "Anglais",
         "fr": "Français",
         "heroSection": {
-            "title": "Héros",
-            "headline": "Titre",
-            "subtext": "Sous-texte",
-            "buttonText": "Texte du Bouton",
-            "image": "Image Héros"
+            "title": "Héros"
         },
         "featuresSection": {
-            "title": "Caractéristiques",
-            "sectionTitle": "Titre de la Section",
-            "subtext": "Sous-texte",
-            "features": "Caractéristiques",
-            "itemTitle": "Titre",
-            "itemIcon": "Icône",
-            "selectIcon": "Sélectionnez une icône",
-            "itemDescription": "Description",
-            "deleteFeature": "Supprimer la característica",
-            "addFeature": "Ajouter une Caractéristique",
-            "newFeatureTitle": "Nouvelle Caractéristique",
-            "newFeatureDescription": "Une brève description de cette nouvelle característica."
+            "title": "Caractéristiques"
         },
         "featuredArticleSection": {
-            "title": "Article en Vedette",
-            "mainTitle": "Titre",
-            "subtitle": "Sous-titre",
-            "text": "Texte",
-            "buttonText": "Texte du Bouton",
-            "buttonLink": "Lien du Bouton",
-            "image": "Image en Vedette"
+            "title": "Article en Vedette"
         },
         "aboutUsSection": {
-            "title": "À Propos de Nous",
-            "mainTitle": "Titre",
-            "paragraph1": "Paragraphe 1",
-            "paragraph2": "Paragraphe 2",
-            "buttonText": "Texte du Bouton",
-            "buttonLink": "Lien du Bouton",
-            "image": "Image À Propos de Nous"
+            "title": "À Propos de Nous"
         },
         "ctaSection": {
-            "title": "CTA",
-            "mainTitle": "Titre",
-            "subtext": "Sous-texte",
-            "buttonText": "Texte du Bouton"
+            "title": "CTA"
         },
         "footerSection": {
-            "title": "Pied de Page",
-            "brandDescription": "Description de la Marque",
-            "socialLinks": "Liens de Réseaux Sociaux",
-            "platform": "Plateforme",
-            "url": "URL",
-            "addSocialLink": "Ajouter un Lien Social",
-            "legalLinks": "Liens Légaux",
-            "text": "Texte",
-            "addLegalLink": "Ajouter un Lien Légal",
-            "copyrightText": "Texte de Copyright",
-            "copyrightPlaceholder": "Vous pouvez utiliser '{year}' comme espace réservé pour l'année en cours."
+            "title": "Pied de Page"
         }
     }
 }

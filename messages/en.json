@@ -117,62 +117,22 @@
         "en": "English",
         "fr": "French",
         "heroSection": {
-            "title": "Hero",
-            "headline": "Headline",
-            "subtext": "Subtext",
-            "buttonText": "Button Text",
-            "image": "Hero Image"
+            "title": "Hero"
         },
         "featuresSection": {
-            "title": "Features",
-            "sectionTitle": "Section Title",
-            "subtext": "Subtext",
-            "features": "Features",
-            "itemTitle": "Title",
-            "itemIcon": "Icon",
-            "selectIcon": "Select an icon",
-            "itemDescription": "Description",
-            "deleteFeature": "Delete feature",
-            "addFeature": "Add Feature",
-            "newFeatureTitle": "New Feature",
-            "newFeatureDescription": "A brief description of this new feature."
+            "title": "Features"
         },
         "featuredArticleSection": {
-            "title": "Featured Article",
-            "mainTitle": "Title",
-            "subtitle": "Subtitle",
-            "text": "Text",
-            "buttonText": "Button Text",
-            "buttonLink": "Button Link",
-            "image": "Featured Image"
+            "title": "Featured Article"
         },
         "aboutUsSection": {
-            "title": "About Us",
-            "mainTitle": "Title",
-            "paragraph1": "Paragraph 1",
-            "paragraph2": "Paragraph 2",
-            "buttonText": "Button Text",
-            "buttonLink": "Button Link",
-            "image": "About Us Image"
+            "title": "About Us"
         },
         "ctaSection": {
-            "title": "CTA",
-            "mainTitle": "Title",
-            "subtext": "Subtext",
-            "buttonText": "Button Text"
+            "title": "CTA"
         },
         "footerSection": {
-            "title": "Footer",
-            "brandDescription": "Brand Description",
-            "socialLinks": "Social Media Links",
-            "platform": "Platform",
-            "url": "URL",
-            "addSocialLink": "Add Social Link",
-            "legalLinks": "Legal Links",
-            "text": "Text",
-            "addLegalLink": "Add Legal Link",
-            "copyrightText": "Copyright Text",
-            "copyrightPlaceholder": "You can use '{year}' as a placeholder for the current year."
+            "title": "Footer"
         }
     }
 }

@@ -80,7 +80,9 @@ export default function ContentEditor({ initialContent, allowedSections }: Conte
   };
   
   const getSectionTitle = (type: EditorComponentType) => {
-    const formattedType = type.replace(/-(\w)/g, (_, c) => c.toUpperCase());
+    const formattedType = type
+        .replace(/-(\w)/g, (_, c) => c.toUpperCase())
+        .replace(/^about$/, 'aboutUs');
     const key = `${formattedType}Section.title` as any;
     try {
         const translatedTitle = t(key);

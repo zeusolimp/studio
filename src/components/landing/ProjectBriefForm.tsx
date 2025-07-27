@@ -36,7 +36,7 @@ const availableSections = [
     { id: "news", label: "Noticias" },
     { id: "contact", label: "Contacto" },
 ];
-const availableColors = ["#F97316", "#000000", "#8B5CF6", "#F97316", "#EC4899", "#A3A3A3", "#3B82F6", "#FBBF24", "#B91C1C", "#10B981", "#A855F7", "#F472B6"];
+const availableColors = ["#F97316", "#000000", "#8B5CF6", "#EC4899", "#A3A3A3", "#3B82F6", "#FBBF24", "#B91C1C", "#10B981", "#A855F7", "#F472B6"];
 
 export default function ProjectBriefForm() {
   const { toast } = useToast();
@@ -257,9 +257,9 @@ export default function ProjectBriefForm() {
                   <FormLabel>Colores Favoritos (Escolha 3)</FormLabel>
                   <FormControl>
                     <div className="flex flex-wrap gap-2 pt-2">
-                      {availableColors.map((color) => (
+                      {availableColors.map((color, index) => (
                          <Checkbox
-                            key={color}
+                            key={`${color}-${index}`}
                             className="h-8 w-8 rounded-full data-[state=checked]:border-primary"
                             style={{ backgroundColor: color }}
                             checked={field.value?.includes(color)}

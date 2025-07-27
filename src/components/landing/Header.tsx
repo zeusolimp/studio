@@ -26,6 +26,9 @@ const Header = () => {
             <Link href="/sobre-nosotros" className="text-muted-foreground transition-colors hover:text-foreground">
                 Quiénes somos
             </Link>
+             <Link href="/blog" className="text-muted-foreground transition-colors hover:text-foreground">
+                Blog
+            </Link>
             <Link href="/contacto" className="text-muted-foreground transition-colors hover:text-foreground">
                 Contacto
             </Link>

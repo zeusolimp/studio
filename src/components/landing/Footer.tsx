@@ -1,6 +1,8 @@
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { getContent } from '@/lib/content';
+import { getSettings } from '@/lib/settings';
 import { FooterSectionData } from '@/types';
 import { DynamicIcon } from '@/components/DynamicIcon';
 import { LayoutDashboard } from 'lucide-react';
@@ -8,13 +10,15 @@ import { LayoutDashboard } from 'lucide-react';
 
 const Footer = async () => {
     const content = await getContent();
+    const settings = await getSettings();
     const data = content.sections.find(
         (section) => section.type === 'footer'
     ) as FooterSectionData | undefined;
 
     if (!data) return null;
 
-    const { brand_description, contact_email, contact_phone, contact_address, social_links, legal_links, copyright_text } = data;
+    const { brand_description, social_links, legal_links, copyright_text } = data;
+    const { contact } = settings;
 
     const currentYear = new Date().getFullYear();
     const processedCopyright = copyright_text.replace('{year}', currentYear.toString());
@@ -26,11 +30,15 @@ const Footer = async () => {
             
             <div className="flex flex-col items-start">
                 <Link href="/" className="flex items-center gap-2 mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7 text-accent">
-                        <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                        <path d="M2 17l10 5 10-5"></path>
-                        <path d="M2 12l10 5 10-5"></path>
-                    </svg>
+                     {settings.logo_url ? (
+                        <Image src={settings.logo_url} alt="iddeia global logo" width={32} height={32} className="h-8 w-8" />
+                    ) : (
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7 text-accent">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    )}
                     <span className="font-headline text-xl font-bold">iddeia global</span>
                 </Link>
                 <p className="text-muted-foreground text-sm">
@@ -58,15 +66,15 @@ const Footer = async () => {
                 <div className="flex flex-col gap-3 text-muted-foreground text-sm">
                 <div className="flex items-center gap-3">
                     <DynamicIcon name="Mail" className="h-4 w-4 text-accent" />
-                    <span>{contact_email}</span>
+                    <span>{contact.email}</span>
                 </div>
                 <div className="flex items-center gap-3">
                     <DynamicIcon name="Phone" className="h-4 w-4 text-accent" />
-                    <span>{contact_phone}</span>
+                    <span>{contact.phone}</span>
                 </div>
                 <div className="flex items-start gap-3">
                     <DynamicIcon name="MapPin" className="h-4 w-4 text-accent mt-1" />
-                    <span>{contact_address}</span>
+                    <span>{contact.address}</span>
                 </div>
                 </div>
             </div>

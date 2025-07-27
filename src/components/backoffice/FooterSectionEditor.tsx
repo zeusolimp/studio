@@ -57,22 +57,6 @@ export default function FooterSectionEditor({ data, onChange }: FooterSectionEdi
         <Textarea id={`desc-${data.id}`} value={data.brand_description} onChange={(e) => handleChange('brand_description', e.target.value)} />
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div className="space-y-2">
-            <Label htmlFor={`email-${data.id}`}>Contact Email</Label>
-            <Input id={`email-${data.id}`} value={data.contact_email} onChange={(e) => handleChange('contact_email', e.target.value)} />
-        </div>
-        <div className="space-y-2">
-            <Label htmlFor={`phone-${data.id}`}>Contact Phone</Label>
-            <Input id={`phone-${data.id}`} value={data.contact_phone} onChange={(e) => handleChange('contact_phone', e.target.value)} />
-        </div>
-      </div>
-      
-      <div className="space-y-2">
-        <Label htmlFor={`address-${data.id}`}>Contact Address</Label>
-        <Input id={`address-${data.id}`} value={data.contact_address} onChange={(e) => handleChange('contact_address', e.target.value)} />
-      </div>
-
       <div className="space-y-4 border-t pt-4">
         <Label>Social Media Links</Label>
         {data.social_links.map((link, index) => (

@@ -1,3 +1,4 @@
+
 {
   "sections": [
     {
@@ -65,9 +66,6 @@
       "id": "footer",
       "type": "footer",
       "brand_description": "Creamos soluciones digitales a medida para potenciar tu negocio con tecnología.",
-      "contact_email": "contacto@iddeiaglobal.com",
-      "contact_phone": "+51 987 654 321",
-      "contact_address": "Av. Principal 123, Oficina 404, Lima, Perú",
       "social_links": [
         {
           "id": "social1",

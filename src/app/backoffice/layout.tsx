@@ -25,6 +25,7 @@ const menuItems = [
     { href: '/backoffice/sobre-nosotros', label: 'Quiénes Somos', icon: Users },
     { href: '/backoffice/contacto', label: 'Contacto', icon: Phone },
     { href: '/backoffice/footer', label: 'Footer', icon: Grip },
+    { href: '/backoffice/configuraciones', label: 'Configuraciones', icon: Settings },
 ];
 
 export default function BackofficeLayout({

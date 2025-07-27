@@ -69,9 +69,6 @@ export type FooterSectionData = {
     id: 'footer';
     type: 'footer';
     brand_description: string;
-    contact_email: string;
-    contact_phone: string;
-    contact_address: string;
     social_links: SocialLink[];
     legal_links: FooterLink[];
     copyright_text: string;
@@ -81,4 +78,27 @@ export type Section = HeroSectionData | FeaturesSectionData | AboutUsSectionData
 
 export type LandingContent = {
   sections: Section[];
+};
+
+
+// Settings Types
+export type ContactInfo = {
+    email: string;
+    phone: string;
+    address: string;
+};
+
+export type ThemeColors = {
+    background: string;
+    foreground: string;
+    accent: string;
+};
+
+export type SiteSettings = {
+    logo_url: string;
+    contact: ContactInfo;
+    theme: {
+        light: ThemeColors;
+        dark: ThemeColors;
+    };
 };

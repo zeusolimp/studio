@@ -1,0 +1,21 @@
+
+{
+  "logo_url": "",
+  "contact": {
+    "email": "contacto@iddeiaglobal.com",
+    "phone": "+51 987 654 321",
+    "address": "Av. Principal 123, Oficina 404, Lima, Perú"
+  },
+  "theme": {
+    "light": {
+      "background": "210 40% 98%",
+      "foreground": "222 47% 11%",
+      "accent": "173 95% 42%"
+    },
+    "dark": {
+      "background": "222 47% 11%",
+      "foreground": "210 40% 98%",
+      "accent": "173 95% 42%"
+    }
+  }
+}

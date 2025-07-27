@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 
 const FeaturedArticleSection = ({ title, subtitle, text, image_url, button_text, button_link }: FeaturedArticleSectionData) => {
   return (
-    <section id="featured-article" className="py-20 md:py-24 bg-secondary/20">
+    <section id="featured-article" className="py-20 md:py-24 bg-secondary/20 min-h-screen flex flex-col justify-center">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>

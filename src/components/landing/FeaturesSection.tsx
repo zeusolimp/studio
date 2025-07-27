@@ -4,7 +4,7 @@ import { DynamicIcon } from '@/components/DynamicIcon';
 
 const FeaturesSection = ({ title, items }: FeaturesSectionData) => {
   return (
-    <section id="features" className="bg-background py-20 md:py-24">
+    <section id="features" className="bg-background py-20 md:py-24 min-h-screen flex flex-col justify-center">
       <div className="container mx-auto px-4">
         <div className="mx-auto max-w-3xl text-center mb-12">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground md:text-4xl">

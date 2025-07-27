@@ -1,4 +1,3 @@
-
 import createNextIntlMiddleware from 'next-intl/middleware';
 
 export const locales = ['pt', 'es', 'en', 'fr'];
@@ -10,5 +9,8 @@ export default createNextIntlMiddleware({
 });
 
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)']
+  // Match all pathnames except for
+  // - … if they start with `/api`, `/_next` or `/_vercel`
+  // - … the ones containing a dot (e.g. `favicon.ico`)
+  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)']
 };

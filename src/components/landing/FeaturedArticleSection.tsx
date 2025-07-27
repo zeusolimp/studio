@@ -23,7 +23,7 @@ const FeaturedArticleSection = ({ title, subtitle, text, image_url, button_text,
             <h2 className="font-headline text-3xl tracking-tight text-foreground md:text-4xl mb-4">
               {subtitle}
             </h2>
-            <p className="text-muted-foreground mb-6">{text}</p>
+            <p className="text-muted-foreground mb-6 whitespace-pre-wrap">{text}</p>
             <Button asChild size="lg">
               <Link href={button_link}>{button_text}</Link>
             </Button>

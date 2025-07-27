@@ -1,0 +1,63 @@
+{
+  "sections": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "headline": "Creamos Soluciones Digitales a tu Medida",
+      "subtext": "Desde aplicaciones web innovadoras y sitios web impactantes hasta sistemas robustos y soporte técnico confiable. Potenciamos tu negocio con tecnología.",
+      "cta_button_text": "Conoce Nuestros Servicios",
+      "image_url": "/uploads/1753575457803-fondo-codigo-hero.jpg"
+    },
+    {
+      "id": "features",
+      "type": "features",
+      "title": "Nuestros Servicios Principales",
+      "subtext": "En iddeia global, nos especializamos en transformar tus ideas en soluciones tecnológicas robustas y eficientes. Nuestro equipo de expertos está dedicado a proporcionar desarrollo de software a medida, diseño de sistemas escalables y un soporte técnico inigualable para asegurar que tu negocio no solo alcance, sino que supere sus objetivos digitales. Descubre cómo podemos potenciar tu presencia en línea y optimizar tus operaciones con nuestras soluciones innovadoras.",
+      "items": [
+        {
+          "id": "feat1",
+          "icon": "Code",
+          "title": "Desarrollo Web",
+          "description": "Creamos aplicaciones y sitios web a medida, optimizados para el rendimiento y la experiencia del usuario."
+        },
+        {
+          "id": "feat2",
+          "icon": "PenTool",
+          "title": "Diseño de Sistemas",
+          "description": "Diseñamos arquitecturas de software robustas y escalables para satisfacer las necesidades de tu empresa."
+        },
+        {
+          "id": "feat3",
+          "icon": "Wand2",
+          "title": "Soporte Técnico",
+          "description": "Ofrecemos soporte técnico experto, tanto online a través de tickets como presencial, para resolver tus incidencias."
+        }
+      ]
+    },
+    {
+      "id": "featured-article",
+      "type": "featured-article",
+      "title": "Artículo Destacado",
+      "subtitle": "Maximizando la Eficiencia con Desarrollo a Medida",
+      "text": "En el dinámico mundo de la tecnología, las soluciones de software genéricas a menudo no logran satisfacer las necesidades específicas de las empresas. El desarrollo a medida emerge como una estrategia clave para optimizar procesos, mejorar la productividad y obtener una ventaja competitiva sostenible. Al crear software diseñado exclusivamente para tus flujos de trabajo, te aseguras de que cada función y característica esté alineada con tus objetivos de negocio, eliminando funcionalidades innecesarias y reduciendo la curva de aprendizaje para tu equipo.\n\nAdoptar una solución a medida no solo significa tener un sistema que se adapta perfectamente a tu empresa, sino también contar con la flexibilidad para escalar y evolucionar junto a ella. A diferencia de los productos de software estándar, una aplicación personalizada puede ser modificada y ampliada para responder a los cambios del mercado y a las nuevas oportunidades, asegurando que tu inversión tecnológica siga siendo relevante y rentable a largo plazo. En iddeia global, nos especializamos en convertir tus requisitos únicos en software potente y eficiente.",
+      "image_url": "https://placehold.co/600x400.png",
+      "button_text": "Ir al Blog",
+      "button_link": "/blog"
+    },
+    {
+      "id": "about",
+      "type": "about",
+      "title": "Sobre Nosotros",
+      "paragraph1": "Somos un equipo de innovadores, solucionadores de problemas y apasionados por la tecnología, dedicados a transformar ideas en realidades digitales. Nuestra misión es impulsar el éxito de nuestros clientes a través de soluciones de software excepcionales y un soporte técnico inigualable.",
+      "paragraph2": "Con años de experiencia en la industria, hemos perfeccionado nuestro enfoque en la creación de aplicaciones web, sitios y sistemas que no solo son visualmente impactantes, sino también robustos, escalables y seguros. Creemos en la colaboración estrecha y la comunicación transparente para garantizar que cada proyecto sea un reflejo fiel de la visión de nuestros clientes.",
+      "image_url": "https://placehold.co/600x400.png"
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "title": "¿Listo para Empezar tu Próximo Proyecto?",
+      "subtext": "Contáctanos para descubrir cómo podemos ayudarte a alcanzar tus objetivos tecnológicos.",
+      "button_text": "Crea un proyecto con nosotros"
+    }
+  ]
+}

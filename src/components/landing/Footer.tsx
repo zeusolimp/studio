@@ -1,11 +1,10 @@
 
 "use client";
 
-import Link from 'next/link';
-import Image from 'next/image';
-import { DynamicIcon } from '@/components/DynamicIcon';
-import { LayoutDashboard } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
+import { Link } from 'next-intl';
+import { DynamicIcon } from '@/components/DynamicIcon';
 import { useState, useEffect } from 'react';
 import type { FooterSectionData, SiteSettings, Locale } from '@/types';
 import { useLocale } from 'next-intl';
@@ -74,7 +73,7 @@ const Footer = () => {
                     <Link href="/blog" className="hover:text-accent transition-colors">{tHeader('blog')}</Link>
                     <Link href="/contacto" className="hover:text-accent transition-colors">{tHeader('contact')}</Link>
                     <Link href="/backoffice" className="flex items-center gap-2 hover:text-accent transition-colors">
-                        <LayoutDashboard className="h-4 w-4" />
+                        <DynamicIcon name="LayoutDashboard" className="h-4 w-4" />
                         {tFooter('dashboard')}
                     </Link>
                 </nav>

@@ -1,7 +1,8 @@
 
 "use client";
 
-import { useTranslations, Link } from 'next-intl';
+import { useTranslations } from 'next-intl';
+import { Link } from '../../navigation';
 import { DynamicIcon } from '@/components/DynamicIcon';
 
 export default function FooterNav() {

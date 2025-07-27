@@ -3,42 +3,42 @@
     {
       "id": "hero",
       "type": "hero",
-      "headline": "Build Your Landing Page, Dynamically",
-      "subtext": "Our platform allows you to edit every part of this page from a simple backoffice. No code required. Change text, images, and even the layout.",
-      "cta_button_text": "Try The Backoffice",
+      "headline": "Creamos Soluciones Digitales a tu Medida",
+      "subtext": "Desde aplicaciones web innovadoras y sitios web impactantes hasta sistemas robustos y soporte técnico confiable. Potenciamos tu negocio con tecnología.",
+      "cta_button_text": "Conoce Nuestros Servicios",
       "image_url": "/uploads/hero-image.png"
     },
     {
       "id": "features",
       "type": "features",
-      "title": "Everything You Need, Nothing You Don't",
+      "title": "Nuestros Servicios Principales",
       "items": [
         {
           "id": "feat1",
-          "icon": "Edit",
-          "title": "Dynamic Text",
-          "description": "Update any text on your landing page instantly from the content editor."
+          "icon": "Code",
+          "title": "Desarrollo Web",
+          "description": "Creamos aplicaciones y sitios web a medida, optimizados para el rendimiento y la experiencia del usuario."
         },
         {
           "id": "feat2",
-          "icon": "Image",
-          "title": "Image Uploads",
-          "description": "Change images with a simple file upload. Your new visuals go live immediately."
+          "icon": "PenTool",
+          "title": "Diseño de Sistemas",
+          "description": "Diseñamos arquitecturas de software robustas y escalables para satisfacer las necesidades de tu empresa."
         },
         {
           "id": "feat3",
-          "icon": "Move",
-          "title": "Content Arrangement",
-          "description": "Reorder sections to perfectly match your narrative and marketing goals."
+          "icon": "Wand2",
+          "title": "Soporte Técnico",
+          "description": "Ofrecemos soporte técnico experto, tanto online a través de tickets como presencial, para resolver tus incidencias."
         }
       ]
     },
     {
       "id": "cta",
       "type": "cta",
-      "title": "Ready to Take Control?",
-      "subtext": "Explore the backoffice and see how easy it is to manage your landing page content.",
-      "button_text": "Go to Backoffice"
+      "title": "¿Listo para Empezar tu Próximo Proyecto?",
+      "subtext": "Contáctanos para descubrir cómo podemos ayudarte a alcanzar tus objetivos tecnológicos.",
+      "button_text": "Solicita una Consulta"
     }
   ]
 }

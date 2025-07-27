@@ -23,6 +23,7 @@ const menuItems = [
     { href: '/backoffice/inicio', label: 'Inicio', icon: Home },
     { href: '/backoffice/servicios', label: 'Servicios', icon: Briefcase },
     { href: '/backoffice/sobre-nosotros', label: 'Quiénes Somos', icon: Users },
+    { href: '/backoffice/blog', label: 'Blog', icon: FileText },
     { href: '/backoffice/contacto', label: 'Contacto', icon: Phone },
     { href: '/backoffice/footer', label: 'Footer', icon: Grip },
     { href: '/backoffice/configuraciones', label: 'Configuraciones', icon: Settings },

@@ -1,58 +1,48 @@
 
 "use client";
 
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { DynamicIcon } from '@/components/DynamicIcon';
-import { useState, useEffect } from 'react';
-import type { FooterSectionData, SiteSettings, Locale } from '@/types';
-import FooterNav from './FooterNav';
-import { useLocale, useTranslations } from 'next-intl';
+import type { FooterSectionData, SiteSettings, Locale, LandingContent } from '@/types';
+import { useTranslations } from 'next-intl';
 import { Link } from '@/navigation';
+import { useLocale } from 'next-intl';
 
 const Footer = () => {
-    const [data, setData] = useState<FooterSectionData | null>(null);
+    const [content, setContent] = useState<LandingContent | null>(null);
     const [settings, setSettings] = useState<SiteSettings | null>(null);
-    const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
     const locale = useLocale() as Locale;
+    
+    useEffect(() => {
+        async function fetchData() {
+            const contentRes = await fetch('/api/content');
+            const contentData = await contentRes.json();
+            setContent(contentData);
+
+            const settingsRes = await fetch('/api/settings');
+            const settingsData = await settingsRes.json();
+            setSettings(settingsData);
+        }
+        fetchData();
+    }, []);
+
     const tHeader = useTranslations('Header');
     const tFooter = useTranslations('Footer');
 
-    const navTranslations = {
-        home: tHeader('home'),
-        services: tHeader('services'),
-        about: tHeader('about'),
-        blog: tHeader('blog'),
-        contact: tHeader('contact'),
-        dashboard: tFooter('dashboard'),
-        navigation: tFooter('navigation')
-    };
-
-    useEffect(() => {
-        async function fetchData() {
-            try {
-                const contentRes = await fetch('/api/content');
-                const content = await contentRes.json();
-                const footerData = content.sections.find((s: any) => s.type === 'footer');
-                setData(footerData);
-
-                const settingsRes = await fetch('/api/settings');
-                const siteSettings = await settingsRes.json();
-                setSettings(siteSettings);
-            } catch (error) {
-                console.error("Failed to fetch footer data", error);
-            }
-        }
-        fetchData();
-        setCurrentYear(new Date().getFullYear());
-    }, []);
-
-    if (!data || !settings) {
+    if (!content || !settings) {
         return <footer className="border-t border-border/50 bg-secondary/20 text-foreground h-96 animate-pulse"></footer>;
+    }
+
+    const data = content.sections.find((s: any) => s.type === 'footer') as FooterSectionData | undefined;
+
+    if (!data) {
+        return <footer className="border-t border-border/50 bg-secondary/20 text-foreground py-12 text-center">Footer content not found.</footer>;
     }
     
     const { brand_description, social_links, legal_links, copyright_text } = data;
     const { contact } = settings;
-
+    const currentYear = new Date().getFullYear();
     const processedCopyright = (copyright_text[locale] || copyright_text.pt).replace('{year}', currentYear.toString());
 
     return (
@@ -78,7 +68,20 @@ const Footer = () => {
                 </p>
             </div>
 
-            <FooterNav translations={navTranslations} />
+            <div>
+                <h3 className="font-headline text-lg font-semibold mb-4">{tFooter('navigation')}</h3>
+                <nav className="flex flex-col gap-2 text-muted-foreground">
+                    <Link href="/" className="hover:text-accent transition-colors">{tHeader('home')}</Link>
+                    <Link href="/servicios" className="hover:text-accent transition-colors">{tHeader('services')}</Link>
+                    <Link href="/sobre-nosotros" className="hover:text-accent transition-colors">{tHeader('about')}</Link>
+                    <Link href="/blog" className="hover:text-accent transition-colors">{tHeader('blog')}</Link>
+                    <Link href="/contacto" className="hover:text-accent transition-colors">{tHeader('contact')}</Link>
+                    <Link href="/backoffice" className="flex items-center gap-2 hover:text-accent transition-colors">
+                        <DynamicIcon name="LayoutDashboard" className="h-4 w-4" />
+                        {tFooter('dashboard')}
+                    </Link>
+                </nav>
+            </div>
 
             <div>
                 <h3 className="font-headline text-lg font-semibold mb-4">{tFooter('contact')}</h3>

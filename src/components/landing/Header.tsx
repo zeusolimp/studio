@@ -17,7 +17,10 @@ const Header = () => {
           <span className="font-headline text-xl font-bold">iddeia global</span>
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-            <Link href="/#features" className="text-muted-foreground transition-colors hover:text-foreground">
+            <Link href="/" className="text-muted-foreground transition-colors hover:text-foreground">
+                Inicio
+            </Link>
+            <Link href="/servicios" className="text-muted-foreground transition-colors hover:text-foreground">
                 Servicios
             </Link>
             <Link href="/sobre-nosotros" className="text-muted-foreground transition-colors hover:text-foreground">

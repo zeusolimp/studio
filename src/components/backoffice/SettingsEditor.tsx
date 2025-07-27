@@ -11,6 +11,7 @@ import { Input } from '@/components/ui/input';
 import ImageUploader from './ImageUploader';
 import { Save, Loader } from 'lucide-react';
 import ColorPicker from './ColorPicker';
+import { useTranslations } from 'next-intl';
 
 interface SettingsEditorProps {
     initialSettings: SiteSettings;
@@ -20,6 +21,7 @@ export default function SettingsEditor({ initialSettings }: SettingsEditorProps)
   const [settings, setSettings] = useState<SiteSettings>(initialSettings);
   const [isSaving, setIsSaving] = useState(false);
   const { toast } = useToast();
+  const t = useTranslations('Backoffice');
 
   const handleSave = async () => {
     setIsSaving(true);
@@ -33,14 +35,14 @@ export default function SettingsEditor({ initialSettings }: SettingsEditorProps)
         throw new Error('Falha ao guardar as configurações');
       }
       toast({
-        title: "Sucesso!",
-        description: "As suas configurações foram guardadas. Serão aplicadas na próxima atualização da página.",
+        title: t('saveSuccessTitle'),
+        description: t('saveSuccessDescription'),
       });
     } catch (error) {
       toast({
         variant: "destructive",
-        title: "Erro",
-        description: "Não foi possível guardar as configurações. Por favor, tente novamente.",
+        title: t('saveErrorTitle'),
+        description: t('saveErrorDescription'),
       });
     } finally {
       setIsSaving(false);
@@ -80,7 +82,7 @@ export default function SettingsEditor({ initialSettings }: SettingsEditorProps)
         <h1 className="text-3xl font-headline">Configurações do Site</h1>
         <Button onClick={handleSave} disabled={isSaving} size="lg">
             {isSaving ? <Loader className="mr-2 h-4 w-4 animate-spin" /> : <Save className="mr-2 h-4 w-4" />}
-            {isSaving ? 'A guardar...' : 'Guardar Configurações'}
+            {isSaving ? t('savingButton') : t('saveButton')}
         </Button>
       </div>
       

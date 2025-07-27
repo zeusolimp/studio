@@ -14,6 +14,7 @@ import FeaturedArticleEditor from './FeaturedArticleEditor';
 import FooterSectionEditor from './FooterSectionEditor';
 import { Save, Loader } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useTranslations } from 'next-intl';
 
 const sectionEditorComponents = {
   hero: HeroSectionEditor,
@@ -32,17 +33,19 @@ interface ContentEditorProps {
 }
 
 const locales: Locale[] = ['pt', 'es', 'en', 'fr'];
-const localeNames = {
-    pt: 'Português',
-    es: 'Español',
-    en: 'English',
-    fr: 'Français'
-}
 
 export default function ContentEditor({ initialContent, allowedSections }: ContentEditorProps) {
   const [content, setContent] = useState<LandingContent>(initialContent);
   const [isSaving, setIsSaving] = useState(false);
   const { toast } = useToast();
+  const t = useTranslations('Backoffice');
+
+  const localeNames: {[key in Locale]: string} = {
+    pt: t('pt'),
+    es: t('es'),
+    en: t('en'),
+    fr: t('fr')
+  }
 
   const handleSave = async () => {
     setIsSaving(true);
@@ -56,14 +59,14 @@ export default function ContentEditor({ initialContent, allowedSections }: Conte
         throw new Error('Falha ao guardar o conteúdo');
       }
       toast({
-        title: "Sucesso!",
-        description: "As suas alterações foram guardadas.",
+        title: t('saveSuccessTitle'),
+        description: t('saveSuccessDescription'),
       });
     } catch (error) {
       toast({
         variant: "destructive",
-        title: "Erro",
-        description: "Não foi possível guardar as alterações. Por favor, tente novamente.",
+        title: t('saveErrorTitle'),
+        description: t('saveErrorDescription'),
       });
     } finally {
       setIsSaving(false);
@@ -76,6 +79,19 @@ export default function ContentEditor({ initialContent, allowedSections }: Conte
     setContent({ ...content, sections: newSections });
   };
   
+  const getSectionTitle = (type: EditorComponentType) => {
+    const key = `${type.replace('-', '')}Section.title` as any;
+    try {
+        const translatedTitle = t(key);
+        if (translatedTitle && translatedTitle !== key) {
+            return t('sectionTitle', {title: translatedTitle});
+        }
+    } catch (e) {
+        // translation not found
+    }
+    return t('sectionTitle', {title: type.charAt(0).toUpperCase() + type.slice(1)});
+  }
+
   const renderSectionEditor = (section: Section, index: number) => {
     const sectionType = section.type as EditorComponentType;
     if (!allowedSections.includes(sectionType)) return null;
@@ -83,7 +99,7 @@ export default function ContentEditor({ initialContent, allowedSections }: Conte
     const EditorComponent = sectionEditorComponents[sectionType];
     if (!EditorComponent) return null;
 
-    const title = `${section.type.charAt(0).toUpperCase() + section.type.slice(1)} Section`;
+    const title = getSectionTitle(sectionType);
     
     // Check if any field in the section data is a localized string
     const isLocalized = Object.values(section).some(value => 
@@ -127,10 +143,10 @@ export default function ContentEditor({ initialContent, allowedSections }: Conte
   return (
     <div className="max-w-4xl mx-auto">
       <div className="flex justify-between items-center mb-6 pb-4 border-b">
-        <h1 className="text-3xl font-headline">Editor de Conteúdo</h1>
+        <h1 className="text-3xl font-headline">{t('title')}</h1>
         <Button onClick={handleSave} disabled={isSaving} size="lg">
             {isSaving ? <Loader className="mr-2 h-4 w-4 animate-spin" /> : <Save className="mr-2 h-4 w-4" />}
-            {isSaving ? 'A guardar...' : 'Guardar Alterações'}
+            {isSaving ? t('savingButton') : t('saveButton')}
         </Button>
       </div>
       

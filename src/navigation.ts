@@ -12,7 +12,15 @@ export const pathnames = {
   '/servicios': '/servicios',
   '/sobre-nosotros': '/sobre-nosotros',
   '/blog': '/blog',
-  '/contacto': '/contacto'
+  '/contacto': '/contacto',
+  '/backoffice': '/backoffice',
+  '/backoffice/inicio': '/backoffice/inicio',
+  '/backoffice/servicios': '/backoffice/servicios',
+  '/backoffice/sobre-nosotros': '/backoffice/sobre-nosotros',
+  '/backoffice/blog': '/backoffice/blog',
+  '/backoffice/contacto': '/backoffice/contacto',
+  '/backoffice/footer': '/backoffice/footer',
+  '/backoffice/configuracoes': '/backoffice/configuracoes'
 } satisfies Pathnames<typeof locales>;
 
 export const { Link, redirect, usePathname, useRouter } =

@@ -4,13 +4,15 @@ import Header from '@/components/landing/Header';
 import HeroSection from '@/components/landing/HeroSection';
 import FeaturesSection from '@/components/landing/FeaturesSection';
 import Footer from '@/components/landing/Footer';
-import type { Section, HeroSectionData, FeaturesSectionData, CtaSectionData, AboutUsSectionData } from '@/types';
+import type { Section, HeroSectionData, FeaturesSectionData, CtaSectionData, AboutUsSectionData, FeaturedArticleSectionData } from '@/types';
 import CtaSection from '@/components/landing/CtaSection';
 import AboutUsSection from '@/components/landing/AboutUsSection';
+import FeaturedArticleSection from '@/components/landing/FeaturedArticleSection';
 
 const sectionComponents = {
   hero: HeroSection,
   features: FeaturesSection,
+  'featured-article': FeaturedArticleSection,
   about: AboutUsSection,
   cta: CtaSection,
 };

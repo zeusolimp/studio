@@ -11,10 +11,12 @@ import HeroSectionEditor from '@/components/backoffice/HeroSectionEditor';
 import FeaturesSectionEditor from '@/components/backoffice/FeaturesSectionEditor';
 import CtaSectionEditor from '@/components/backoffice/CtaSectionEditor';
 import AboutUsSectionEditor from '@/components/backoffice/AboutUsSectionEditor';
+import FeaturedArticleEditor from './FeaturedArticleEditor';
 
 const sectionEditorComponents = {
   hero: HeroSectionEditor,
   features: FeaturesSectionEditor,
+  'featured-article': FeaturedArticleEditor,
   about: AboutUsSectionEditor,
   cta: CtaSectionEditor,
 };
@@ -76,7 +78,7 @@ export default function ContentTabs({ initialContent }: { initialContent: Landin
     const renderEditorFor = (type: Section['type']) => {
         const { section, index } = getSection(type);
         if (!section || index === -1) return <div>Section '{type}' not found.</div>;
-        const EditorComponent = sectionEditorComponents[type];
+        const EditorComponent = sectionEditorComponents[type as keyof typeof sectionEditorComponents];
         return <EditorComponent data={section as any} onChange={(newSectionData) => handleSectionChange(index, newSectionData)} />;
     }
 
@@ -93,12 +95,14 @@ export default function ContentTabs({ initialContent }: { initialContent: Landin
                 <TabsList className="flex flex-col h-auto justify-start items-stretch">
                     <TabsTrigger value="hero">Hero Section</TabsTrigger>
                     <TabsTrigger value="services">Services Section</TabsTrigger>
+                    <TabsTrigger value="featured-article">Featured Article</TabsTrigger>
                     <TabsTrigger value="about">About Us Section</TabsTrigger>
                     <TabsTrigger value="cta">CTA Section</TabsTrigger>
                 </TabsList>
                 <div className="flex-1">
                     <TabsContent value="hero" className="mt-0">{renderEditorFor('hero')}</TabsContent>
                     <TabsContent value="services" className="mt-0">{renderEditorFor('features')}</TabsContent>
+                    <TabsContent value="featured-article" className="mt-0">{renderEditorFor('featured-article')}</TabsContent>
                     <TabsContent value="about" className="mt-0">{renderEditorFor('about')}</TabsContent>
                     <TabsContent value="cta" className="mt-0">{renderEditorFor('cta')}</TabsContent>
                 </div>
@@ -106,4 +110,3 @@ export default function ContentTabs({ initialContent }: { initialContent: Landin
         </div>
     );
 }
-

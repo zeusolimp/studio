@@ -1,34 +1,38 @@
 
 "use client";
 
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Image from 'next/image';
 import { Link } from 'next-intl';
 import { DynamicIcon } from '@/components/DynamicIcon';
 import { useState, useEffect } from 'react';
 import type { FooterSectionData, SiteSettings, Locale } from '@/types';
-import { useLocale } from 'next-intl';
-
 
 const Footer = () => {
     const tFooter = useTranslations('Footer');
     const tHeader = useTranslations('Header');
     const [data, setData] = useState<FooterSectionData | null>(null);
     const [settings, setSettings] = useState<SiteSettings | null>(null);
+    const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
     const locale = useLocale() as Locale;
 
     useEffect(() => {
         async function fetchData() {
-            const contentRes = await fetch('/api/content');
-            const content = await contentRes.json();
-            const footerData = content.sections.find((s: any) => s.type === 'footer');
-            setData(footerData);
+            try {
+                const contentRes = await fetch('/api/content');
+                const content = await contentRes.json();
+                const footerData = content.sections.find((s: any) => s.type === 'footer');
+                setData(footerData);
 
-            const settingsRes = await fetch('/api/settings');
-            const siteSettings = await settingsRes.json();
-            setSettings(siteSettings);
+                const settingsRes = await fetch('/api/settings');
+                const siteSettings = await settingsRes.json();
+                setSettings(siteSettings);
+            } catch (error) {
+                console.error("Failed to fetch footer data", error);
+            }
         }
         fetchData();
+        setCurrentYear(new Date().getFullYear());
     }, []);
 
     if (!data || !settings) {
@@ -38,7 +42,6 @@ const Footer = () => {
     const { brand_description, social_links, legal_links, copyright_text } = data;
     const { contact } = settings;
 
-    const currentYear = new Date().getFullYear();
     const processedCopyright = (copyright_text[locale] || copyright_text.pt).replace('{year}', currentYear.toString());
 
     return (

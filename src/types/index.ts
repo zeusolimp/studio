@@ -40,6 +40,8 @@ export type AboutUsSectionData = {
   paragraph1: string;
   paragraph2: string;
   image_url: string;
+  button_text?: string;
+  button_link?: string;
 };
 
 export type CtaSectionData = {

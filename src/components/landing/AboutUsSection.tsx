@@ -1,7 +1,9 @@
 import type { AboutUsSectionData } from '@/types';
 import Image from 'next/image';
+import Link from 'next/link';
+import { Button } from '@/components/ui/button';
 
-const AboutUsSection = ({ title, paragraph1, paragraph2, image_url }: AboutUsSectionData) => {
+const AboutUsSection = ({ title, paragraph1, paragraph2, image_url, button_text, button_link }: AboutUsSectionData) => {
   return (
     <section id="about" className="py-20 md:py-24 bg-background min-h-screen flex flex-col justify-center">
       <div className="container mx-auto px-4">
@@ -14,6 +16,13 @@ const AboutUsSection = ({ title, paragraph1, paragraph2, image_url }: AboutUsSec
                 <p>{paragraph1}</p>
                 <p>{paragraph2}</p>
             </div>
+             {button_text && button_link && (
+              <div className="mt-8">
+                <Button asChild size="lg">
+                  <Link href={button_link}>{button_text}</Link>
+                </Button>
+              </div>
+            )}
           </div>
           <div>
             <Image

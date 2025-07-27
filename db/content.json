@@ -13,7 +13,7 @@
       "id": "features",
       "type": "features",
       "title": "Nuestros Servicios Principales",
-      "subtext": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "subtext": "En iddeia global, nos especializamos en una amplia gama de servicios de desarrollo de software, diseñados para impulsar la innovación y la eficiencia en tu negocio.",
       "items": [
         {
           "id": "feat1",
@@ -51,7 +51,9 @@
       "title": "Sobre Nosotros",
       "paragraph1": "Somos un equipo de innovadores, solucionadores de problemas y apasionados por la tecnología, dedicados a transformar ideas en realidades digitales. Nuestra misión es impulsar el éxito de nuestros clientes a través de soluciones de software excepcionales y un soporte técnico inigualable.",
       "paragraph2": "Con años de experiencia en la industria, hemos perfeccionado nuestro enfoque en la creación de aplicaciones web, sitios y sistemas que no solo son visualmente impactantes, sino también robustos, escalables y seguros. Creemos en la colaboración estrecha y la comunicación transparente para garantizar que cada proyecto sea un reflejo fiel de la visión de nuestros clientes.",
-      "image_url": "https://placehold.co/600x400.png"
+      "image_url": "https://placehold.co/600x400.png",
+      "button_text": "¿Quiénes somos?",
+      "button_link": "/sobre-nosotros"
     },
     {
       "id": "cta",

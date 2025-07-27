@@ -14,13 +14,13 @@
         "dashboard": "Tableau de Bord"
     },
     "BackofficeSidebar": {
-        "home": "Accueil",
+        "home": "Home",
         "services": "Services",
-        "about": "À propos",
+        "about": "About",
         "blog": "Blog",
         "contact": "Contact",
-        "footer": "Pied de page",
-        "settings": "Paramètres"
+        "footer": "Footer",
+        "settings": "Settings"
     },
     "ProjectBriefForm": {
         "title": "Briefing de Projet",
@@ -135,7 +135,7 @@
             "deleteFeature": "Supprimer la característica",
             "addFeature": "Ajouter une Caractéristique",
             "newFeatureTitle": "Nouvelle Caractéristique",
-            "newFeatureDescription": "Une brève description de cette nouvelle caractéristique."
+            "newFeatureDescription": "Une brève description de cette nouvelle característica."
         },
         "featuredArticleSection": {
             "title": "Article en Vedette",

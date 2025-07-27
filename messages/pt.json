@@ -14,13 +14,13 @@
         "dashboard": "Painel de Controlo"
     },
     "BackofficeSidebar": {
-        "home": "Início",
-        "services": "Serviços",
-        "about": "Nós",
+        "home": "Home",
+        "services": "Services",
+        "about": "About",
         "blog": "Blog",
-        "contact": "Contacto",
-        "footer": "Rodapé",
-        "settings": "Configurações"
+        "contact": "Contact",
+        "footer": "Footer",
+        "settings": "Settings"
     },
     "ProjectBriefForm": {
         "title": "Briefing do Projeto",

@@ -21,7 +21,7 @@ const HeroSection = ({ headline, subtext, cta_button_text, image_url }: HeroSect
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="md:col-start-2">
                 <div className="max-w-xl text-left">
-                     <h1 className="font-headline text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+                     <h1 className="font-headline text-4xl tracking-tight text-white md:text-5xl lg:text-6xl">
                         {headline}
                     </h1>
                     <p className="mt-6 text-lg text-gray-200">

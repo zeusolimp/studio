@@ -1,9 +1,8 @@
 
 "use client";
 
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations, useLocale, Link } from 'next-intl';
 import Image from 'next/image';
-import { Link } from 'next-intl';
 import { DynamicIcon } from '@/components/DynamicIcon';
 import { useState, useEffect } from 'react';
 import type { FooterSectionData, SiteSettings, Locale } from '@/types';
@@ -130,4 +129,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

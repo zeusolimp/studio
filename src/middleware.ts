@@ -1,9 +1,10 @@
-import createMiddleware from 'next-intl/middleware';
+
+import createNextIntlMiddleware from 'next-intl/middleware';
 
 export const locales = ['pt', 'es', 'en', 'fr'];
 export const defaultLocale = 'pt';
 
-export default createMiddleware({
+export default createNextIntlMiddleware({
   locales,
   defaultLocale,
 });

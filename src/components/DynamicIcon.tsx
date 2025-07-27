@@ -1,7 +1,7 @@
 "use client";
 
 import type { LucideProps } from 'lucide-react';
-import { Edit, Image, Move, Rocket, Users, ShieldCheck, PenTool, Code, Wand2, Ticket } from 'lucide-react';
+import { Edit, Image, Move, Rocket, Users, ShieldCheck, PenTool, Code, Wand2, Ticket, User, Mail, Building, Calendar, AppWindow, Link, Palette, PlusCircle, Trash2 } from 'lucide-react';
 
 export const iconMap = {
   Edit,
@@ -14,6 +14,15 @@ export const iconMap = {
   Code,
   Wand2,
   Ticket,
+  User,
+  Mail,
+  Building,
+  Calendar,
+  AppWindow,
+  Link,
+  Palette,
+  PlusCircle,
+  Trash2,
 };
 
 export type IconName = keyof typeof iconMap;

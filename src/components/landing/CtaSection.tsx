@@ -1,23 +1,18 @@
 import type { CtaSectionData } from '@/types';
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
+import ProjectBriefForm from './ProjectBriefForm';
 
 const CtaSection = ({ title, subtext, button_text }: CtaSectionData) => {
   return (
     <section id="cta" className="py-20 md:py-24 bg-secondary/20">
       <div className="container mx-auto px-4">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-4xl text-center">
           <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground md:text-4xl">
             {title}
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground">
+          <p className="mt-4 text-lg text-muted-foreground mb-12">
             {subtext}
           </p>
-          <div className="mt-8">
-            <Button asChild size="lg" style={{ backgroundColor: 'hsl(var(--accent))', color: 'hsl(var(--accent-foreground))' }} className="hover:opacity-90 shadow-lg shadow-accent/20">
-              <Link href="/backoffice">{button_text}</Link>
-            </Button>
-          </div>
+          <ProjectBriefForm />
         </div>
       </div>
     </section>

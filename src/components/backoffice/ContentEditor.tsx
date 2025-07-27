@@ -107,7 +107,7 @@ export default function ContentEditor({ initialContent, allowedSections }: Conte
         typeof value === 'object' && value !== null && !Array.isArray(value) && 'pt' in value && 'es' in value && 'en' in value && 'fr' in value
     );
     
-    if (isLocalized || section.type === 'features') {
+    if (isLocalized || section.type === 'features' || section.type === 'footer') {
         return (
              <Card key={`${section.id}-${index}`}>
                 <CardHeader>

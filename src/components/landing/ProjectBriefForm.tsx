@@ -36,7 +36,7 @@ const availableSections = [
     { id: "news", label: "Noticias" },
     { id: "contact", label: "Contacto" },
 ];
-const availableColors = ["#F97316", "#000000", "#8B5CF6", "#EC4899", "#A3A3A3", "#3B82F6", "#FBBF24", "#B91C1C", "#10B981", "#A855F7", "#F472B6"];
+const availableColors = ["#F97316", "#000000", "#8B5CF6", "#EC4899", "#A3A3A3", "#3B82F6", "#FBBF24", "#B91C1C", "#10B981", "#A855F7"];
 
 export default function ProjectBriefForm() {
   const { toast } = useToast();
@@ -61,7 +61,6 @@ export default function ProjectBriefForm() {
   });
 
   function onSubmit(data: BriefFormValues) {
-    console.log(data);
     toast({
       title: "Briefing Enviado!",
       description: "Gracias por completar el briefing. Nos pondremos en contacto contigo pronto.",

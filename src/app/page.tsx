@@ -1,3 +1,4 @@
+
 import { getContent } from '@/lib/content';
 import Header from '@/components/landing/Header';
 import HeroSection from '@/components/landing/HeroSection';
@@ -9,15 +10,18 @@ import AboutUsSection from '@/components/landing/AboutUsSection';
 
 const sectionComponents = {
   hero: HeroSection,
+  features: FeaturesSection,
+  about: AboutUsSection,
+  cta: CtaSection,
 };
 
 export default async function Home() {
   const content = await getContent();
 
   const renderSection = (section: Section) => {
-    if (section.type === 'hero') {
-      const Component = sectionComponents[section.type];
-      return <Component key={section.id} {...(section as HeroSectionData)} />;
+    const Component = sectionComponents[section.type as keyof typeof sectionComponents];
+    if (Component) {
+      return <Component key={section.id} {...(section as any)} />;
     }
     return null;
   };

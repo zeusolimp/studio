@@ -12,7 +12,7 @@ const Header = () => {
             <path d="M2 17l10 5 10-5"></path>
             <path d="M2 12l10 5 10-5"></path>
           </svg>
-          <span className="font-headline text-xl font-bold">Soluciones Digitales</span>
+          <span className="font-headline text-xl font-bold">iddeia global</span>
         </Link>
         <nav>
           <Button asChild variant="ghost" size="sm">

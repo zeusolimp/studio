@@ -16,7 +16,7 @@ export default function BackofficeLayout({
               <path d="M2 17l10 5 10-5"></path>
               <path d="M2 12l10 5 10-5"></path>
             </svg>
-            <span className="font-headline text-lg font-bold">Dynamic Landing</span>
+            <span className="font-headline text-lg font-bold">iddeia global</span>
             <span className="text-sm text-muted-foreground ml-2">Backoffice</span>
         </div>
         <div className="ml-auto flex items-center gap-2">

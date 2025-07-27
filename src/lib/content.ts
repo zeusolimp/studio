@@ -7,54 +7,232 @@ const dataFilePath = path.join(process.cwd(), 'db', 'content.json');
 const defaultContent: LandingContent = {
   sections: [
     {
-      id: 'hero',
-      type: 'hero',
-      headline: 'Build Your Landing Page, Dynamically',
-      subtext: 'Our platform allows you to edit every part of this page from a simple backoffice. No code required. Change text, images, and even the layout.',
-      cta_button_text: 'Try The Backoffice',
-      image_url: '/uploads/hero-image.png',
+      "id": "hero",
+      "type": "hero",
+      "headline": {
+        "pt": "Criamos Soluções Digitais à sua Medida",
+        "es": "Creamos Soluciones Digitales a tu Medida",
+        "en": "We Create Digital Solutions Tailored for You",
+        "fr": "Nous Créons des Solutions Numériques sur Mesure pour Vous"
+      },
+      "subtext": {
+        "pt": "Desde aplicações web inovadoras e websites impactantes até sistemas robustos e suporte técnico de confiança. Potenciamos o seu negócio com tecnologia.",
+        "es": "Desde aplicaciones web innovadoras y sitios web impactantes hasta sistemas robustos y soporte técnico confiable. Potenciamos tu negocio con tecnología.",
+        "en": "From innovative web applications and impactful websites to robust systems and reliable technical support. We power your business with technology.",
+        "fr": "Des applications web innovantes et des sites web percutants aux systèmes robustes et au support technique fiable. Nous propulsons votre entreprise avec la technologie."
+      },
+      "cta_button_text": {
+        "pt": "Conheça os Nossos Serviços",
+        "es": "Conoce Nuestros Servicios",
+        "en": "Discover Our Services",
+        "fr": "Découvrez Nos Services"
+      },
+      "image_url": "/uploads/1753575457803-fondo-codigo-hero.jpg"
     },
     {
-      id: 'features',
-      type: 'features',
-      title: 'Everything You Need, Nothing You Don\'t',
-      items: [
+      "id": "features",
+      "type": "features",
+      "title": {
+        "pt": "Os Nossos Serviços Principais",
+        "es": "Nuestros Servicios Principales",
+        "en": "Our Core Services",
+        "fr": "Nos Services Principaux"
+      },
+      "subtext": {
+        "pt": "Na iddeia global, especializamo-nos numa vasta gama de serviços de desenvolvimento de software, concebidos para impulsionar a inovação e a eficiência no seu negócio.",
+        "es": "En iddeia global, nos especializamos en una amplia gama de servicios de desarrollo de software, diseñados para impulsar la innovación y la eficiencia en tu negocio.",
+        "en": "At iddeia global, we specialize in a wide range of software development services, designed to drive innovation and efficiency in your business.",
+        "fr": "Chez iddeia global, nous nous spécialisons dans une large gamme de services de développement de logiciels, conçus pour stimuler l'innovation et l'efficacité de votre entreprise."
+      },
+      "items": [
         {
-          id: 'feat1',
-          icon: 'Edit',
-          title: 'Dynamic Text',
-          description: 'Update any text on your landing page instantly from the content editor.',
+          "id": "feat1",
+          "icon": "Code",
+          "title": {
+            "pt": "Desenvolvimento Web",
+            "es": "Desarrollo Web",
+            "en": "Web Development",
+            "fr": "Développement Web"
+          },
+          "description": {
+            "pt": "Criamos aplicações e websites à medida, otimizados para o desempenho e a experiência do utilizador.",
+            "es": "Creamos aplicaciones y sitios web a medida, optimizados para el rendimiento y la experiencia del usuario.",
+            "en": "We create custom applications and websites, optimized for performance and user experience.",
+            "fr": "Nous créons des applications et des sites web sur mesure, optimisés pour la performance et l'expérience utilisateur."
+          }
         },
         {
-          id: 'feat2',
-          icon: 'Image',
-          title: 'Image Uploads',
-          description: 'Change images with a simple file upload. Your new visuals go live immediately.',
+          "id": "feat2",
+          "icon": "PenTool",
+          "title": {
+            "pt": "Desenho de Sistemas",
+            "es": "Diseño de Sistemas",
+            "en": "System Design",
+            "fr": "Conception de Systèmes"
+          },
+          "description": {
+            "pt": "Desenhamos arquiteturas de software robustas e escaláveis para satisfazer as necessidades da sua empresa.",
+            "es": "Diseñamos arquitecturas de software robustas y escalables para satisfacer las necesidades de tu empresa.",
+            "en": "We design robust and scalable software architectures to meet your company's needs.",
+            "fr": "Nous concevons des architectures logicielles robustes et évolutives pour répondre aux besoins de votre entreprise."
+          }
         },
         {
-          id: 'feat3',
-          icon: 'Move',
-          title: 'Content Arrangement',
-          description: 'Reorder sections to perfectly match your narrative and marketing goals.',
+          "id": "feat3",
+          "icon": "Wand2",
+          "title": {
+            "pt": "Suporte Técnico",
+            "es": "Soporte Técnico",
+            "en": "Technical Support",
+            "fr": "Support Technique"
+          },
+          "description": {
+            "pt": "Oferecemos suporte técnico especializado, tanto online através de tickets como presencial, para resolver as suas incidências.",
+            "es": "Ofrecemos soporte técnico experto, tanto online a través de tickets como presencial, para resolver tus incidencias.",
+            "en": "We offer expert technical support, both online via tickets and in-person, to resolve your issues.",
+            "fr": "Nous offrons un support technique expert, en ligne via des tickets et sur site, pour résoudre vos incidents."
+          }
+        }
+      ]
+    },
+    {
+      "id": "featured-article",
+      "type": "featured-article",
+      "title": {
+        "pt": "Artigo em Destaque",
+        "es": "Artículo Destacado",
+        "en": "Featured Article",
+        "fr": "Article en Vedette"
+      },
+      "subtitle": {
+        "pt": "Maximizando a Eficiência com Desenvolvimento à Medida",
+        "es": "Maximizando la Eficiencia con Desarrollo a Medida",
+        "en": "Maximizing Efficiency with Custom Development",
+        "fr": "Maximiser l'Efficacité avec le Développement sur Mesure"
+      },
+      "text": {
+        "pt": "No dinâmico mundo da tecnologia, as soluções de software genéricas muitas vezes não conseguem satisfazer as necessidades específicas das empresas. O desenvolvimento à medida surge como uma estratégia chave para otimizar processos, melhorar a produtividade e obter uma vantagem competitiva sustentável. Ao criar software desenhado exclusivamente para os seus fluxos de trabalho, garante que cada função e característica está alinhada com os seus objetivos de negócio, eliminando funcionalidades desnecessárias e reduzindo a curva de aprendizagem para a sua equipa.\n\nAdotar uma solução à medida não só significa ter um sistema que se adapta perfeitamente à sua empresa, mas também contar com a flexibilidade para escalar e evoluir com ela. Ao contrário dos produtos de software padrão, uma aplicação personalizada pode ser modificada e expandida para responder às mudanças do mercado e às novas oportunidades, assegurando que o seu investimento tecnológico continue a ser relevante e rentável a longo prazo. Na iddeia global, especializamo-nos em transformar os seus requisitos únicos em software potente e eficiente.",
+        "es": "En el dinámico mundo de la tecnología, las soluciones de software genéricas a menudo no logran satisfacer las necesidades específicas de las empresas. El desarrollo a medida emerge como una estrategia clave para optimizar procesos, mejorar la productividad y obtener una ventaja competitiva sostenible. Al crear software diseñado exclusivamente para tus flujos de trabajo, te aseguras de que cada función y característica esté alineada con tus objetivos de negocio, eliminando funcionalidades innecesarias y reduciendo la curva de aprendizaje para tu equipo.\n\nAdoptar una solución a medida no solo significa tener un sistema que se adapta perfectamente a tu empresa, sino también contar con la flexibilidad para escalar y evolucionar junto a ella. A diferencia de los productos de software estándar, una aplicación personalizada puede ser modificada y ampliada para responder a los cambios del mercado y a las nuevas oportunidades, asegurando que tu inversión tecnológica siga siendo relevante y rentable a largo plazo. En iddeia global, nos especializamos en convertir tus requisitos únicos en software potente y eficiente.",
+        "en": "In the dynamic world of technology, generic software solutions often fail to meet the specific needs of businesses. Custom development emerges as a key strategy to optimize processes, improve productivity, and gain a sustainable competitive advantage. By creating software designed exclusively for your workflows, you ensure that every function and feature is aligned with your business goals, eliminating unnecessary functionalities and reducing the learning curve for your team.\n\nAopting for a custom solution not only means having a system that perfectly fits your company but also having the flexibility to scale and evolve with it. Unlike standard software products, a custom application can be modified and expanded to respond to market changes and new opportunities, ensuring that your technology investment remains relevant and profitable in the long term. At iddeia global, we specialize in transforming your unique requirements into powerful and efficient software.",
+        "fr": "Dans le monde dynamique de la technologie, les solutions logicielles génériques ne parviennent souvent pas à répondre aux besoins spécifiques des entreprises. Le développement sur mesure apparaît comme une stratégie clé pour optimiser les processus, améliorer la productivité et obtenir un avantage concurrentiel durable. En créant des logiciels conçus exclusivement pour vos flux de travail, vous vous assurez que chaque fonction et caractéristique est alignée sur vos objectifs commerciaux, en éliminant les fonctionnalités inutiles et en réduisant la courbe d'apprentissage pour votre équipe.\n\nAdopter une solution sur mesure ne signifie pas seulement avoir un système qui s'adapte parfaitement à votre entreprise, mais aussi avoir la flexibilité de l'adapter et d'évoluer avec elle. Contrairement aux produits logiciels standard, une application personnalisée peut être modifiée et étendue pour répondre aux changements du marché et aux nouvelles opportunités, garantissant que votre investissement technologique reste pertinent et rentable à long terme. Chez iddeia global, nous sommes spécialisés dans la transformation de vos exigences uniques en logiciels puissants et efficaces."
+      },
+      "image_url": "/uploads/1753579133668-fondo-codigo-hero.jpg",
+      "button_text": {
+        "pt": "Ir para o Blog",
+        "es": "Ir al Blog",
+        "en": "Go to the Blog",
+        "fr": "Aller au Blog"
+      },
+      "button_link": "/blog"
+    },
+    {
+      "id": "about",
+      "type": "about",
+      "title": {
+        "pt": "Sobre Nós",
+        "es": "Sobre Nosotros",
+        "en": "About Us",
+        "fr": "À Propos de Nous"
+      },
+      "paragraph1": {
+        "pt": "Somos uma equipa de inovadores, solucionadores de problemas e apaixonados por tecnologia, dedicados a transformar ideias em realidades digitais. A nossa missão é impulsionar o sucesso dos nossos clientes através de soluções de software excecionais e um suporte técnico inigualável.",
+        "es": "Somos un equipo de innovadores, solucionadores de problemas y apasionados por la tecnología, dedicados a transformar ideas en realidades digitales. Nuestra misión es impulsar el éxito de nuestros clientes a través de soluciones de software excepcionales y un soporte técnico inigualable.",
+        "en": "We are a team of innovators, problem solvers, and technology enthusiasts dedicated to turning ideas into digital realities. Our mission is to drive our clients' success through exceptional software solutions and unparalleled technical support.",
+        "fr": "Nous sommes une équipe d'innovateurs, de solutionneurs de problèmes et de passionnés de technologie, dédiés à transformer les idées en réalités numériques. Notre mission est de favoriser le succès de nos clients grâce à des solutions logicielles exceptionnelles et un support technique inégalé."
+      },
+      "paragraph2": {
+        "pt": "Com anos de experiência na indústria, aperfeiçoámos a nossa abordagem na criação de aplicações web, sites e sistemas que não são apenas visualmente impactantes, mas também robustos, escaláveis e seguros. Acreditamos na colaboração estreita e na comunicação transparente para garantir que cada projeto seja um reflexo fiel da visão dos nossos clientes.",
+        "es": "Con años de experiencia en la industria, hemos perfeccionado nuestro enfoque en la creación de aplicaciones web, sitios y sistemas que no solo son visualmente impactantes, sino también robustos, escalables y seguros. Creemos en la colaboración estrecha y la comunicación transparente para garantizar que cada proyecto sea un reflejo fiel de la visión de nuestros clientes.",
+        "en": "With years of industry experience, we have perfected our approach to creating web applications, sites, and systems that are not only visually striking but also robust, scalable, and secure. We believe in close collaboration and transparent communication to ensure that each project is a faithful reflection of our clients' vision.",
+        "fr": "Avec des années d'expérience dans l'industrie, nous avons perfectionné notre approche pour créer des applications web, des sites et des systèmes qui sont non seulement visuellement percutants, mais aussi robustes, évolutifs et sécurisés. Nous croyons en une collaboration étroite et une communication transparente pour garantir que chaque projet soit un reflet fidèle de la vision de nos clients."
+      },
+      "image_url": "/uploads/1753579140840-fondo-codigo-hero.jpg",
+      "button_text": {
+        "pt": "Quem somos?",
+        "es": "¿Quiénes somos?",
+        "en": "Who are we?",
+        "fr": "Qui sommes-nous ?"
+      },
+      "button_link": "/sobre-nosotros"
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "title": {
+        "pt": "Pronto para Começar o seu Próximo Projeto?",
+        "es": "¿Listo para Empezar tu Próximo Proyecto?",
+        "en": "Ready to Start Your Next Project?",
+        "fr": "Prêt à Démarrer Votre Prochain Projet ?"
+      },
+      "subtext": {
+        "pt": "Contacte-nos para descobrir como podemos ajudá-lo a alcançar os seus objetivos tecnológicos.",
+        "es": "Contáctanos para descubrir cómo podemos ayudarte a alcanzar tus objetivos tecnológicos.",
+        "en": "Contact us to find out how we can help you achieve your technological goals.",
+        "fr": "Contactez-nous pour découvrir comment nous pouvons vous aider à atteindre vos objectifs technologiques."
+      },
+      "button_text": {
+        "pt": "Crie um projeto connosco",
+        "es": "Crea un proyecto con nosotros",
+        "en": "Create a project with us",
+        "fr": "Créez un projet avec nous"
+      }
+    },
+    {
+      "id": "footer",
+      "type": "footer",
+      "brand_description": {
+        "pt": "Criamos soluções digitais à medida para potenciar o seu negócio com tecnologia.",
+        "es": "Creamos soluciones digitales a medida para potenciar tu negocio con tecnología.",
+        "en": "We create custom digital solutions to boost your business with technology.",
+        "fr": "Nous créons des solutions numériques sur mesure pour dynamiser votre entreprise avec la technologie."
+      },
+      "social_links": [
+        {
+          "id": "social1",
+          "platform": "Facebook",
+          "url": "#"
         },
+        {
+          "id": "social2",
+          "platform": "Instagram",
+          "url": "#"
+        },
+        {
+          "id": "social3",
+          "platform": "Linkedin",
+          "url": "#"
+        }
       ],
-    },
-     {
-      id: 'about',
-      type: 'about',
-      title: 'Sobre Nosotros',
-      paragraph1: 'Somos un equipo de innovadores, solucionadores de problemas y apasionados por la tecnología, dedicados a transformar ideas en realidades digitales. Nuestra misión es impulsar el éxito de nuestros clientes a través de soluciones de software excepcionales y un soporte técnico inigualable.',
-      paragraph2: 'Con años de experiencia en la industria, hemos perfeccionado nuestro enfoque en la creación de aplicaciones web, sitios y sistemas que no solo son visualmente impactantes, sino también robustos, escalables y seguros. Creemos en la colaboración estrecha y la comunicación transparente para garantizar que cada proyecto sea un reflejo fiel de la visión de nuestros clientes.',
-      image_url: 'https://placehold.co/600x400.png',
-    },
-    {
-      id: 'cta',
-      type: 'cta',
-      title: '¿Listo para Empezar tu Próximo Proyecto?',
-      subtext: 'Contáctanos para descubrir cómo podemos ayudarte a alcanzar tus objetivos tecnológicos.',
-      button_text: 'Crea un proyecto con nosotros',
-    },
-  ],
+      "legal_links": [
+        {
+          "id": "legal1",
+          "text": {
+            "pt": "Políticas de Privacidade",
+            "es": "Políticas de Privacidad",
+            "en": "Privacy Policies",
+            "fr": "Politiques de Confidentialité"
+          },
+          "url": "/politicas-privacidade"
+        },
+        {
+          "id": "legal2",
+          "text": {
+            "pt": "Livro de Reclamações",
+            "es": "Libro de Reclamaciones",
+            "en": "Complaints Book",
+            "fr": "Livre de Réclamations"
+          },
+          "url": "/livro-reclamacoes"
+        }
+      ],
+      "copyright_text": {
+        "pt": "{year} iddeia global. Todos os direitos reservados.",
+        "es": "{year} iddeia global. Todos los derechos reservados.",
+        "en": "{year} iddeia global. All rights reserved.",
+        "fr": "{year} iddeia global. Tous droits réservés."
+      }
+    }
+  ]
 };
 
 export async function getContent(): Promise<LandingContent> {

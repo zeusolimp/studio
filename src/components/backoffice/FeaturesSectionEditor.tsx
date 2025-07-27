@@ -1,4 +1,4 @@
-import type { FeaturesSectionData, FeatureItem } from '@/types';
+import type { FeaturesSectionData, FeatureItem, Locale } from '@/types';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -10,18 +10,26 @@ import { Textarea } from '../ui/textarea';
 interface FeaturesSectionEditorProps {
   data: FeaturesSectionData;
   onChange: (newData: FeaturesSectionData) => void;
+  locale: Locale;
 }
 
 const availableIcons = Object.keys(iconMap);
 
-export default function FeaturesSectionEditor({ data, onChange }: FeaturesSectionEditorProps) {
+export default function FeaturesSectionEditor({ data, onChange, locale }: FeaturesSectionEditorProps) {
   const handleChange = (field: 'title' | 'subtext', value: string) => {
-    onChange({ ...data, [field]: value });
+    onChange({ ...data, [field]: { ...data[field], [locale]: value } });
   };
 
-  const handleItemChange = (index: number, field: keyof FeatureItem, value: string) => {
+  const handleItemChange = (index: number, field: keyof FeatureItem, value: any) => {
     const newItems = [...data.items];
-    newItems[index] = { ...newItems[index], [field]: value };
+    const item = newItems[index];
+
+    if (field === 'title' || field === 'description') {
+        item[field][locale] = value;
+    } else {
+        (item as any)[field] = value;
+    }
+    
     onChange({ ...data, items: newItems });
   };
   
@@ -29,8 +37,8 @@ export default function FeaturesSectionEditor({ data, onChange }: FeaturesSectio
     const newItem: FeatureItem = {
       id: `feat-${Date.now()}`,
       icon: 'PenTool',
-      title: 'Nova Funcionalidade',
-      description: 'Uma breve descrição desta nova funcionalidade.',
+      title: { pt: 'Nova Funcionalidade', es: 'Nueva Característica', en: 'New Feature', fr: 'Nouvelle fonctionnalité' },
+      description: { pt: 'Uma breve descrição desta nova funcionalidade.', es: 'Una breve descripción de esta nueva característica.', en: 'A brief description of this new feature.', fr: 'Une brève description de cette nouvelle fonctionnalité.' },
     };
     onChange({ ...data, items: [...data.items, newItem] });
   };
@@ -43,19 +51,19 @@ export default function FeaturesSectionEditor({ data, onChange }: FeaturesSectio
   return (
     <div className="space-y-6">
       <div className="space-y-2">
-        <Label htmlFor={`title-${data.id}`}>Título da Secção</Label>
+        <Label htmlFor={`title-${data.id}-${locale}`}>Título da Secção</Label>
         <Input
-          id={`title-${data.id}`}
-          value={data.title}
+          id={`title-${data.id}-${locale}`}
+          value={data.title[locale]}
           onChange={(e) => handleChange('title', e.target.value)}
         />
       </div>
 
        <div className="space-y-2">
-        <Label htmlFor={`subtext-${data.id}`}>Subtexto</Label>
+        <Label htmlFor={`subtext-${data.id}-${locale}`}>Subtexto</Label>
         <Textarea
-          id={`subtext-${data.id}`}
-          value={data.subtext}
+          id={`subtext-${data.id}-${locale}`}
+          value={data.subtext[locale]}
           onChange={(e) => handleChange('subtext', e.target.value)}
         />
       </div>
@@ -70,8 +78,8 @@ export default function FeaturesSectionEditor({ data, onChange }: FeaturesSectio
             </Button>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                    <Label htmlFor={`item-title-${item.id}`}>Título</Label>
-                    <Input id={`item-title-${item.id}`} value={item.title} onChange={(e) => handleItemChange(index, 'title', e.target.value)} />
+                    <Label htmlFor={`item-title-${item.id}-${locale}`}>Título</Label>
+                    <Input id={`item-title-${item.id}-${locale}`} value={item.title[locale]} onChange={(e) => handleItemChange(index, 'title', e.target.value)} />
                 </div>
                 <div className="space-y-2">
                     <Label htmlFor={`item-icon-${item.id}`}>Ícone</Label>
@@ -88,8 +96,8 @@ export default function FeaturesSectionEditor({ data, onChange }: FeaturesSectio
                 </div>
             </div>
             <div className="space-y-2">
-                <Label htmlFor={`item-desc-${item.id}`}>Descrição</Label>
-                <Input id={`item-desc-${item.id}`} value={item.description} onChange={(e) => handleItemChange(index, 'description', e.target.value)} />
+                <Label htmlFor={`item-desc-${item.id}-${locale}`}>Descrição</Label>
+                <Input id={`item-desc-${item.id}-${locale}`} value={item.description[locale]} onChange={(e) => handleItemChange(index, 'description', e.target.value)} />
             </div>
           </div>
         ))}

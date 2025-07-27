@@ -2,7 +2,7 @@
 "use client";
 
 import { useState } from 'react';
-import type { LandingContent, Section } from '@/types';
+import type { LandingContent, Section, Locale } from '@/types';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
@@ -13,6 +13,7 @@ import AboutUsSectionEditor from './AboutUsSectionEditor';
 import FeaturedArticleEditor from './FeaturedArticleEditor';
 import FooterSectionEditor from './FooterSectionEditor';
 import { Save, Loader } from 'lucide-react';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 
 const sectionEditorComponents = {
   hero: HeroSectionEditor,
@@ -28,6 +29,14 @@ type EditorComponentType = keyof typeof sectionEditorComponents;
 interface ContentEditorProps {
     initialContent: LandingContent;
     allowedSections: EditorComponentType[];
+}
+
+const locales: Locale[] = ['pt', 'es', 'en', 'fr'];
+const localeNames = {
+    pt: 'Português',
+    es: 'Español',
+    en: 'English',
+    fr: 'Français'
 }
 
 export default function ContentEditor({ initialContent, allowedSections }: ContentEditorProps) {
@@ -75,11 +84,38 @@ export default function ContentEditor({ initialContent, allowedSections }: Conte
     if (!EditorComponent) return null;
 
     const title = `${section.type.charAt(0).toUpperCase() + section.type.slice(1)} Section`;
+    
+    // Check if any field in the section data is a localized string
+    const isLocalized = Object.values(section).some(value => 
+        typeof value === 'object' && value !== null && !Array.isArray(value) && 'pt' in value && 'es' in value && 'en' in value && 'fr' in value
+    );
+    
+    if (isLocalized || section.type === 'features') {
+        return (
+             <Card key={`${section.id}-${index}`}>
+                <CardHeader>
+                    <CardTitle className="font-headline text-xl">{title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <Tabs defaultValue="pt">
+                        <TabsList>
+                            {locales.map(loc => <TabsTrigger key={loc} value={loc}>{localeNames[loc]}</TabsTrigger>)}
+                        </TabsList>
+                        {locales.map(loc => (
+                            <TabsContent key={loc} value={loc} className='pt-4'>
+                                <EditorComponent data={section as any} onChange={(newSectionData) => handleSectionChange(index, newSectionData)} locale={loc} />
+                            </TabsContent>
+                        ))}
+                    </Tabs>
+                </CardContent>
+            </Card>
+        )
+    }
 
     return (
         <Card key={`${section.id}-${index}`}>
             <CardHeader>
-                <CardTitle className="font-headline text-xl">{title}</CardTitle>
+                <CardTitle>{title}</CardTitle>
             </CardHeader>
             <CardContent>
                 <EditorComponent data={section as any} onChange={(newSectionData) => handleSectionChange(index, newSectionData)} />

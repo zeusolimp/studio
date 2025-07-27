@@ -1,49 +1,58 @@
 
-import Link from 'next/link';
+import Link from 'next-intl/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { LayoutDashboard } from 'lucide-react';
 import { ThemeToggle } from '../ThemeToggle';
 import { getSettings } from '@/lib/settings';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useTranslations } from 'next-intl';
 
-const Header = async () => {
-  const settings = await getSettings();
+const Header = () => {
+  const t = useTranslations('Header');
+  // I need to do this because getSettings is an async function and this is a server component
+  // so I cannot use async/await here. I will just read the settings in an async function and then
+  // call the component with the settings as props.
+  const getSettingsPayload = async () => {
+    return await getSettings();
+  }
+
+  const NavLinks = () => {
+    return (
+        <>
+            <Link href="/" className="text-muted-foreground transition-colors hover:text-foreground">
+                {t('home')}
+            </Link>
+            <Link href="/servicios" className="text-muted-foreground transition-colors hover:text-foreground">
+                {t('services')}
+            </Link>
+            <Link href="/sobre-nosotros" className="text-muted-foreground transition-colors hover:text-foreground">
+                {t('about')}
+            </Link>
+            <Link href="/blog" className="text-muted-foreground transition-colors hover:text-foreground">
+                {t('blog')}
+            </Link>
+            <Link href="/contacto" className="text-muted-foreground transition-colors hover:text-foreground">
+                {t('contact')}
+            </Link>
+        </>
+    )
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container flex h-16 max-w-screen-2xl items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          {settings.logo_url ? (
-            <Image src={settings.logo_url} alt="iddeia global logo" width={32} height={32} className="h-8 w-8" />
-          ) : (
-             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7 text-accent">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                <path d="M2 17l10 5 10-5"></path>
-                <path d="M2 12l10 5 10-5"></path>
-            </svg>
-          )}
+          {/* This component cannot be async, so I will do a trick to get the settings */}
+          <HeaderLogo getSettingsPayload={getSettingsPayload} />
           <span className="font-headline text-xl font-bold">iddeia global</span>
         </Link>
         
         <div className="flex items-center gap-6">
             <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
-                <Link href="/" className="text-muted-foreground transition-colors hover:text-foreground">
-                    Início
-                </Link>
-                <Link href="/servicios" className="text-muted-foreground transition-colors hover:text-foreground">
-                    Serviços
-                </Link>
-                <Link href="/sobre-nosotros" className="text-muted-foreground transition-colors hover:text-foreground">
-                    Quem somos
-                </Link>
-                <Link href="/blog" className="text-muted-foreground transition-colors hover:text-foreground">
-                    Blog
-                </Link>
-                <Link href="/contacto" className="text-muted-foreground transition-colors hover:text-foreground">
-                    Contacto
-                </Link>
+                <NavLinks />
             </nav>
             <div className="flex items-center gap-2">
+                <LanguageSwitcher />
                 <ThemeToggle />
             </div>
         </div>
@@ -51,5 +60,23 @@ const Header = async () => {
     </header>
   );
 };
+
+const HeaderLogo = async ({ getSettingsPayload }: { getSettingsPayload: () => Promise<any> }) => {
+    const settings = await getSettingsPayload();
+    return (
+        <>
+            {settings.logo_url ? (
+                <Image src={settings.logo_url} alt="iddeia global logo" width={32} height={32} className="h-8 w-8" />
+            ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7 text-accent">
+                    <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                    <path d="M2 17l10 5 10-5"></path>
+                    <path d="M2 12l10 5 10-5"></path>
+                </svg>
+            )}
+        </>
+    )
+}
+
 
 export default Header;

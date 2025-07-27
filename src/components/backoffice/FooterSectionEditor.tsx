@@ -1,5 +1,5 @@
 
-import type { FooterSectionData, SocialLink, FooterLink } from '@/types';
+import type { FooterSectionData, SocialLink, FooterLink, Locale } from '@/types';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -10,11 +10,12 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 interface FooterSectionEditorProps {
   data: FooterSectionData;
   onChange: (newData: FooterSectionData) => void;
+  locale: Locale;
 }
 
-export default function FooterSectionEditor({ data, onChange }: FooterSectionEditorProps) {
-  const handleChange = (field: keyof FooterSectionData, value: string) => {
-    onChange({ ...data, [field]: value });
+export default function FooterSectionEditor({ data, onChange, locale }: FooterSectionEditorProps) {
+  const handleLocalizedStringChange = (field: 'brand_description' | 'copyright_text', value: string) => {
+    onChange({ ...data, [field]: { ...data[field], [locale]: value } });
   };
 
   const handleSocialLinkChange = (index: number, field: keyof SocialLink, value: string) => {
@@ -33,14 +34,23 @@ export default function FooterSectionEditor({ data, onChange }: FooterSectionEdi
     onChange({ ...data, social_links: newLinks });
   };
   
-  const handleLegalLinkChange = (index: number, field: keyof FooterLink, value: string) => {
+  const handleLegalLinkChange = (index: number, field: keyof FooterLink, value: any) => {
     const newLinks = [...data.legal_links];
-    newLinks[index] = { ...newLinks[index], [field]: value };
+    const link = newLinks[index];
+    if (field === 'text') {
+        link[field][locale] = value;
+    } else {
+        (link as any)[field] = value;
+    }
     onChange({ ...data, legal_links: newLinks });
   };
 
   const handleAddLegalLink = () => {
-    const newLink: FooterLink = { id: `legal-${Date.now()}`, text: 'Novo Link', url: '#' };
+    const newLink: FooterLink = { 
+        id: `legal-${Date.now()}`, 
+        text: { pt: 'Novo Link', es: 'Nuevo Enlace', en: 'New Link', fr: 'Nouveau lien' }, 
+        url: '#' 
+    };
     onChange({ ...data, legal_links: [...data.legal_links, newLink] });
   };
 
@@ -53,8 +63,8 @@ export default function FooterSectionEditor({ data, onChange }: FooterSectionEdi
   return (
     <div className="space-y-6">
       <div className="space-y-2">
-        <Label htmlFor={`desc-${data.id}`}>Descrição da Marca</Label>
-        <Textarea id={`desc-${data.id}`} value={data.brand_description} onChange={(e) => handleChange('brand_description', e.target.value)} />
+        <Label htmlFor={`desc-${data.id}-${locale}`}>Descrição da Marca</Label>
+        <Textarea id={`desc-${data.id}-${locale}`} value={data.brand_description[locale]} onChange={(e) => handleLocalizedStringChange('brand_description', e.target.value)} />
       </div>
 
       <div className="space-y-4 border-t pt-4">
@@ -92,8 +102,8 @@ export default function FooterSectionEditor({ data, onChange }: FooterSectionEdi
              <div key={link.id} className="flex items-end gap-2 p-2 border rounded-md bg-background/50">
                 <div className="grid grid-cols-2 gap-2 flex-grow">
                      <div className="space-y-1">
-                        <Label htmlFor={`legal-text-${link.id}`} className="text-xs">Texto</Label>
-                        <Input id={`legal-text-${link.id}`} value={link.text} onChange={(e) => handleLegalLinkChange(index, 'text', e.target.value)} />
+                        <Label htmlFor={`legal-text-${link.id}-${locale}`} className="text-xs">Texto</Label>
+                        <Input id={`legal-text-${link.id}-${locale}`} value={link.text[locale]} onChange={(e) => handleLegalLinkChange(index, 'text', e.target.value)} />
                     </div>
                      <div className="space-y-1">
                         <Label htmlFor={`legal-url-${link.id}`} className="text-xs">URL</Label>
@@ -109,8 +119,8 @@ export default function FooterSectionEditor({ data, onChange }: FooterSectionEdi
       </div>
       
        <div className="space-y-2 border-t pt-4">
-        <Label htmlFor={`copyright-${data.id}`}>Texto de Copyright</Label>
-        <Input id={`copyright-${data.id}`} value={data.copyright_text} onChange={(e) => handleChange('copyright_text', e.target.value)} />
+        <Label htmlFor={`copyright-${data.id}-${locale}`}>Texto de Copyright</Label>
+        <Input id={`copyright-${data.id}-${locale}`} value={data.copyright_text[locale]} onChange={(e) => handleLocalizedStringChange('copyright_text', e.target.value)} />
         <p className="text-xs text-muted-foreground">Pode usar `'{'{year}'}'` como placeholder para o ano atual.</p>
       </div>
     </div>

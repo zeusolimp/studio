@@ -1,7 +1,7 @@
 
 "use client";
 
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { DynamicIcon } from '@/components/DynamicIcon';
@@ -14,6 +14,18 @@ const Footer = () => {
     const [settings, setSettings] = useState<SiteSettings | null>(null);
     const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
     const locale = useLocale() as Locale;
+    const tHeader = useTranslations('Header');
+    const tFooter = useTranslations('Footer');
+
+    const navTranslations = {
+        home: tHeader('home'),
+        services: tHeader('services'),
+        about: tHeader('about'),
+        blog: tHeader('blog'),
+        contact: tHeader('contact'),
+        dashboard: tFooter('dashboard'),
+        navigation: tFooter('navigation')
+    };
 
     useEffect(() => {
         async function fetchData() {
@@ -66,10 +78,10 @@ const Footer = () => {
                 </p>
             </div>
 
-            <FooterNav />
+            <FooterNav translations={navTranslations} />
 
             <div>
-                <h3 className="font-headline text-lg font-semibold mb-4">Contacto</h3>
+                <h3 className="font-headline text-lg font-semibold mb-4">{tFooter('contact')}</h3>
                 <div className="flex flex-col gap-3 text-muted-foreground text-sm">
                 <div className="flex items-center gap-3">
                     <DynamicIcon name="Mail" className="h-4 w-4 text-accent" />
@@ -87,7 +99,7 @@ const Footer = () => {
             </div>
 
             <div>
-                <h3 className="font-headline text-lg font-semibold mb-4">Síguenos</h3>
+                <h3 className="font-headline text-lg font-semibold mb-4">{tFooter('follow_us')}</h3>
                 <div className="flex items-center gap-4">
                  {social_links.map(social => (
                      <a key={social.id} href={social.url} target='_blank' rel="noopener noreferrer" aria-label={social.platform} className="text-muted-foreground hover:text-accent transition-colors">

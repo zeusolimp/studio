@@ -1,13 +1,13 @@
 
 "use client";
 
-import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
-import Link from 'next/link';
 import { DynamicIcon } from '@/components/DynamicIcon';
 import { useState, useEffect } from 'react';
 import type { FooterSectionData, SiteSettings, Locale } from '@/types';
 import FooterNav from './FooterNav';
+import { useLocale, useTranslations } from 'next-intl';
+import { Link } from '@/navigation';
 
 const Footer = () => {
     const [data, setData] = useState<FooterSectionData | null>(null);

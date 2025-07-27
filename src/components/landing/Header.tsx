@@ -18,7 +18,7 @@ const Header = () => {
         </Link>
         <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
             <Link href="/" className="text-muted-foreground transition-colors hover:text-foreground">
-                Inicio
+                Iniciar
             </Link>
             <Link href="/servicios" className="text-muted-foreground transition-colors hover:text-foreground">
                 Servicios

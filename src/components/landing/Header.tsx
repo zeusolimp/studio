@@ -1,3 +1,4 @@
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { LayoutDashboard } from 'lucide-react';
@@ -15,6 +16,17 @@ const Header = () => {
           </svg>
           <span className="font-headline text-xl font-bold">iddeia global</span>
         </Link>
+        <nav className="hidden md:flex items-center gap-6 text-sm font-medium">
+            <Link href="/#features" className="text-muted-foreground transition-colors hover:text-foreground">
+                Servicios
+            </Link>
+            <Link href="/#about" className="text-muted-foreground transition-colors hover:text-foreground">
+                Quiénes somos
+            </Link>
+            <Link href="/#cta" className="text-muted-foreground transition-colors hover:text-foreground">
+                Contacto
+            </Link>
+        </nav>
         <nav className="flex items-center gap-2">
           <Button asChild variant="ghost" size="sm">
             <Link href="/backoffice">

@@ -1,0 +1,169 @@
+
+{
+    "Header": {
+        "home": "Inicio",
+        "services": "Servicios",
+        "about": "Quiénes somos",
+        "blog": "Blog",
+        "contact": "Contacto"
+    },
+    "Footer": {
+        "navigation": "Navegación",
+        "contact": "Contacto",
+        "follow_us": "Síguenos",
+        "dashboard": "Panel de Control"
+    },
+    "ProjectBriefForm": {
+        "title": "Briefing del Proyecto",
+        "description": "Por favor, complete los detalles a continuación para que podamos entender su proyecto.",
+        "fullName": "Nombre Completo",
+        "fullNamePlaceholder": "Tu nombre",
+        "fullNameRequired": "El nombre completo es obligatorio",
+        "email": "Dirección de Correo Electrónico",
+        "emailPlaceholder": "tu@email.com",
+        "emailInvalid": "Email inválido",
+        "companyName": "Nombre de la Empresa (Opcional)",
+        "companyNamePlaceholder": "Acme Inc.",
+        "idealTimeframe": "Plazo Ideal (Opcional)",
+        "idealTimeframePlaceholder": "ej: 3-6 meses",
+        "projectType": "Tipo de Proyecto",
+        "projectTypePlaceholder": "Seleccione un tipo de proyecto",
+        "projectTypeRequired": "Debe seleccionar un tipo de proyecto",
+        "projectTypes": {
+            "corporate": "Sitio Web Corporativo",
+            "ecommerce": "E-commerce",
+            "webapp": "Aplicación Web",
+            "blog": "Blog",
+            "landing": "Landing Page",
+            "other": "Otro"
+        },
+        "requiredSections": "Secciones Requeridas",
+        "sections": {
+            "home": "Inicio",
+            "about": "Quiénes Somos",
+            "services": "Servicios",
+            "news": "Noticias",
+            "contact": "Contacto"
+        },
+        "referenceSites": "Sitios de Referencia (Opcional)",
+        "referenceSitesPlaceholder": "https://ejemplo.com",
+        "addAnotherSite": "Añadir otro sitio",
+        "invalidUrl": "URL inválida",
+        "favoriteColors": "Colores Favoritos (Elija hasta 3)",
+        "favoriteColorsRequired": "Elija al menos un color.",
+        "favoriteColorsMax": "Puede elegir hasta 3 colores.",
+        "projectDescription": "Descripción del Proyecto",
+        "projectDescriptionPlaceholder": "Cuéntenos sobre sus objetivos, público objetivo y cualquier funcionalidad específica que tenga en mente.",
+        "projectDescriptionMin": "La descripción debe tener al menos 10 caracteres.",
+        "submitButton": "Enviar Brief",
+        "submitSuccessTitle": "¡Briefing Enviado!",
+        "submitSuccessDescription": "Gracias por completar el briefing. Nos pondremos en contacto con usted en breve."
+    },
+     "BlogPage": {
+        "title": "Nuestro Blog",
+        "description": "Ideas, tutoriales y noticias del mundo de la tecnología y el desarrollo de software.",
+        "comingSoonTitle": "¡Próximamente!",
+        "comingSoonDescription": "Estamos trabajando en contenido increíble para ti.",
+        "pastArticlesTitle": "Artículos Anteriores (Ejemplos)",
+        "viewMoreButton": "Ver más artículos",
+        "article1": {
+            "category": "Desarrollo de Software",
+            "title": "Maximizando la Eficiencia con Desarrollo a Medida",
+            "excerpt": "Descubre cómo las soluciones de software personalizadas pueden transformar tus operaciones, mejorar la productividad y darte una ventaja competitiva sostenible en el mercado actual.",
+            "author": "El Equipo de Iddeia",
+            "date": "Hace 2 días"
+        },
+        "article2": {
+            "category": "Arquitectura de Software",
+            "title": "La Importancia de una Arquitectura de Sistema Robusta",
+            "excerpt": "Una base sólida es la clave para el éxito a largo plazo. Exploramos por qué una arquitectura bien diseñada es crucial para la escalabilidad, mantenimiento y seguridad de tu aplicación.",
+            "author": "El Equipo de Iddeia",
+            "date": "Hace 1 semana"
+        },
+        "article3": {
+            "category": "Soporte Técnico",
+            "title": "Soporte Técnico: Tu Aliado Estratégico Post-Lanzamiento",
+            "excerpt": "El lanzamiento es solo el comienzo. Aprende cómo un buen servicio de soporte técnico no solo resuelve problemas, sino que también impulsa la mejora continua de tu producto.",
+            "author": "El Equipo de Iddeia",
+            "date": "Hace 2 semanas"
+        }
+    },
+    "NotFound": {
+        "pageTitle": "Página No Encontrada",
+        "title": "Página no encontrada.",
+        "cta": "Ir a la página de inicio"
+    },
+    "Backoffice": {
+        "title": "Editor de Contenido",
+        "saveButton": "Guardar Cambios",
+        "savingButton": "Guardando...",
+        "saveSuccessTitle": "¡Éxito!",
+        "saveSuccessDescription": "Tus cambios han sido guardados.",
+        "saveErrorTitle": "Error",
+        "saveErrorDescription": "No se pudieron guardar los cambios. Por favor, inténtalo de nuevo.",
+        "sectionTitle": "Sección {title}",
+        "language": "Idioma",
+        "pt": "Portugués",
+        "es": "Español",
+        "en": "Inglés",
+        "fr": "Francés",
+        "heroSection": {
+            "title": "Hero",
+            "headline": "Titular",
+            "subtext": "Subtexto",
+            "buttonText": "Texto del Botón",
+            "image": "Imagen Hero"
+        },
+        "featuresSection": {
+            "title": "Características",
+            "sectionTitle": "Título de la Sección",
+            "subtext": "Subtexto",
+            "features": "Características",
+            "itemTitle": "Título",
+            "itemIcon": "Icono",
+            "selectIcon": "Seleccione un icono",
+            "itemDescription": "Descripción",
+            "deleteFeature": "Eliminar característica",
+            "addFeature": "Añadir Característica",
+            "newFeatureTitle": "Nueva Característica",
+            "newFeatureDescription": "Una breve descripción de esta nueva característica."
+        },
+        "featuredArticleSection": {
+            "title": "Artículo Destacado",
+            "mainTitle": "Título",
+            "subtitle": "Subtítulo",
+            "text": "Texto",
+            "buttonText": "Texto del Botón",
+            "buttonLink": "Enlace del Botón",
+            "image": "Imagen Destacada"
+        },
+        "aboutUsSection": {
+            "title": "Sobre Nosotros",
+            "mainTitle": "Título",
+            "paragraph1": "Párrafo 1",
+            "paragraph2": "Párrafo 2",
+            "buttonText": "Texto del Botón",
+            "buttonLink": "Enlace del Botón",
+            "image": "Imagen Sobre Nosotros"
+        },
+        "ctaSection": {
+            "title": "CTA",
+            "mainTitle": "Título",
+            "subtext": "Subtexto",
+            "buttonText": "Texto del Botón"
+        },
+        "footerSection": {
+            "title": "Pie de Página",
+            "brandDescription": "Descripción de la Marca",
+            "socialLinks": "Enlaces de Redes Sociales",
+            "platform": "Plataforma",
+            "url": "URL",
+            "addSocialLink": "Añadir Enlace Social",
+            "legalLinks": "Enlaces Legales",
+            "text": "Texto",
+            "addLegalLink": "Añadir Enlace Legal",
+            "copyrightText": "Texto de Copyright",
+            "copyrightPlaceholder": "Puedes usar '{year}' como marcador de posición para el año actual."
+        }
+    }
+}

@@ -1,0 +1,169 @@
+
+{
+    "Header": {
+        "home": "Home",
+        "services": "Services",
+        "about": "About us",
+        "blog": "Blog",
+        "contact": "Contact"
+    },
+    "Footer": {
+        "navigation": "Navigation",
+        "contact": "Contact",
+        "follow_us": "Follow us",
+        "dashboard": "Dashboard"
+    },
+    "ProjectBriefForm": {
+        "title": "Project Briefing",
+        "description": "Please fill in the details below so we can understand your project.",
+        "fullName": "Full Name",
+        "fullNamePlaceholder": "Your name",
+        "fullNameRequired": "Full name is required",
+        "email": "Email Address",
+        "emailPlaceholder": "your@email.com",
+        "emailInvalid": "Invalid email",
+        "companyName": "Company Name (Optional)",
+        "companyNamePlaceholder": "Acme Inc.",
+        "idealTimeframe": "Ideal Timeframe (Optional)",
+        "idealTimeframePlaceholder": "e.g. 3-6 months",
+        "projectType": "Project Type",
+        "projectTypePlaceholder": "Select a project type",
+        "projectTypeRequired": "You must select a project type",
+        "projectTypes": {
+            "corporate": "Corporate Website",
+            "ecommerce": "E-commerce",
+            "webapp": "Web Application",
+            "blog": "Blog",
+            "landing": "Landing Page",
+            "other": "Other"
+        },
+        "requiredSections": "Required Sections",
+        "sections": {
+            "home": "Home",
+            "about": "About Us",
+            "services": "Services",
+            "news": "News",
+            "contact": "Contact"
+        },
+        "referenceSites": "Reference Sites (Optional)",
+        "referenceSitesPlaceholder": "https://example.com",
+        "addAnotherSite": "Add another site",
+        "invalidUrl": "Invalid URL",
+        "favoriteColors": "Favorite Colors (Choose up to 3)",
+        "favoriteColorsRequired": "Choose at least one color.",
+        "favoriteColorsMax": "You can choose up to 3 colors.",
+        "projectDescription": "Project Description",
+        "projectDescriptionPlaceholder": "Tell us about your goals, target audience, and any specific features you have in mind.",
+        "projectDescriptionMin": "The description must be at least 10 characters long.",
+        "submitButton": "Send Briefing",
+        "submitSuccessTitle": "Briefing Sent!",
+        "submitSuccessDescription": "Thank you for filling out the briefing. We will contact you shortly."
+    },
+     "BlogPage": {
+        "title": "Our Blog",
+        "description": "Ideas, tutorials, and news from the world of technology and software development.",
+        "comingSoonTitle": "Coming soon!",
+        "comingSoonDescription": "We are working on incredible content for you.",
+        "pastArticlesTitle": "Past Articles (Examples)",
+        "viewMoreButton": "View more articles",
+        "article1": {
+            "category": "Software Development",
+            "title": "Maximizing Efficiency with Custom Development",
+            "excerpt": "Discover how custom software solutions can transform your operations, improve productivity, and give you a sustainable competitive advantage in today's market.",
+            "author": "The Iddeia Team",
+            "date": "2 days ago"
+        },
+        "article2": {
+            "category": "Software Architecture",
+            "title": "The Importance of a Robust System Architecture",
+            "excerpt": "A solid foundation is the key to long-term success. We explore why a well-designed architecture is crucial for the scalability, maintenance, and security of your application.",
+            "author": "The Iddeia Team",
+            "date": "1 week ago"
+        },
+        "article3": {
+            "category": "Technical Support",
+            "title": "Technical Support: Your Strategic Post-Launch Ally",
+            "excerpt": "The launch is just the beginning. Learn how good technical support not only solves problems but also drives continuous improvement of your product.",
+            "author": "The Iddeia Team",
+            "date": "2 weeks ago"
+        }
+    },
+    "NotFound": {
+        "pageTitle": "Page Not Found",
+        "title": "Page not found.",
+        "cta": "Go to homepage"
+    },
+    "Backoffice": {
+        "title": "Content Editor",
+        "saveButton": "Save Changes",
+        "savingButton": "Saving...",
+        "saveSuccessTitle": "Success!",
+        "saveSuccessDescription": "Your changes have been saved.",
+        "saveErrorTitle": "Error",
+        "saveErrorDescription": "Could not save changes. Please try again.",
+        "sectionTitle": "Section {title}",
+        "language": "Language",
+        "pt": "Portuguese",
+        "es": "Spanish",
+        "en": "English",
+        "fr": "French",
+        "heroSection": {
+            "title": "Hero",
+            "headline": "Headline",
+            "subtext": "Subtext",
+            "buttonText": "Button Text",
+            "image": "Hero Image"
+        },
+        "featuresSection": {
+            "title": "Features",
+            "sectionTitle": "Section Title",
+            "subtext": "Subtext",
+            "features": "Features",
+            "itemTitle": "Title",
+            "itemIcon": "Icon",
+            "selectIcon": "Select an icon",
+            "itemDescription": "Description",
+            "deleteFeature": "Delete feature",
+            "addFeature": "Add Feature",
+            "newFeatureTitle": "New Feature",
+            "newFeatureDescription": "A brief description of this new feature."
+        },
+        "featuredArticleSection": {
+            "title": "Featured Article",
+            "mainTitle": "Title",
+            "subtitle": "Subtitle",
+            "text": "Text",
+            "buttonText": "Button Text",
+            "buttonLink": "Button Link",
+            "image": "Featured Image"
+        },
+        "aboutUsSection": {
+            "title": "About Us",
+            "mainTitle": "Title",
+            "paragraph1": "Paragraph 1",
+            "paragraph2": "Paragraph 2",
+            "buttonText": "Button Text",
+            "buttonLink": "Button Link",
+            "image": "About Us Image"
+        },
+        "ctaSection": {
+            "title": "CTA",
+            "mainTitle": "Title",
+            "subtext": "Subtext",
+            "buttonText": "Button Text"
+        },
+        "footerSection": {
+            "title": "Footer",
+            "brandDescription": "Brand Description",
+            "socialLinks": "Social Media Links",
+            "platform": "Platform",
+            "url": "URL",
+            "addSocialLink": "Add Social Link",
+            "legalLinks": "Legal Links",
+            "text": "Text",
+            "addLegalLink": "Add Legal Link",
+            "copyrightText": "Copyright Text",
+            "copyrightPlaceholder": "You can use '{year}' as a placeholder for the current year."
+        }
+    }
+}

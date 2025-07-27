@@ -1,0 +1,169 @@
+
+{
+    "Header": {
+        "home": "Início",
+        "services": "Serviços",
+        "about": "Quem somos",
+        "blog": "Blog",
+        "contact": "Contacto"
+    },
+    "Footer": {
+        "navigation": "Navegação",
+        "contact": "Contacto",
+        "follow_us": "Siga-nos",
+        "dashboard": "Painel de Controlo"
+    },
+    "ProjectBriefForm": {
+        "title": "Briefing do Projeto",
+        "description": "Por favor, preencha os detalhes abaixo para que possamos entender o seu projeto.",
+        "fullName": "Nome Completo",
+        "fullNamePlaceholder": "O seu nome",
+        "fullNameRequired": "Nome completo é obrigatório",
+        "email": "Endereço de Email",
+        "emailPlaceholder": "o.seu@email.com",
+        "emailInvalid": "Email inválido",
+        "companyName": "Nome da Empresa (Opcional)",
+        "companyNamePlaceholder": "Acme Inc.",
+        "idealTimeframe": "Prazo Ideal (Opcional)",
+        "idealTimeframePlaceholder": "ex: 3-6 meses",
+        "projectType": "Tipo de Projeto",
+        "projectTypePlaceholder": "Selecione um tipo de projeto",
+        "projectTypeRequired": "Deve selecionar um tipo de projeto",
+        "projectTypes": {
+            "corporate": "Site Corporativo",
+            "ecommerce": "E-commerce",
+            "webapp": "Aplicação Web",
+            "blog": "Blog",
+            "landing": "Landing Page",
+            "other": "Outro"
+        },
+        "requiredSections": "Secções Necessárias",
+        "sections": {
+            "home": "Início",
+            "about": "Quem Somos",
+            "services": "Serviços",
+            "news": "Notícias",
+            "contact": "Contacto"
+        },
+        "referenceSites": "Sites de Referência (Opcional)",
+        "referenceSitesPlaceholder": "https://exemplo.com",
+        "addAnotherSite": "Adicionar outro site",
+        "invalidUrl": "URL inválida",
+        "favoriteColors": "Cores Favoritas (Escolha até 3)",
+        "favoriteColorsRequired": "Escolha pelo menos uma cor.",
+        "favoriteColorsMax": "Pode escolher até 3 cores.",
+        "projectDescription": "Descrição do Projeto",
+        "projectDescriptionPlaceholder": "Fale-nos sobre os seus objetivos, público-alvo e quaisquer funcionalidades específicas que tenha em mente.",
+        "projectDescriptionMin": "A descrição deve ter pelo menos 10 caracteres.",
+        "submitButton": "Enviar Brief",
+        "submitSuccessTitle": "Briefing Enviado!",
+        "submitSuccessDescription": "Obrigado por preencher o briefing. Entraremos em contacto consigo em breve."
+    },
+    "BlogPage": {
+        "title": "O Nosso Blog",
+        "description": "Ideias, tutoriais e notícias do mundo da tecnologia e do desenvolvimento de software.",
+        "comingSoonTitle": "Em breve!",
+        "comingSoonDescription": "Estamos a trabalhar em conteúdo incrível para si.",
+        "pastArticlesTitle": "Artigos Anteriores (Exemplos)",
+        "viewMoreButton": "Ver mais artigos",
+        "article1": {
+            "category": "Desenvolvimento de Software",
+            "title": "Maximizando a Eficiência com Desenvolvimento à Medida",
+            "excerpt": "Descubra como as soluções de software personalizadas podem transformar as suas operações, melhorar a produtividade e dar-lhe uma vantagem competitiva sustentável no mercado atual.",
+            "author": "A Equipa da Iddeia",
+            "date": "Há 2 dias"
+        },
+        "article2": {
+            "category": "Arquitetura de Software",
+            "title": "A Importância de uma Arquitetura de Sistema Robusta",
+            "excerpt": "Uma base sólida é a chave para o sucesso a longo prazo. Exploramos por que uma arquitetura bem projetada é crucial para a escalabilidade, manutenção e segurança da sua aplicação.",
+            "author": "A Equipa da Iddeia",
+            "date": "Há 1 semana"
+        },
+        "article3": {
+            "category": "Suporte Técnico",
+            "title": "Suporte Técnico: O Seu Aliado Estratégico Pós-Lançamento",
+            "excerpt": "O lançamento é apenas o começo. Aprenda como um bom serviço de suporte técnico não só resolve problemas, mas também impulsiona a melhoria contínua do seu produto.",
+            "author": "A Equipa da Iddeia",
+            "date": "Há 2 semanas"
+        }
+    },
+    "NotFound": {
+        "pageTitle": "Página Não Encontrada",
+        "title": "Página não encontrada.",
+        "cta": "Ir para a página inicial"
+    },
+    "Backoffice": {
+        "title": "Editor de Conteúdo",
+        "saveButton": "Guardar Alterações",
+        "savingButton": "A guardar...",
+        "saveSuccessTitle": "Sucesso!",
+        "saveSuccessDescription": "As suas alterações foram guardadas.",
+        "saveErrorTitle": "Erro",
+        "saveErrorDescription": "Não foi possível guardar as alterações. Por favor, tente novamente.",
+        "sectionTitle": "Secção {title}",
+        "language": "Idioma",
+        "pt": "Português",
+        "es": "Espanhol",
+        "en": "Inglês",
+        "fr": "Francês",
+        "heroSection": {
+            "title": "Hero",
+            "headline": "Título",
+            "subtext": "Subtexto",
+            "buttonText": "Texto do Botão",
+            "image": "Imagem Hero"
+        },
+        "featuresSection": {
+            "title": "Funcionalidades",
+            "sectionTitle": "Título da Secção",
+            "subtext": "Subtexto",
+            "features": "Funcionalidades",
+            "itemTitle": "Título",
+            "itemIcon": "Ícone",
+            "selectIcon": "Selecione um ícone",
+            "itemDescription": "Descrição",
+            "deleteFeature": "Apagar funcionalidade",
+            "addFeature": "Adicionar Funcionalidade",
+            "newFeatureTitle": "Nova Funcionalidade",
+            "newFeatureDescription": "Uma breve descrição desta nova funcionalidade."
+        },
+        "featuredArticleSection": {
+            "title": "Artigo em Destaque",
+            "mainTitle": "Título",
+            "subtitle": "Subtítulo",
+            "text": "Texto",
+            "buttonText": "Texto do Botão",
+            "buttonLink": "Link do Botão",
+            "image": "Imagem em Destaque"
+        },
+        "aboutUsSection": {
+            "title": "Sobre Nós",
+            "mainTitle": "Título",
+            "paragraph1": "Parágrafo 1",
+            "paragraph2": "Parágrafo 2",
+            "buttonText": "Texto do Botão",
+            "buttonLink": "Link do Botão",
+            "image": "Imagem Sobre Nós"
+        },
+        "ctaSection": {
+            "title": "CTA",
+            "mainTitle": "Título",
+            "subtext": "Subtexto",
+            "buttonText": "Texto do Botão"
+        },
+        "footerSection": {
+            "title": "Rodapé",
+            "brandDescription": "Descrição da Marca",
+            "socialLinks": "Links de Redes Sociais",
+            "platform": "Plataforma",
+            "url": "URL",
+            "addSocialLink": "Adicionar Link Social",
+            "legalLinks": "Links Legais",
+            "text": "Texto",
+            "addLegalLink": "Adicionar Link Legal",
+            "copyrightText": "Texto de Copyright",
+            "copyrightPlaceholder": "Pode usar '{year}' como placeholder para o ano atual."
+        }
+    }
+}

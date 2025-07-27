@@ -24,7 +24,7 @@ export default async function SobreNosotrosPage() {
   const aboutUsData = content.sections.find(
     (section) => section.type === 'about'
   ) as AboutUsSectionData | undefined;
-
+  
   return (
     <div className="flex flex-col min-h-screen">
       <Header />

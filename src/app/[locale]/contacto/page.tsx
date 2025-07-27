@@ -24,7 +24,7 @@ export default async function ContactoPage() {
   const ctaData = content.sections.find(
     (section) => section.type === 'cta'
   ) as CtaSectionData | undefined;
-
+  
   return (
     <div className="flex flex-col min-h-screen">
       <Header />

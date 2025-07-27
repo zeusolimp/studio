@@ -4,43 +4,47 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { DynamicIcon } from '@/components/DynamicIcon';
-import type { FooterSectionData, SiteSettings, Locale, LandingContent } from '@/types';
-import { useTranslations } from 'next-intl';
+import type { FooterSectionData, SiteSettings, Locale } from '@/types';
 import { Link } from '@/navigation';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 const Footer = () => {
-    const [content, setContent] = useState<LandingContent | null>(null);
+    const [footerData, setFooterData] = useState<FooterSectionData | null>(null);
     const [settings, setSettings] = useState<SiteSettings | null>(null);
     const locale = useLocale() as Locale;
-    
-    useEffect(() => {
-        async function fetchData() {
-            const contentRes = await fetch('/api/content');
-            const contentData = await contentRes.json();
-            setContent(contentData);
-
-            const settingsRes = await fetch('/api/settings');
-            const settingsData = await settingsRes.json();
-            setSettings(settingsData);
-        }
-        fetchData();
-    }, []);
-
     const tHeader = useTranslations('Header');
     const tFooter = useTranslations('Footer');
 
-    if (!content || !settings) {
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const [contentRes, settingsRes] = await Promise.all([
+                    fetch('/api/content'),
+                    fetch('/api/settings'),
+                ]);
+                const content = await contentRes.json();
+                const settings = await settingsRes.json();
+                
+                const footer = content.sections.find(
+                    (section: any) => section.type === 'footer'
+                ) as FooterSectionData | undefined;
+
+                if (footer) setFooterData(footer);
+                setSettings(settings);
+
+            } catch (error) {
+                console.error("Failed to fetch footer data:", error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    if (!footerData || !settings) {
         return <footer className="border-t border-border/50 bg-secondary/20 text-foreground h-96 animate-pulse"></footer>;
     }
-
-    const data = content.sections.find((s: any) => s.type === 'footer') as FooterSectionData | undefined;
-
-    if (!data) {
-        return <footer className="border-t border-border/50 bg-secondary/20 text-foreground py-12 text-center">Footer content not found.</footer>;
-    }
     
-    const { brand_description, social_links, legal_links, copyright_text } = data;
+    const { brand_description, social_links, legal_links, copyright_text } = footerData;
     const { contact } = settings;
     const currentYear = new Date().getFullYear();
     const processedCopyright = (copyright_text[locale] || copyright_text.pt).replace('{year}', currentYear.toString());

@@ -1,9 +1,9 @@
 
 "use client";
 
-import { Link } from 'next-intl';
-import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
+import Link from 'next/link';
 import { ThemeToggle } from '../ThemeToggle';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useEffect, useState } from 'react';

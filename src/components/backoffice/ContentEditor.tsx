@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState } from 'react';
@@ -90,7 +91,7 @@ export default function ContentEditor({ initialContent }: { initialContent: Land
                         <ArrowDown className="h-4 w-4" />
                         <span className="sr-only">Move section down</span>
                     </Button>
-                    <Button variant="ghost" size="icon" onClick={() => handleRemoveSection(index)} className="text-destructive hover:bg-destructive/10 hover:text-destructive">
+                    <Button disabled variant="ghost" size="icon" onClick={() => handleRemoveSection(index)} className="text-destructive hover:bg-destructive/10 hover:text-destructive">
                         <Trash2 className="h-4 w-4" />
                         <span className="sr-only">Delete section</span>
                     </Button>

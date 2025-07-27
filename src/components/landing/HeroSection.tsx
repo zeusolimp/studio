@@ -5,32 +5,29 @@ import Link from 'next/link';
 
 const HeroSection = ({ headline, subtext, cta_button_text, image_url }: HeroSectionData) => {
   return (
-    <section id="hero" className="py-20 md:py-32 bg-secondary/20">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
-          <div className="text-center md:text-left">
-            <h1 className="font-headline text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl">
-              {headline}
-            </h1>
-            <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto md:mx-0">
-              {subtext}
-            </p>
-            <div className="mt-8">
-              <Button asChild size="lg" style={{ backgroundColor: 'hsl(var(--accent))', color: 'hsl(var(--accent-foreground))' }} className="hover:opacity-90 shadow-lg shadow-accent/20">
-                <Link href="/backoffice">{cta_button_text}</Link>
-              </Button>
-            </div>
-          </div>
-          <div>
-            <Image
-              src={image_url || "https://placehold.co/600x400.png"}
-              alt={headline}
-              width={600}
-              height={400}
-              className="mx-auto rounded-lg shadow-2xl"
-              data-ai-hint="web development agency"
-            />
-          </div>
+    <section id="hero" className="relative py-20 md:py-40 text-center text-white">
+      <div className="absolute inset-0 z-0">
+        <Image
+          src={image_url || "https://placehold.co/1920x1080.png"}
+          alt={headline}
+          fill
+          className="object-cover"
+          data-ai-hint="web development agency"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/60"></div>
+      </div>
+      <div className="container relative z-10 mx-auto px-4">
+        <h1 className="font-headline text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
+          {headline}
+        </h1>
+        <p className="mt-6 max-w-2xl mx-auto text-lg text-gray-200">
+          {subtext}
+        </p>
+        <div className="mt-8">
+          <Button asChild size="lg" style={{ backgroundColor: 'hsl(var(--accent))', color: 'hsl(var(--accent-foreground))' }} className="hover:opacity-90 shadow-lg shadow-accent/20">
+            <Link href="/servicios">{cta_button_text}</Link>
+          </Button>
         </div>
       </div>
     </section>

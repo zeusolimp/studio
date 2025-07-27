@@ -21,6 +21,15 @@ export type FeaturesSectionData = {
   items: FeatureItem[];
 };
 
+export type AboutUsSectionData = {
+  id: 'about';
+  type: 'about';
+  title: string;
+  paragraph1: string;
+  paragraph2: string;
+  image_url: string;
+};
+
 export type CtaSectionData = {
   id: 'cta';
   type: 'cta';
@@ -29,7 +38,7 @@ export type CtaSectionData = {
   button_text: string;
 };
 
-export type Section = HeroSectionData | FeaturesSectionData | CtaSectionData;
+export type Section = HeroSectionData | FeaturesSectionData | AboutUsSectionData | CtaSectionData;
 
 export type LandingContent = {
   sections: Section[];

@@ -9,11 +9,13 @@ import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import HeroSectionEditor from './HeroSectionEditor';
 import FeaturesSectionEditor from './FeaturesSectionEditor';
 import CtaSectionEditor from './CtaSectionEditor';
+import AboutUsSectionEditor from './AboutUsSectionEditor';
 import { Save, Loader, ArrowUp, ArrowDown, Trash2 } from 'lucide-react';
 
 const sectionEditorComponents = {
   hero: HeroSectionEditor,
   features: FeaturesSectionEditor,
+  about: AboutUsSectionEditor,
   cta: CtaSectionEditor,
 };
 

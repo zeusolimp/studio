@@ -2,13 +2,15 @@ import { getContent } from '@/lib/content';
 import Header from '@/components/landing/Header';
 import HeroSection from '@/components/landing/HeroSection';
 import FeaturesSection from '@/components/landing/FeaturesSection';
+import AboutUsSection from '@/components/landing/AboutUsSection';
 import CtaSection from '@/components/landing/CtaSection';
 import Footer from '@/components/landing/Footer';
-import type { Section, HeroSectionData, FeaturesSectionData, CtaSectionData } from '@/types';
+import type { Section, HeroSectionData, FeaturesSectionData, CtaSectionData, AboutUsSectionData } from '@/types';
 
 const sectionComponents = {
   hero: HeroSection,
   features: FeaturesSection,
+  about: AboutUsSection,
   cta: CtaSection,
 };
 

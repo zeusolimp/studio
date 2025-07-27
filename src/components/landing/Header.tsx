@@ -20,10 +20,10 @@ const Header = () => {
             <Link href="/#features" className="text-muted-foreground transition-colors hover:text-foreground">
                 Servicios
             </Link>
-            <Link href="/#about" className="text-muted-foreground transition-colors hover:text-foreground">
+            <Link href="/sobre-nosotros" className="text-muted-foreground transition-colors hover:text-foreground">
                 Quiénes somos
             </Link>
-            <Link href="/#cta" className="text-muted-foreground transition-colors hover:text-foreground">
+            <Link href="/contacto" className="text-muted-foreground transition-colors hover:text-foreground">
                 Contacto
             </Link>
         </nav>

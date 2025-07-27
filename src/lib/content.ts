@@ -39,12 +39,20 @@ const defaultContent: LandingContent = {
         },
       ],
     },
+     {
+      id: 'about',
+      type: 'about',
+      title: 'Sobre Nosotros',
+      paragraph1: 'Somos un equipo de innovadores, solucionadores de problemas y apasionados por la tecnología, dedicados a transformar ideas en realidades digitales. Nuestra misión es impulsar el éxito de nuestros clientes a través de soluciones de software excepcionales y un soporte técnico inigualable.',
+      paragraph2: 'Con años de experiencia en la industria, hemos perfeccionado nuestro enfoque en la creación de aplicaciones web, sitios y sistemas que no solo son visualmente impactantes, sino también robustos, escalables y seguros. Creemos en la colaboración estrecha y la comunicación transparente para garantizar que cada proyecto sea un reflejo fiel de la visión de nuestros clientes.',
+      image_url: 'https://placehold.co/600x400.png',
+    },
     {
       id: 'cta',
       type: 'cta',
-      title: 'Ready to Take Control?',
-      subtext: 'Explore the backoffice and see how easy it is to manage your landing page content.',
-      button_text: 'Go to Backoffice',
+      title: '¿Listo para Empezar tu Próximo Proyecto?',
+      subtext: 'Contáctanos para descubrir cómo podemos ayudarte a alcanzar tus objetivos tecnológicos.',
+      button_text: 'Crea un proyecto con nosotros',
     },
   ],
 };
@@ -56,7 +64,24 @@ export async function getContent(): Promise<LandingContent> {
     return data;
   } catch (error) {
     console.warn('content.json not found or invalid, using default content.');
-    return defaultContent;
+    
+    // Create the db directory if it doesn't exist
+    try {
+      await fs.mkdir(path.dirname(dataFilePath), { recursive: true });
+    } catch (mkdirError) {
+       console.error('Could not create db directory', mkdirError);
+    }
+    
+    // Write the default content to the file
+    try {
+      await fs.writeFile(dataFilePath, JSON.stringify(defaultContent, null, 2), 'utf8');
+      console.log('Created default content.json file.');
+      return defaultContent;
+    } catch (writeFileError) {
+        console.error('Could not write default content.json file', writeFileError);
+        // Return default content in memory if file writing fails
+        return defaultContent;
+    }
   }
 }
 

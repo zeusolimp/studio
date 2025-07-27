@@ -2,29 +2,26 @@ import { getContent } from '@/lib/content';
 import Header from '@/components/landing/Header';
 import HeroSection from '@/components/landing/HeroSection';
 import FeaturesSection from '@/components/landing/FeaturesSection';
-import AboutUsSection from '@/components/landing/AboutUsSection';
-import CtaSection from '@/components/landing/CtaSection';
 import Footer from '@/components/landing/Footer';
-import type { Section, HeroSectionData, FeaturesSectionData, CtaSectionData, AboutUsSectionData } from '@/types';
+import type { Section, HeroSectionData, FeaturesSectionData } from '@/types';
 
 const sectionComponents = {
   hero: HeroSection,
   features: FeaturesSection,
-  about: AboutUsSection,
-  cta: CtaSection,
 };
 
 export default async function Home() {
   const content = await getContent();
 
   const renderSection = (section: Section) => {
-    const Component = sectionComponents[section.type as keyof typeof sectionComponents];
-    if (!Component) {
-      return null;
+    // Ensure section.type is one of the keys in sectionComponents
+    if (section.type in sectionComponents) {
+        const Component = sectionComponents[section.type as keyof typeof sectionComponents];
+        // The 'any' type is used here for simplicity as each component has different props.
+        // In a larger application, you might use a more robust mapping or type guards.
+        return <Component key={section.id} {...(section as any)} />;
     }
-    // The 'any' type is used here for simplicity as each component has different props.
-    // In a larger application, you might use a more robust mapping or type guards.
-    return <Component key={section.id} {...(section as any)} />;
+    return null;
   };
 
   return (

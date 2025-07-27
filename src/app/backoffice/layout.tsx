@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Eye } from 'lucide-react';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 export default function BackofficeLayout({
   children,
@@ -20,6 +21,7 @@ export default function BackofficeLayout({
             <span className="text-sm text-muted-foreground ml-2">Backoffice</span>
         </div>
         <div className="ml-auto flex items-center gap-2">
+            <ThemeToggle />
             <Button asChild variant="outline" size="sm">
                 <Link href="/">
                     <Eye className="mr-2 h-4 w-4" />

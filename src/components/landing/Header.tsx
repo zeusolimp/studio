@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { LayoutDashboard } from 'lucide-react';
+import { ThemeToggle } from '../ThemeToggle';
 
 const Header = () => {
   return (
@@ -14,13 +15,14 @@ const Header = () => {
           </svg>
           <span className="font-headline text-xl font-bold">iddeia global</span>
         </Link>
-        <nav>
+        <nav className="flex items-center gap-2">
           <Button asChild variant="ghost" size="sm">
             <Link href="/backoffice">
               <LayoutDashboard className="mr-2 h-4 w-4" />
               Panel de Control
             </Link>
           </Button>
+          <ThemeToggle />
         </nav>
       </div>
     </header>

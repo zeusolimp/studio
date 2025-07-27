@@ -7,7 +7,7 @@ const AboutUsSection = ({ title, paragraph1, paragraph2, image_url }: AboutUsSec
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground md:text-4xl mb-6">
+            <h2 className="font-headline text-3xl tracking-tight text-foreground md:text-4xl mb-6">
               {title}
             </h2>
             <div className="space-y-4 text-muted-foreground">

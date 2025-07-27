@@ -20,7 +20,7 @@ const FeaturedArticleSection = ({ title, subtitle, text, image_url, button_text,
           </div>
           <div>
             <h3 className="font-headline text-sm font-semibold uppercase tracking-wider text-accent mb-2">{title}</h3>
-            <h2 className="font-headline text-3xl font-bold tracking-tight text-foreground md:text-4xl mb-4">
+            <h2 className="font-headline text-3xl tracking-tight text-foreground md:text-4xl mb-4">
               {subtitle}
             </h2>
             <p className="text-muted-foreground mb-6">{text}</p>

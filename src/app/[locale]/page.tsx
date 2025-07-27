@@ -4,7 +4,7 @@ import Header from '@/components/landing/Header';
 import HeroSection from '@/components/landing/HeroSection';
 import FeaturesSection from '@/components/landing/FeaturesSection';
 import Footer from '@/components/landing/Footer';
-import type { Section, Locale } from '@/types';
+import type { Locale } from '@/types';
 import CtaSection from '@/components/landing/CtaSection';
 import AboutUsSection from '@/components/landing/AboutUsSection';
 import FeaturedArticleSection from '@/components/landing/FeaturedArticleSection';
@@ -37,19 +37,22 @@ export default async function Home({ params: { locale } }: { params: { locale: L
       <Header />
       <main className="flex-grow">
         {content.sections
-          .filter(section => section.type !== 'footer') // O footer é renderizado separadamente
+          .filter(section => section.type !== 'footer')
           .map(section => {
             const Component = sectionComponents[section.type as keyof typeof sectionComponents];
             
             if (Component) {
               let props: any;
               
-              if (section.type === 'features') {
+              if (section.type === 'features' && 'items' in section) {
                   props = {
                       ...getLocalizedContent(section, locale),
                       items: section.items.map(item => getLocalizedContent(item, locale))
                   };
-              } else {
+              } else if ('social_links' in section) { 
+                return null;
+              }
+              else {
                   props = getLocalizedContent(section, locale);
               }
               

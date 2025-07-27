@@ -1,26 +1,41 @@
 
+"use client";
+
 import { Link } from 'next-intl';
 import Image from 'next/image';
-import { getContent } from '@/lib/content';
-import { getSettings } from '@/lib/settings';
-import { FooterSectionData, Locale } from '@/types';
 import { DynamicIcon } from '@/components/DynamicIcon';
 import { LayoutDashboard } from 'lucide-react';
-import { getLocale, getTranslations } from 'next-intl/server';
+import { useTranslations } from 'next-intl';
+import { useState, useEffect } from 'react';
+import type { FooterSectionData, SiteSettings, Locale } from '@/types';
 
+const Footer = () => {
+    const t = useTranslations('Footer');
+    const [data, setData] = useState<FooterSectionData | null>(null);
+    const [settings, setSettings] = useState<SiteSettings | null>(null);
+    const [locale, setLocale] = useState<Locale>('pt');
 
-const Footer = async () => {
-    const t = await getTranslations('Footer');
-    const content = await getContent();
-    const settings = await getSettings();
-    const locale = await getLocale() as Locale;
+    useEffect(() => {
+        async function fetchData() {
+            const contentRes = await fetch('/api/content');
+            const content = await contentRes.json();
+            const footerData = content.sections.find((s: any) => s.type === 'footer');
+            setData(footerData);
 
-    const data = content.sections.find(
-        (section) => section.type === 'footer'
-    ) as FooterSectionData | undefined;
+            const settingsRes = await fetch('/api/settings');
+            const siteSettings = await settingsRes.json();
+            setSettings(siteSettings);
 
-    if (!data) return null;
+            const currentLocale = window.location.pathname.split('/')[1] as Locale || 'pt';
+            setLocale(currentLocale);
+        }
+        fetchData();
+    }, []);
 
+    if (!data || !settings) {
+        return <footer className="border-t border-border/50 bg-secondary/20 text-foreground h-96 animate-pulse"></footer>;
+    }
+    
     const { brand_description, social_links, legal_links, copyright_text } = data;
     const { contact } = settings;
 
@@ -58,10 +73,10 @@ const Footer = async () => {
                     <Link href="/sobre-nosotros" className="hover:text-accent transition-colors">{t('about')}</Link>
                     <Link href="/blog" className="hover:text-accent transition-colors">{t('blog')}</Link>
                     <Link href="/contacto" className="hover:text-accent transition-colors">{t('contact')}</Link>
-                    <a href="/backoffice" className="flex items-center gap-2 hover:text-accent transition-colors">
+                    <Link href="/backoffice" className="flex items-center gap-2 hover:text-accent transition-colors">
                         <LayoutDashboard className="h-4 w-4" />
                         {t('dashboard')}
-                    </a>
+                    </Link>
                 </nav>
             </div>
 

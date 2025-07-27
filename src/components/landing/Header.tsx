@@ -1,14 +1,16 @@
 
+"use client";
+
 import { Link } from 'next-intl';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
+import { useTranslations } from 'next-intl';
 import { ThemeToggle } from '../ThemeToggle';
-import { getSettings } from '@/lib/settings';
 import LanguageSwitcher from './LanguageSwitcher';
-import { getTranslations } from 'next-intl/server';
+import { useEffect, useState } from 'react';
+import { SiteSettings } from '@/types';
 
-const Header = async () => {
-  const t = await getTranslations('Header');
+const Header = () => {
+  const t = useTranslations('Header');
   
   const NavLinks = () => {
     return (
@@ -54,8 +56,24 @@ const Header = async () => {
   );
 };
 
-const HeaderLogo = async () => {
-    const settings = await getSettings();
+const HeaderLogo = () => {
+    const [settings, setSettings] = useState<SiteSettings | null>(null);
+
+    useEffect(() => {
+        async function fetchSettings() {
+            const res = await fetch('/api/settings');
+            const data = await res.json();
+            setSettings(data);
+        }
+        fetchSettings();
+    }, []);
+
+    if (!settings) {
+        return (
+            <div className="h-8 w-8 rounded-full bg-muted animate-pulse" />
+        )
+    }
+
     return (
         <>
             {settings.logo_url ? (

@@ -8,12 +8,14 @@ import { LayoutDashboard } from 'lucide-react';
 import { useTranslations } from 'next-intl';
 import { useState, useEffect } from 'react';
 import type { FooterSectionData, SiteSettings, Locale } from '@/types';
+import { useLocale } from 'next-intl';
+
 
 const Footer = () => {
     const t = useTranslations('Footer');
     const [data, setData] = useState<FooterSectionData | null>(null);
     const [settings, setSettings] = useState<SiteSettings | null>(null);
-    const [locale, setLocale] = useState<Locale>('pt');
+    const locale = useLocale() as Locale;
 
     useEffect(() => {
         async function fetchData() {
@@ -25,9 +27,6 @@ const Footer = () => {
             const settingsRes = await fetch('/api/settings');
             const siteSettings = await settingsRes.json();
             setSettings(siteSettings);
-
-            const currentLocale = window.location.pathname.split('/')[1] as Locale || 'pt';
-            setLocale(currentLocale);
         }
         fetchData();
     }, []);

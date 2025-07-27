@@ -7,7 +7,7 @@ import { useTranslations } from 'next-intl';
 import { ThemeToggle } from '../ThemeToggle';
 import LanguageSwitcher from './LanguageSwitcher';
 import { useEffect, useState } from 'react';
-import { SiteSettings } from '@/types';
+import type { SiteSettings } from '@/types';
 
 const Header = () => {
   const t = useTranslations('Header');

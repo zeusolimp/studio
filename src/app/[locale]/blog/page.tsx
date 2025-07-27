@@ -1,3 +1,6 @@
+
+"use client";
+
 import Header from '@/components/landing/Header';
 import Footer from '@/components/landing/Footer';
 import { Card, CardContent } from '@/components/ui/card';

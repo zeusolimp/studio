@@ -1,5 +1,4 @@
-import Link from "next-intl/link";
-import { useTranslations } from "next-intl";
+import { Link, useTranslations } from "next-intl";
 
 export default function NotFound() {
   const t = useTranslations("NotFound");
